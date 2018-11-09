@@ -1,0 +1,128 @@
+page {
+  display: block;
+  min-height: 100%;
+  background-color: #f3f3f3;
+  font-family: "微软雅黑";
+}
+
+.fs_20 {
+  font-size: 20rpx;
+}
+
+.fs_26 {
+  font-size: 26rpx;
+}
+
+.fs_32 {
+  font-size: 32rpx;
+}
+
+.fs_34 {
+  font-size: 34rpx;
+}
+
+.sub_btn {
+  background: #f53159 !important;
+  color: #fff !important;
+  font-size: 36rpx;
+  border-radius: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  transition: all 0.1s;
+}
+
+.sub_btn_hover {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+.sub_btn[disabled]{
+  background: #f53159 !important ;
+  color: #fff !important ;
+  opacity: 0.6;
+}
+.clearfix:after{
+content:"";
+height:0;
+line-height:0;
+display:block;
+clear:both;
+visibility:hidden;
+}
+
+.clearfix{
+ zoom:1;  
+}
+
+@keyframes showIn{
+  0%{
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  40%{opacity: 1;}
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes hideOut{
+  0%{
+    transform: scale(1);
+    opacity:1;
+  }
+  100%{
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+.popIn{
+  animation: sdiledowm 0.4s;
+}
+.popOut{
+  animation: sdileout 0.4s;
+}
+@keyframes sdiledowm{
+  0%{
+      transform: translate(0,800rpx);
+      opacity: 0;
+  }
+  100%{
+      transform: none;
+      opacity: 1;
+  }
+}
+@keyframes sdileout{
+  0%{
+      transform: none;
+      opacity: 1;
+  }
+  100%{
+      transform: translate(0,800rpx);
+      opacity: 0;
+  }
+}
+
+.bgIn{
+  animation: bgIn 0.4s forwards;
+}
+.bgOut{
+  animation: bgOut 0.4s forwards;
+}
+@keyframes bgIn{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+@keyframes bgOut{
+  0%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+  }
+}

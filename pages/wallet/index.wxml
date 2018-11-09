@@ -1,0 +1,18 @@
+<!-- 押金 -->
+<view class="deposit">
+    <view class="deposit_content">
+        <text class="deposit_tit">押金</text>
+        <!-- <text class="deposit_num">¥199.00</text> -->
+        <text class="deposit_num">¥0.00</text>
+    </view>
+    <!-- 交易记录or支付押金/提现 -->
+    <view class="deal">
+        <text class="deal_tit">交易记录</text>
+        <!-- <view class="deal_btn" bindtap="showModal">提现</view> -->
+        <view class="deal_btn" bindtap="showModal">支付押金</view>
+    </view>
+</view>
+<!-- 彈窗 -->
+<view>
+    <modal class="my_modal">{{modalText}}</modal>
+</view>

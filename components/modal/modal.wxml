@@ -1,0 +1,32 @@
+<!-- 支付彈窗 -->
+<view class="modal" hidden="{{hideModal}}">
+  <view class="modal_bg"></view>
+  <view class="bottom_modal" animation="{{animationData}}">
+    <view class="modal_cont_nav">
+      <text class="modal_cont_nav_tit">支付押金</text>
+      <image bindtap="hideModal" class="modal_exit_icon" mode="widthFix" src="/image/exit_icon.png" />
+    </view>
+    <view class="modal_num">¥199.00</view>
+    <view class="modal_num_tit">一次性支付，随时可退</view>
+    <view class="modal_btn">微信支付</view>
+  </view>
+</view>
+<!-- 剩余押金支付 -->
+<!-- <view class="modal" hidden="{{hideModal}}">
+  <view class="modal_bg"></view>
+  <view class="bottom_modal" animation="{{animationData}}">
+    <view class="modal_cont_nav">
+      <text class="modal_cont_nav_tit">支付押金</text>
+      <image bindtap="hideModal" class="modal_exit_icon" mode="widthFix" src="/image/exit_icon.png" />
+    </view>
+    <view class="total_deposit">
+      <text class="modal_num_text_1">总押金</text>
+      <text class="modal_num_text_2">¥199.00</text>
+    </view>
+    <view class="total_deposit">
+      <text class="modal_num_text_1">剩余押金</text>
+      <text class="modal_num_text_2">¥100.00</text>
+    </view>
+    <view class="modal_btn">还需支付99.00元</view>
+  </view>
+</view> -->

@@ -1,0 +1,127 @@
+/* 搜索附近 */
+.nav_color {
+  width: 100%;
+  height: 90rpx;
+  background: #3edd8d;
+}
+.search {
+  width: 93%;
+  height: 120rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  position: relative;
+  top: -60rpx;
+}
+.search_tit {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #252525;
+  line-height: 120rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+.search_x {
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+}
+.search_box {
+  width: 510rpx;
+  height: 70rpx;
+  background: #f3f3f3;
+  float: right;
+  margin-top: 25rpx;
+  margin-right: 30rpx;
+  border-radius: 35rpx;
+}
+.search_s {
+  width: 35rpx;
+  height: 35rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+}
+.search_box_tit {
+  font-size: 20rpx;
+  color: #999;
+  float: left;
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+}
+/* 附近网点 */
+.near_add {
+  width: 93%;
+  height: 180rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  position: relative;
+  top: -60rpx;
+  margin-top: 15rpx;
+}
+.near_add_tit {
+  font-size: 30rpx;
+  color: #252525;
+  margin-left: 20rpx;
+  position: relative;
+  top: 10rpx;
+  float: left;
+}
+.near_add_time {
+  float: left;
+  margin-top: 8rpx;
+}
+.near_add_time_icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+  margin-top: 25rpx;
+  float: left;
+}
+.near_add_time_tit {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+  margin-top: 23rpx;
+  float: left;
+}
+.icon_x {
+  width: 20rpx;
+  height: 20rpx;
+  float: left;
+  margin-left: 320rpx;
+  margin-top: 28rpx;
+}
+.near_add_time_num {
+  font-size: 24rpx;
+  color: #999;
+  float: left;
+  margin-top: 20rpx;
+}
+.icon_d {
+  width: 35rpx;
+  height: 35rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+.near_add_icon {
+  float: left;
+}
+.add_icon {
+  width: 35rpx;
+  height: 35rpx;
+  float: left;
+  margin-top: 27rpx;
+  margin-left: 20rpx;
+}
+.near_add_icon_tit {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+  margin-top: 27rpx;
+  float: left;
+}

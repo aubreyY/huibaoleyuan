@@ -1,0 +1,29 @@
+<!-- 地图 -->
+<view class="map_content">
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" show-location style="width: 100%; height: {{view.Height}}px;"></map>
+    <cover-view class="map_nav_box">
+        <cover-view class="map_nav_tit">租东东绘本服务网点</cover-view>
+        <cover-view>
+            <cover-image class="map_nav_time_icon" src="/image/near_add_time_icon.png"></cover-image>
+            <cover-view class="map_nav_time_num" style="width:150rpx">9:00~20:00</cover-view>
+            <cover-image class="icon_x" src="/image/icon_x.png"></cover-image>
+            <cover-view class="map_nav_time_m">500M</cover-view>
+            <cover-image class="icon_d" src="/image/icon_d.png"></cover-image>
+        </cover-view>
+        <cover-view>
+            <cover-image class="map_nav_near_icon" src="/image/add_icon.png"></cover-image>
+            <cover-view class="map_nav_near_tit">朝阳·望京摩托罗拉大厦</cover-view>
+        </cover-view>
+        <cover-view class="map_nav_btn">
+            <cover-view class="map_nav_btn_phone">
+                <cover-image class="map_phone_icon" src="/image/phone_icon.png"></cover-image>
+                <cover-view class="map_phone_title">联系门店</cover-view>
+            </cover-view>
+            <cover-view class="map_nav_border"></cover-view>
+            <cover-view class="map_nav_btn_add">
+                <cover-image class="map_nav_btn_add_icon" src="/image/map_nav.png"></cover-image>
+                <cover-view class="map_nav_btn_add_title">导航</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+</view>

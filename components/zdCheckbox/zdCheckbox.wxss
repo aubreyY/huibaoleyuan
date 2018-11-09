@@ -1,0 +1,22 @@
+
+.checkbox{
+    width: 30rpx;height: 30rpx;
+    position: relative;display: inline-block;
+    border-radius: 30rpx;
+    border: 1px solid #cacaca;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.checkbox image{
+    display: block;
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;height: 100%;
+    display: none;
+} 
+.checkbox_on{
+    border-color: #f5315a;
+}
+.checkbox_on image{
+    display: block;
+}

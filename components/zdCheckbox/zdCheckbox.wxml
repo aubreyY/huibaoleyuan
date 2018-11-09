@@ -1,0 +1,3 @@
+<view class="checkbox {{isShow ? 'checkbox_on':''}}">
+    <image src='/image/check_on.png' mode="aspectFit"></image>
+</view>

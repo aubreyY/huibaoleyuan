@@ -1,0 +1,37 @@
+<!-- 头部背景 -->
+<view class="user_head_color">
+  <image mode="widthFix" class="user_head_bg" src="/image/user_head.png" />
+</view>
+<!-- 头像信息 -->
+<view class="user_nav">
+  <view class="user_nav_img">
+    <open-data type="userAvatarUrl" />
+  </view>
+  <view class="user_nav_name">
+    <open-data type="userNickName" />
+  </view>
+  <view class="user_nav_tit">
+    <text>已经借阅3次啦!</text>
+  </view>
+</view>
+<view class="user_content">
+  <!-- 钱包or借阅 -->
+  <view class="user_wallet" bindtap="my_wallet">
+    <image mode="widthFix" class="user_wallet_icon" src="/image/wallet_icon.png" />
+    <text class="user_wallet_tit">我的钱包</text>
+    <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+  </view>
+  <view class="user_wallet" style="border:1rpx solid #fff;">
+    <image mode="widthFix" class="user_wallet_icon" src="/image/borrow_icon.png" />
+    <text class="user_wallet_tit">借阅指南</text>
+    <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+  </view>
+</view>
+<!-- 关于我们 -->
+<view class="user_about">
+  <image mode="widthFix" class="user_about_icon" src="/image/about_icon.png" />
+  <text class="user_about_tit">关于我们</text>
+  <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+</view>
+<!-- 授权登录 -->
+<login isShow="{{isShowLogin}}"></login>

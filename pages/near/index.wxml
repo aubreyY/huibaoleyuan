@@ -1,0 +1,70 @@
+<!-- 搜索附近 -->
+<view class="nav_color"></view>
+<view class="search">
+    <text class="search_tit">北京</text>
+    <image mode="widthFix" class="search_x" src="/image/search_x.png" />
+    <view class="search_box">
+        <image mode="widthFix" class="search_s" src="/image/search_s.png" />
+        <input class="search_box_tit" placeholder="搜索附近网点" />
+    </view>
+</view>
+<!-- 附近的网点 -->
+<view class="near_add" bindtap="my_map">
+    <text class="near_add_tit">租东东服务网点</text>
+    <view class="near_add_time">
+        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
+        <text class="near_add_time_tit">9:00 ~ 20:00</text>
+        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
+        <text class="near_add_time_num">500M</text>
+        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+    </view>
+    <view class="near_add_icon">
+        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
+        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
+    </view>
+</view>
+
+<view class="near_add" bindtap="my_map">
+    <text class="near_add_tit">租东东服务网点</text>
+    <view class="near_add_time">
+        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
+        <text class="near_add_time_tit">9:00 ~ 20:00</text>
+        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
+        <text class="near_add_time_num">500M</text>
+        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+    </view>
+    <view class="near_add_icon">
+        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
+        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
+    </view>
+</view>
+
+<view class="near_add" bindtap="my_map">
+    <text class="near_add_tit">租东东服务网点</text>
+    <view class="near_add_time">
+        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
+        <text class="near_add_time_tit">9:00 ~ 20:00</text>
+        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
+        <text class="near_add_time_num">500M</text>
+        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+    </view>
+    <view class="near_add_icon">
+        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
+        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
+    </view>
+</view>
+
+<view class="near_add" bindtap="my_map">
+    <text class="near_add_tit">租东东服务网点</text>
+    <view class="near_add_time">
+        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
+        <text class="near_add_time_tit">9:00 ~ 20:00</text>
+        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
+        <text class="near_add_time_num">500M</text>
+        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+    </view>
+    <view class="near_add_icon">
+        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
+        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
+    </view>
+</view>

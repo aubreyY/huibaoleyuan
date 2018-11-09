@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh":true,
+    "component": true,
+    "usingComponents": {
+        "slide-tab": "/components/slideTab/slideTab"
+    }
+}

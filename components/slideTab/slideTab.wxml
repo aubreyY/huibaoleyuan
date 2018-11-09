@@ -1,0 +1,34 @@
+<view class="menu {{type?'menu_fixed':''}}" wx:if="{{!xscroll}}">
+    <view class="menu_li {{item.state ? 'menu_on':''}}" wx:for="{{menuConfig}}" wx:key="{{i}}" bindtap="selects" data-index="{{i}}"
+        wx:for-index="i" style="width:{{750/rowNum}}rpx;">{{item.name}}</view>
+    <view class="menu_bot" style="transition: {{anmin}};transform:translateX({{sumDist}}rpx);width:{{w}}rpx;left:{{left}}rpx;"></view>
+</view>
+
+<!-- -->
+<view class="menu {{type?'menu_fixed':''}}" wx:if="{{xscroll}}">
+    <view style="transform:translateX({{-scrollCm}}rpx);transition: all 0.3s;">
+        <view class="menu_li {{item.state ? 'menu_on':''}}" wx:for="{{menuConfig}}" wx:key="{{i}}" bindtap="selects" data-index="{{i}}"
+            wx:for-index="i" style="width:{{750/rowNum}}rpx;">{{item.value}}</view>
+        <view class="menu_bot" style="transition: {{anmin}};transform:translateX({{sumDist}}rpx);width:{{w}}rpx;left:{{left}}rpx;"></view>
+    </view>
+</view>
+
+<view style="height:90rpx;" wx:if="{{type}}"></view>
+
+
+<!-- 首页滚动条
+
+<scroll-view class="menu {{type?'menu_fixed':''}}" wx:if="{{xscroll}}" scroll-x="{{true}}" bindscroll="gd" scroll-with-animation="true" scroll-left="{{index*scrw-2*scrw}}">
+    <view class="menu_li {{item.state ? 'menu_on':''}}" wx:for="{{menu}}" wx:key="{{i}}" bindtap="selects" data-index="{{i}}"
+        wx:for-index="i" style="width:{{750/rowNum}}rpx;}}">{{item.value}}</view>
+    <view class="menu_bot" style="transition: {{anmin}};transform:translateX({{sumDist}}rpx);width:{{w}}rpx;left:{{left}}rpx;"></view>
+</scroll-view>
+ -->
+
+
+
+
+
+<view bindtouchstart="satrt" bindtouchmove="move" bindtouchend="end" class="menu_main">
+    <slot></slot>
+</view>

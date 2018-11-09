@@ -1,0 +1,35 @@
+/* 借阅记录 */
+.borrow_list{
+    width: 100%;
+    height: 200rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}
+.borrow_time{
+    height: 90rpx;
+    border-bottom: 1rpx solid #f3f3f3;
+    line-height: 90rpx
+}
+.borrow_time_tit_1{
+    font-size:24rpx;
+    color: #999999;
+    float: left;
+    margin-left: 30rpx;
+}
+.borrow_time_tit_2{
+    font-size:30rpx;
+    color: #252525;
+    float: right;
+    margin-right: 30rpx;
+}
+.borrow_book{
+    height: 109rpx;
+    line-height: 109rpx;
+}
+.borrow_time_tit_3{
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    float: left;
+    margin-left: 30rpx;
+}

@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "slide-tab": "/components/slideTab/slideTab"
+    },
+    "disableScroll": true,
+    "enablePullDownRefresh":true,
+    "navigationBarTitleText":"我的"
+}

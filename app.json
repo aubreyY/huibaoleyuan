@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/near/index",
+    "pages/map/map",
+    "pages/order/index",
+    "pages/borrow/index",
+    "pages/return-book/index",
+    "pages/user/index",
+    "pages/wallet/index",
+    "pages/login/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#3EDD8D",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "textColor": "#666666",
+    "selectedColor": "#3EDD8D",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [{
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "image/nav_1.png",
+        "selectedIconPath": "image/nav_1_on.png"
+      },
+      {
+        "pagePath": "pages/near/index",
+        "text": "附近",
+        "iconPath": "image/nav_2.png",
+        "selectedIconPath": "image/nav_2_on.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "image/nav_3.png",
+        "selectedIconPath": "image/nav_3_on.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "image/nav_4.png",
+        "selectedIconPath": "image/nav_4_on.png"
+      }
+    ]
+  }
+}

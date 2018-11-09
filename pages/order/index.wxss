@@ -1,0 +1,238 @@
+/* 订单头部 */
+.order_color {
+  width: 100%;
+  height: 90rpx;
+  background: #3edd8d;
+}
+
+.order {
+  width: 93%;
+  height: 132rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  position: absolute;
+  top: 20rpx;
+  left: 28rpx;
+  box-shadow: 0rpx 6rpx 14rpx rgba(34, 25, 25, 0.3);
+  z-index: 999;
+}
+
+.order_tit {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #252525;
+  line-height: 132rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+
+.order_take_btn {
+  width: 86rpx;
+  height: 48rpx;
+  background: #3edd8d;
+  border: 1rpx solid #3edd8d;
+  border-top-left-radius: 12rpx;
+  border-bottom-left-radius: 12rpx;
+  float: left;
+  margin-left: 125rpx;
+  margin-top: 43rpx;
+  font-size: 22rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+}
+
+.order_take_in {
+  width: 135rpx;
+  height: 48rpx;
+  border: 1rpx solid #3edd8d;
+  border-top-right-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  float: left;
+  margin-top: 43rpx;
+  font-size: 22rpx;
+  color: #252525;
+  text-align: center;
+  line-height: 48rpx;
+}
+
+/* 网点导航 */
+.order_content {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: relative;
+  top: -19rpx;
+}
+
+.nav_box {
+  display: flex;
+  width: 750rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #f3f3f3;
+  margin: auto;
+  height: 120rpx;
+  align-items: center;
+  position: relative;
+  top: 80rpx;
+  margin-top: 20rpx;
+}
+
+.nav_logo {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 30rpx;
+}
+
+.nav_logo_img {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.nav_add_li {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.nav_add_tit_1 {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #252525;
+  margin-top: 22rpx;
+  float: left;
+}
+
+.nav_add_tit_2 {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 20rpx;
+  margin-bottom: 27rpx;
+  float: left;
+}
+
+.nav_add_tit_3 {
+  font-size: 24rpx;
+  color: #666666;
+  float: left;
+  margin-top: 12rpx;
+}
+
+.icon_x {
+  width: 20rpx;
+  height: 20rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 110rpx;
+}
+
+.icon_d {
+  width: 35rpx;
+  height: 35rpx;
+  float: left;
+  margin-top: 12rpx;
+  margin-left: 35rpx;
+}
+
+/* 还书 */
+.return_book {
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  position: relative;
+  top: 80rpx;
+  line-height: 90rpx;
+}
+
+.return_book_time {
+  font-size: 24rpx;
+  color: #999999;
+  float: left;
+  margin-left: 35rpx;
+}
+.return_book_btn{
+  width: 160rpx;
+  height: 48rpx;
+  background: #3edd8d;
+  border-radius: 35rpx;
+  float: right;
+  margin-right: 35rpx;
+  margin-top: 23rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+}
+/* 二维码 */
+.code_box {
+  width: 100%;
+  height: 430rpx;
+  background: #fff;
+  position: relative;
+  top: 80rpx;
+}
+
+.code_img {
+  width: 313rpx;
+  height: 313rpx;
+  margin: 0 auto;
+  margin-left: 29%;
+  margin-top: 30rpx;
+}
+
+.code_title {
+  font-size: 28rpx;
+  color: #999999;
+  float: left;
+  margin-left: 26%;
+  margin-top: 15rpx;
+}
+
+/* 取消订单 */
+.cancel_order {
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  border-top: 1rpx solid #f3f3f3;
+  position: relative;
+  top: 80rpx;
+}
+
+.cancel_order_btn {
+  width: 160rpx;
+  height: 48rpx;
+  background: #3edd8d;
+  border-radius: 35rpx;
+  float: right;
+  margin-right: 35rpx;
+  margin-top: 23rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+}
+
+/* 借阅记录 */
+.borrow_box {
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  position: relative;
+  top: 80rpx;
+}
+
+.borrow_tit {
+  font-size: 34rpx;
+  color: #252525;
+  float: left;
+  margin-left: 35rpx;
+  margin-top: 25rpx;
+}
+
+.borrow_icon {
+  width: 35rpx;
+  height: 35rpx;
+  float: right;
+  margin-top: 28rpx;
+  margin-right: 35rpx;
+}

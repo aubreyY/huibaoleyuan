@@ -1,0 +1,134 @@
+/* 轮播图 */
+.banner-swiper {
+  height: 375rpx;
+}
+
+.swiper-item {
+  width: 100%;
+  height: 375rpx;
+}
+
+/* 网点导航 */
+.nav_box {
+  display: flex;
+  width: 750rpx;
+  background: #fff;
+  margin: auto;
+  margin-top: 20rpx;
+  height: 120rpx;
+  align-items: center;
+}
+
+.nav_logo {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 30rpx;
+}
+
+.nav_logo_img {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.nav_add_li {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.nav_add_tit_1 {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #252525;
+  margin-top: 22rpx;
+  float: left;
+}
+
+.nav_add_tit_2 {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 20rpx;
+  margin-bottom: 27rpx;
+  float: left;
+}
+
+.nav_add_tit_3 {
+  font-size: 24rpx;
+  color: #666666;
+  float: left;
+  margin-top: 12rpx;
+}
+
+.icon_x {
+  width: 20rpx;
+  height: 20rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 110rpx;
+}
+
+.icon_d {
+  width: 35rpx;
+  height: 35rpx;
+  float: left;
+  margin-top: 12rpx;
+  margin-left: 45rpx;
+}
+/* 分类 */
+.classify_box{
+  width: 100%;
+  height: 180rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  display: flex;
+}
+.classify_box_li{
+  flex: 1;
+}
+.classify_box_img{
+  width: 70rpx;
+  height: 70rpx;
+  float: left;
+  margin-left: 58rpx;
+  margin-top: 35rpx;
+}
+.classify_box_title{
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #252525;
+  float: left;
+  margin-left: 45rpx;
+  margin-top: 25rpx;
+}
+/* 图书列表 */
+.book_box{
+  width: 100%;
+  height: 700rpx;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.book_list{
+  width: 347rpx;
+  height: 542rpx;
+  border-radius: 12rpx;
+  box-shadow: 0rpx 6rpx 12rpx rgba(34, 25, 25, 0.3);
+  float: left;
+  margin-left: 20rpx;
+}
+.book_list_top{
+  height: 321rpx;
+  border: 1rpx solid #f3f3f3;
+  background: #F8FDFA;
+}
+.book_list_name{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.book_list_name_tit{
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #252525;
+  float: left;
+
+}

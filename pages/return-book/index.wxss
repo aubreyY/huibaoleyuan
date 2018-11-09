@@ -1,0 +1,107 @@
+/* 还书指南 */
+.return_book {
+    width: 100%;
+    height: 90rpx;
+    background: #fff;
+    line-height: 90rpx;
+    margin-top: 20rpx;
+}
+
+.return_book_tit {
+    font-size: 34rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-left: 35rpx;
+}
+
+/* 服务网点 */
+.nav_box {
+    display: flex;
+    width: 750rpx;
+    background: #fff;
+    margin: auto;
+    margin-top: 1rpx;
+    height: 135rpx;
+    align-items: center;
+}
+
+.nav_logo {
+    width: 70rpx;
+    height: 70rpx;
+    margin-left: 30rpx;
+}
+
+.nav_logo_img {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.nav_add_li {
+    flex: 1;
+    margin-left: 20rpx;
+}
+
+.nav_add_tit_1 {
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-top: 22rpx;
+    float: left;
+}
+
+.nav_add_tit_2 {
+    font-size: 24rpx;
+    color: #999999;
+    margin-top: 20rpx;
+    margin-bottom: 27rpx;
+    float: left;
+}
+
+.nav_add_tit_3 {
+    font-size: 24rpx;
+    color: #666666;
+    float: right;
+    margin-top: 10rpx;
+    margin-right:35rpx;
+}
+
+.icon_x {
+    width: 20rpx;
+    height: 20rpx;
+    float: right;
+    margin-top: 19rpx;
+}
+/* 营业时间or联系电话 */
+.business_box,.phone_box{
+    width: 100%;
+    height: 90rpx;
+    background: #fff;
+    line-height: 90rpx;
+    margin-top: 20rpx;
+}
+.business_title,.phone_title{
+    font-size: 30rpx;
+    color: #252525;
+    float: left;
+    margin-left: 35rpx;
+}
+.business_time,.phone_time{
+    font-size: 24rpx;
+    color: #999999;
+    float: right;
+    margin-right: 35rpx;
+}
+/* 地图导航Button */
+.navigation_btn{
+    width: 690rpx;
+    height: 80rpx;
+    background: #3EDD8D;
+    border-radius: 40rpx;
+    margin: 0 auto;
+    margin-top: 45rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 80rpx;
+    text-align: center;
+}
