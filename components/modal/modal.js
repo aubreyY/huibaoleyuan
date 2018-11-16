@@ -1,6 +1,6 @@
 Component({
   options: {
-    multipleSlots: true 
+    multipleSlots: true
   },
   /** 
    * 组件的属性列表 
@@ -10,16 +10,34 @@ Component({
       type: Boolean,
       value: true
     },
-    modalMsg: {
+    tost: {
+      type: Boolean,
+      value: true
+    },
+    title: {
       type: String,
-      value: ' ',
+      value: '标题',
+    },
+    content: {
+      type: String,
+      value: '内容',
+    },
+    btnNO: {
+      type: String,
+      value: '取消'
+    },
+    btnOK: {
+      type: String,
+      value: '确定'
     }
+
   },
   /** 
    * 组件的初始数据 
    */
   data: {
-    animationData: {}
+    animationData: {},
+    flag: true
   },
   /** 
    * 组件的方法列表 
@@ -67,6 +85,39 @@ Component({
       this.setData({
         animationData: this.animation.export(),
       })
+    },
+    // tost提示窗
+    prompt_show: function () {
+      var that = this;
+      that.setData({
+        tost: false
+      })
+    },
+    prompt_hide: function () {
+      var that = this;
+      that.setData({
+        tost: true
+      })
+    },
+    //隐藏输入框弹窗
+    hidePopup: function () {
+      this.setData({
+        flag: !this.data.flag
+      })
+    },
+    //展示输入框弹窗
+    showPopup() {
+      this.setData({
+        flag: !this.data.flag
+      })
+    },
+    _error() {
+      //触发取消回调
+      this.triggerEvent("error")
+    },
+    _success() {
+      //触发成功回调
+      this.triggerEvent("success");
     }
   }
 })

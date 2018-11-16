@@ -1,13 +1,23 @@
 {
   "pages": [
     "pages/home/index",
+    "pages/language-class/index",
+    "pages/mood-class/index",
+    "pages/art-class/index",
+    "pages/science-class/index",
+    "pages/school-bag/index",
+    "pages/confirm-borrow/index",
+    "pages/book-details/index",
     "pages/near/index",
     "pages/map/map",
     "pages/order/index",
-    "pages/borrow/index",
+    "pages/borrow-record/index",
     "pages/return-book/index",
     "pages/user/index",
     "pages/wallet/index",
+    "pages/borrow-guide/index",
+    "pages/about-us/index",
+    "pages/settings/index",
     "pages/login/index"
   ],
   "window": {

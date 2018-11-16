@@ -1,0 +1,172 @@
+<!-- 艺术创想 -->
+<view class="lang_nav">
+    <view class="lang_nav_left" bindtap="showitem1">
+        <text class="age_calss">年龄</text>
+        <image class="age_icon" mode="widthFix" src="/image/search_x.png" />
+    </view>
+    <view class="lang_nav_right" bindtap="showitem2">
+        <text class="font_class">艺术创想</text>
+        <image class="age_icon" mode="widthFix" src="/image/search_x.png" />
+    </view>
+    <view class="{{open1?'display_show':'display_none'}}">
+        <view class="classify_btn" bindtap="hideitem1">1~2岁</view>
+        <view class="classify_btn" bindtap="hideitem1">2~3岁</view>
+        <view class="classify_btn" bindtap="hideitem1">3~5岁</view>
+        <view class="classify_btn" bindtap="hideitem1">5~6岁</view>
+        <view class="classify_btn" bindtap="hideitem1">8岁以上</view>
+        <view class="classify_btn" bindtap="hideitem1">全部</view>
+    </view>
+    <view class="{{open2?'display_show':'display_none'}}">
+        <view class="classify_btn" bindtap="hideitem2">艺术创新</view>
+        <view class="classify_btn" bindtap="hideitem2">儿童启蒙</view>
+        <view class="classify_btn" bindtap="hideitem2">历史文学</view>
+        <view class="classify_btn" bindtap="hideitem2">自我保护</view>
+        <view class="classify_btn" bindtap="hideitem2">情感认知</view>
+        <view class="classify_btn" bindtap="hideitem2">全部</view>
+    </view>
+</view>
+<!-- 列表 -->
+<view class="book_list_first" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<view class="book_list" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<view class="book_list" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<view class="book_list" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<view class="book_list" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<view class="book_list" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<view class="book_list" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<view class="book_list" bindtap="my_bag">
+    <view class="book_img">
+        <image mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_text">
+        <text class="book_title">安徒生系列包</text>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+        <view class="book_font">
+            <text>安徒生童话</text>
+            <text>安徒生童话</text>
+        </view>
+    </view>
+    <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>

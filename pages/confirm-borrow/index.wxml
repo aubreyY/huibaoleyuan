@@ -1,0 +1,43 @@
+<!-- 确认借阅 -->
+<view class="confirm_nav">
+    <view class="confirm_nav_tit">
+        <text>取书门店</text>
+    </view>
+    <view class="nav_box">
+        <view class="nav_logo">
+            <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
+        </view>
+        <view class="nav_add_li">
+            <text class="nav_add_tit_1">租东东绘本服务网点</text>
+            <text class="nav_add_tit_2">朝阳区·望京摩托罗拉大厦</text>
+        </view>
+        <view class="nav_add_li">
+            <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
+            <text class="nav_add_tit_3">500M</text>
+        </view>
+    </view>
+</view>
+<!-- 借阅周期 -->
+<view class="borrow_day">
+    <text class="borrow_day_tit_1">借阅周期</text>
+    <text class="borrow_day_tit_2">(取书时间计算)</text>
+    <text class="borrow_day_tit_3">30天</text>
+</view>
+<!-- 借阅须知 -->
+<view class="borrow_text">
+    <view class="borrow_text_cont">
+        <text class="borrow_text_left">借阅须知</text>
+        <view class="borrow_text_right">
+            <image mode="widthFix" src="/image/text_r.png" />
+            <!-- <image mode="widthFix" src="/image/text_r_on.png" /> -->
+            <text>同意《借阅条款》</text>
+        </view>
+    </view>
+    <view class="borrow_font_cont">
+        <text class="borrow_font_text">1. 请在提交订单 <text style="font-size:24rpx;color:#F10A26">3天</text> 内前往指定地点取书</text>
+        <text class="borrow_font_text">2. 爱惜图书，有爱传承</text>
+        <text class="borrow_font_text">3. 超期限归还或损坏图书将影响您的后续借阅并会产生一定的损坏费和超时费</text>
+    </view>
+</view>
+<!-- 免费借阅 -->
+<view class="borrow_button">免费借阅</view>

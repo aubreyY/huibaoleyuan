@@ -6,7 +6,7 @@
         <text class="deposit_num">¥0.00</text>
     </view>
     <!-- 交易记录or支付押金/提现 -->
-    <view class="deal">
+    <view class="deal" bindtap="prompt_hide">
         <text class="deal_tit">交易记录</text>
         <!-- <view class="deal_btn" bindtap="showModal">提现</view> -->
         <view class="deal_btn" bindtap="showModal">支付押金</view>

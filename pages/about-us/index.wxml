@@ -1,0 +1,11 @@
+<!-- 关于我们 -->
+<view class="about_content">
+    <view class="logo_img"><image mode="widthFix" src="/image/about_logo.png" /></view>
+    <view class="logo_title">慧宝乐园</view>
+    <view class="logo_text_1">慧宝乐园，家庭亲子阅读服务平台。</view>
+    <view class="logo_text_2">这里有精选万册童书；</view>
+    <view class="logo_text_2">这里有业内知名专家引领阅读；</view>
+    <view class="logo_text_2">这里有绘本专业讲读指导；</view>
+    <view class="logo_text_2">这是一个童书游乐园；</view>
+    <view class="logo_text_2">这是一个助力亲子成长的平台。</view>
+</view>

@@ -1,8 +1,12 @@
 <view class="bg" wx:if="{{isShow}}">
+<!-- <view class="bg" bindtap="onLogin"> -->
     <view class="pop">
         <text class="tit">登录提示</text>
         <view class="boxbtn">
-            <button type="primary" class="loginbtn" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> <image src="/image/wxlogo.png"  mode="aspectFit"/>  微信授权登录 </button>
+            <button type="primary" class="loginbtn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                <image src="/image/wxlogo.png" mode="aspectFit" />
+                微信授权登录
+            </button>
         </view>
     </view>
 </view>

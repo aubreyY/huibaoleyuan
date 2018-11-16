@@ -1,0 +1,3 @@
+<!-- 借阅指南 -->
+<view class="guide_box_1"><image mode="widthFix" src="/image/guide_1.png" /></view>
+<view class="guide_box_2"><image mode="widthFix" src="/image/guide_2.png" /></view>

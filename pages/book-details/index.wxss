@@ -1,0 +1,110 @@
+/* 书籍详情 */
+.contains_cont {
+    width: 100%;
+    height: 320rpx;
+    background: #fff;
+}
+
+.contains_cont_left {
+    width: 260rpx;
+    height: 260rpx;
+    background: #F8FDFA;
+    margin: 30rpx 0rpx 30rpx 30rpx;
+    float: left;
+}
+
+.contains_cont_left image {
+    width: 200rpx;
+    height: 200rpx;
+    margin-left: 28rpx;
+    margin-top: 13rpx;
+}
+
+.contains_cont_right {
+    width: 430rpx;
+    height: 320rpx;
+    float: left;
+}
+
+.book_name {
+    width: 430rpx;
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+    float: left;
+}
+
+.book_author,
+.book_Press,
+.book_Press_time {
+    width: 400rpx;
+    font-size: 22rpx;
+    color: #999999;
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+    float: left;
+}
+
+.book_label_cont {
+    width: 400rpx;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    float: left;
+}
+
+.book_lable_list {
+    width: 100rpx;
+    height: 30rpx;
+    background: #f3f3f3;
+    border-radius: 20rpx;
+    float: left;
+    margin-left: 10rpx;
+    font-size: 20rpx;
+    color: #252525;
+    line-height: 30rpx;
+    text-align: center;
+}
+
+/* 简介 */
+.book_des {
+    width: 100%;
+    height: 270rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.book_des_title {
+    height: 90rpx;
+    border-bottom: 1rpx solid #f3f3f3;
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    line-height: 90rpx;
+    margin-left: 35rpx;
+}
+
+.book_des_cont {
+    width: 684rpx;
+    height: 160rpx;
+    font-size: 26rpx;
+    color: #252525;
+    margin-left: 35rpx;
+    margin-top: 20rpx;
+    line-height: 45rpx;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap */
+}
+/* 简介图片 */
+.des_img{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: 20rpx;
+}
+.des_img image{
+    width: 100%;
+    height: 100%;
+}

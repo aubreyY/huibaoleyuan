@@ -6,7 +6,18 @@
   position: relative;
   z-index: 100;
 }
-
+.user_set{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 15rpx;
+  right: 35rpx;
+  z-index: 9999;
+}
+.user_set image{
+  width: 60rpx;
+  height: 60rpx;
+}
 /* 头像信息 */
 .user_nav {
   width: 90%;

@@ -3,6 +3,6 @@
     "enablePullDownRefresh": true,
     "navigationBarTitleText": "我的钱包",
     "usingComponents": {  
-        "modal": "/components/modal/modal"  
+        "modal": "/components/modal/modal"
     }  
 }

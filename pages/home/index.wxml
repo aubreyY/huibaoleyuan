@@ -7,7 +7,7 @@
   </block>
 </swiper>
 <!-- 服务网点导航 -->
-<view class="nav_box">
+<view class="nav_box" bindtap="my_map">
   <view class="nav_logo">
     <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
   </view>
@@ -23,29 +23,266 @@
 </view>
 <!-- 分类 -->
 <view class="classify_box">
-  <view class="classify_box_li">
+  <view class="classify_box_li" bindtap="my_lang">
     <image mode="widthFix" class="classify_box_img" src="/image/classify_01.png" />
     <text class="classify_box_title">语言发展</text>
   </view>
-   <view class="classify_box_li">
+  <view class="classify_box_li" bindtap="my_mood">
     <image mode="widthFix" class="classify_box_img" src="/image/classify_02.png" />
     <text class="classify_box_title">情绪管理</text>
   </view>
-   <view class="classify_box_li">
+  <view class="classify_box_li" bindtap="my_art">
     <image mode="widthFix" class="classify_box_img" src="/image/classify_03.png" />
     <text class="classify_box_title">艺术创想</text>
   </view>
-   <view class="classify_box_li">
+  <view class="classify_box_li" bindtap="my_science">
     <image mode="widthFix" class="classify_box_img" src="/image/classify_04.png" />
     <text class="classify_box_title">科学认知</text>
   </view>
 </view>
+<!-- 分类导航 -->
+<view class="{{navFixed?'classify_navbox':''}}">
+  <view class="classify_left" bindtap="showitem1">
+    <text class="age_calss">年龄</text>
+    <image class="age_icon" mode="widthFix" src="/image/search_x.png" />
+  </view>
+  <view class="classify_right" bindtap="showitem2">
+    <text class="age_calss">分类</text>
+    <image class="age_icon" mode="widthFix" src="/image/search_x.png" />
+  </view>
+  <view class="{{open1?'display_show':'display_none'}}">
+    <view class="classify_btn" bindtap="hideitem1">1~2岁</view>
+    <view class="classify_btn" bindtap="hideitem1">2~3岁</view>
+    <view class="classify_btn" bindtap="hideitem1">3~5岁</view>
+    <view class="classify_btn" bindtap="hideitem1">5~6岁</view>
+    <view class="classify_btn" bindtap="hideitem1">8岁以上</view>
+    <view class="classify_btn" bindtap="hideitem1">全部</view>
+  </view>
+  <view class="{{open2?'display_show':'display_none'}}">
+    <view class="classify_btn" bindtap="hideitem2">艺术创新</view>
+    <view class="classify_btn" bindtap="hideitem2">儿童启蒙</view>
+    <view class="classify_btn" bindtap="hideitem2">历史文学</view>
+    <view class="classify_btn" bindtap="hideitem2">自我保护</view>
+    <view class="classify_btn" bindtap="hideitem2">情感认知</view>
+    <view class="classify_btn" bindtap="hideitem2">全部</view>
+  </view>
+</view>
 <!-- 图书列表 -->
 <view class="book_box">
-  <view class="book_list">
-    <view class="book_list_top"></view>
+  <!-- 商品一 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
     <view class="book_list_name">
       <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
+  <!-- 商品二 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品三 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品四 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品四 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品四 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品四 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品四 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品四 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+  <!-- 商品四 -->
+  <view class="book_list" bindtap="my_bag">
+    <view class="book_list_top">
+      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+    </view>
+    <view class="book_list_name">
+      <text class="book_list_name_tit">安徒生童话系列包</text>
+      <text class="book_list_name_num">共10本</text>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit">安徒生童话</view>
+    </view>
+    <view class="book_list_btn">
+      <view class="book_list_btn_tit">查看更多</view>
+    </view>
+  </view>
+</view>
+<!-- 底部 -->
+<view class="footer">
+  <view class="footer_line_1"></view>
+  <text class="footer_title">已经到底了</text>
+  <view class="footer_line_2"></view>
 </view>

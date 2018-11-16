@@ -1,0 +1,172 @@
+/* 确认借阅 */
+.confirm_nav {
+    width: 100%;
+    height: 226rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.confirm_nav_tit {
+    height: 90rpx;
+    border-bottom: 1rpx solid #f3f3f3;
+    font-size: 34rpx;
+    font-weight: 500;
+    color: #252525;
+    line-height: 90rpx;
+}
+
+.confirm_nav_tit text {
+    margin-left: 35rpx;
+}
+
+.nav_box {
+    display: flex;
+    height: 135rpx;
+    align-items: center;
+}
+
+.nav_logo {
+    width: 70rpx;
+    height: 70rpx;
+    margin-left: 30rpx;
+}
+
+.nav_logo_img {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.nav_add_li {
+    flex: 1;
+    margin-left: 20rpx;
+}
+
+.nav_add_tit_1 {
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-top: 22rpx;
+    float: left;
+}
+
+.nav_add_tit_2 {
+    font-size: 24rpx;
+    color: #999999;
+    margin-top: 20rpx;
+    margin-bottom: 27rpx;
+    float: left;
+}
+
+.nav_add_tit_3 {
+    font-size: 24rpx;
+    color: #666666;
+    float: left;
+    margin-top: 12rpx;
+}
+
+.icon_x {
+    width: 20rpx;
+    height: 20rpx;
+    float: left;
+    margin-top: 20rpx;
+    margin-left: 61%;
+}
+/* 借阅周期 */
+.borrow_day{
+    width: 100%;
+    height: 90rpx;
+    background: #fff;
+    margin-top: 20rpx;
+    line-height: 90rpx;
+}
+.borrow_day_tit_1{
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-left: 35rpx;
+    float: left;
+}
+.borrow_day_tit_2{
+    font-size: 24rpx;
+    color: #999999;
+    margin-left: 15rpx;
+    float: left;
+}
+.borrow_day_tit_3{
+    font-size: 24rpx;
+    color: #999999;
+    margin-right: 35rpx;
+    float: right;
+}
+/* 借阅须知 */
+.borrow_text{
+    width: 100%;
+    height: 260rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}
+.borrow_text_cont{
+    height: 100rpx;
+    border-bottom: 1rpx solid #f3f3f3;
+    line-height: 100rpx;
+}
+.borrow_text_left{
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    float: left;
+    margin-left: 35rpx;
+}
+
+.borrow_text_right{
+    width: 260rpx;
+    height: 100rpx;
+    float: right;
+}
+
+.borrow_text_right text{
+    font-size: 24rpx;
+    color: #999999;
+    float: left;
+    margin-left: 10rpx;
+}
+/* .borrow_text_right text{
+    font-size: 24rpx;
+    color: #3EDD8D;
+    float: left;
+    margin-left: 10rpx;
+} */
+.borrow_text_right image{
+    width: 30rpx;
+    width: 30rpx;
+    float: left;
+    margin-top: 37rpx;
+    margin-left: 10rpx;
+}
+.borrow_font_cont{
+    width: 91%;
+    height: 110rpx;
+    margin: 0 auto;
+    margin-top: 30rpx;
+}
+.borrow_font_text{
+    width: 100%;
+    font-size: 20rpx;
+    color: #999999;
+    float: left;
+    margin-top: 10rpx;
+}
+/* 免费借阅 */
+.borrow_button{
+    width: 93%;
+    height: 80rpx;
+    background: #3EDD8D;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    border-radius: 45rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #fff;
+    line-height: 80rpx;
+    text-align: center;
+}

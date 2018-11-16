@@ -1,40 +1,48 @@
 /* components/login/login.wxss */
-.pop{
+.pop {
     position: absolute;
-    left: 50%;top:50%;
-    transform: translate(-50%,-50%);
-    width: 560rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400rpx;
     background: #fff;
-    border-radius: 10rpx;
+    border-radius: 15rpx;
     overflow: hidden;
-   
-   
 }
-.tit{
+
+.tit {
     font-size: 40rpx;
     text-align: center;
     display: block;
-    line-height: 100rpx;
-    border-bottom: 1px solid #d2d3d5;
-    font-size: 36rpx;
+    line-height: 80rpx;
+    border-bottom: 1px solid #f3f3f3;
+    font-size: 30rpx;
+    color: #252525;
 }
-.bg{
+
+.bg {
     position: fixed;
-    left: 0;top: 0;width:100%;height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    z-index: 999;
+    z-index: 999999;
 }
-.boxbtn{
-    padding:80rpx 60rpx;
+
+.boxbtn {
+    padding: 30rpx 30rpx;
 }
-.loginbtn{
+
+.loginbtn {
     background: #fff !important;
     border: 1px solid #09bb07 !important;
     color: #09bb07 !important;
-    font-size: 32rpx !important;
+    font-size: 30rpx !important;
     border-radius: 100rpx !important;
 }
-.loginbtn image{
+
+.loginbtn image {
     width: 44rpx;
     height: 44rpx;
     vertical-align: middle;

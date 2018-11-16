@@ -1,10 +1,18 @@
 /* 环境切换 */
 export const APP_TYPE = 'test'
 
-let BAES_DOMAIN = APP_TYPE == 'test' ? 'wxtest.huibaoleyuan.com' : 'wx.huibaoleyuan.com'
-let BASE_URL = 'https://app.'+BAES_DOMAIN
-let UPLOAD_URL = 'https://upload.'+BAES_DOMAIN
-let IMG_PRIVATE_URL = 'https://img.'+BAES_DOMAIN
+let BAES_DOMAIN = APP_TYPE == 'test' ? '192.168.1.122:18851' : 'wx.huibaoleyuan.com'
+
+// let BASE_URL = 'https://app.'+BAES_DOMAIN
+// let UPLOAD_URL = 'https://upload.'+BAES_DOMAIN
+// let IMG_PRIVATE_URL = 'https://img.'+BAES_DOMAIN
+
+
+let BASE_URL = 'http://192.168.1.122:18851'
+let UPLOAD_URL = 'http://192.168.1.122:18851'
+let IMG_PRIVATE_URL = 'http://img.'+BAES_DOMAIN
+
+
 
 export { BAES_DOMAIN, BASE_URL, UPLOAD_URL, IMG_PRIVATE_URL}
 

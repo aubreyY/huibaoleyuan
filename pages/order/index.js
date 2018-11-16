@@ -11,7 +11,7 @@ Page({
   //事件处理函数
   my_borrow: function() {
     wx.navigateTo({
-      url: '../borrow/index'
+      url: '../borrow-record/index'
     })
   },
   my_return_book: function() {

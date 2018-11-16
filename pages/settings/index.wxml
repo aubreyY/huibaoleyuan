@@ -1,0 +1,13 @@
+<!-- 设置 -->
+<view class="user_set">
+  <text class="user_set_tit">修改头像</text>
+  <image class="user_set_icon" mode="widthFix" src="/image/icon_d.png" />
+  <view class="user_set_img">
+    <open-data type="userAvatarUrl" />
+  </view>
+</view>
+<view class="user_set" bindtap="showPopup">
+  <text class="user_set_tit">修改昵称</text>
+  <image class="user_set_icon" mode="widthFix" src="/image/icon_d.png" />
+</view>
+<popup class='popup' title='请输入您的昵称' content='请输入内容' btnNO='取消' btnOK='确定' bind:error="_error" bind:success="_success"></popup>

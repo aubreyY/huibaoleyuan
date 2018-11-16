@@ -1,0 +1,39 @@
+/* 关于我们 */
+page{
+    background: #fff;
+}
+.about_content{
+    width: 100%;
+    height: auto;
+    margin-top: 110rpx;
+}
+.logo_img{
+    width: 144rpx;
+    height: 144rpx;
+    margin: 0 auto;
+}
+.logo_img image{
+    width: 144rpx;
+    height: 144rpx;
+}
+.logo_title{
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-top: 30rpx;
+    text-align: center;
+}
+.logo_text_1{
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-top: 50rpx;
+    text-align: center;
+}
+.logo_text_2{
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #252525;
+    margin-top: 10rpx;
+    text-align: center;
+}

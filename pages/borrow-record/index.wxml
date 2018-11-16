@@ -1,0 +1,37 @@
+<!-- 借阅记录 -->
+<view class="borrow_list">
+    <view class="borrow_time">
+        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
+        <text class="borrow_time_tit_2">已取消</text>
+    </view>
+    <view class="borrow_book">
+        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
+    </view>
+</view>
+<view class="borrow_list">
+    <view class="borrow_time">
+        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
+        <text class="borrow_time_tit_2">已完成</text>
+    </view>
+    <view class="borrow_book">
+        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
+    </view>
+</view>
+<view class="borrow_list">
+    <view class="borrow_time">
+        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
+        <text class="borrow_time_tit_2">已完成</text>
+    </view>
+    <view class="borrow_book">
+        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
+    </view>
+</view>
+<view class="borrow_list">
+    <view class="borrow_time">
+        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
+        <text class="borrow_time_tit_2">已完成</text>
+    </view>
+    <view class="borrow_book">
+        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
+    </view>
+</view>
