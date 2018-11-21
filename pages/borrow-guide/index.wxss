@@ -1,27 +1,26 @@
 /* 借阅指南 */
-.guide_box_1{
+.guide_box_1 {
     width: 100%;
-    height: 305rpx;
+    height: 390rpx;
     background: #fff;
     margin-top: 20rpx;
 }
-.guide_box_1 image{
-    width: 520rpx;
-    height: 160rpx;
-    position: relative;
-    margin-top: 30rpx;
-    margin-left: 16%;
-}
-.guide_box_2{
+
+.guide_box_2 {
     width: 100%;
-    height: 330rpx;
+    height: 420rpx;
     background: #fff;
     margin-top: 20rpx;
 }
-.guide_box_2 image{
-    width: 520rpx;
-    height: 160rpx;
-    position: relative;
-    margin-top: 30rpx;
-    margin-left: 16%;
+
+.guide_cont {
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.guide_cont image {
+    width: 100%;
+    height: 100%;
+    margin-top: 33rpx;
 }

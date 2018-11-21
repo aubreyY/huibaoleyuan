@@ -41,6 +41,10 @@
   top: -60rpx;
   overflow: hidden;
 }
+.user_nav_img image{
+  width: 120rpx;
+  height: 120rpx;
+}
 
 .user_nav_name {
   font-size: 36rpx;
@@ -51,10 +55,10 @@
   top: -55rpx;
 }
 
-.user_nav_tit {
+.user_nav_tit_1 {
   width: 200rpx;
   height: 40rpx;
-  border: 1rpx solid #f6f6f6;
+  border: 1rpx solid #f1f1f1;
   border-radius: 30rpx;
   margin: 0 auto;
   position: relative;
@@ -64,6 +68,19 @@
   color: #999999;
   text-align: center;
   line-height: 40rpx;
+}
+.user_nav_tit_2{
+  width: 235rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  position: relative;
+  top: -60rpx;
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #252525;
+  text-align: center;
+  line-height: 80rpx;
 }
 
 /* 钱包or借阅 */
@@ -78,7 +95,7 @@
 .user_wallet {
   width: 100%;
   height: 90rpx;
-  border-bottom: 1rpx solid #f3f3f3;
+  border-bottom: 1rpx solid #f1f1f1;
   position: relative;
   top: 190rpx;
 }
@@ -106,7 +123,12 @@
   margin-top: 29rpx;
   margin-right: 30rpx;
 }
-
+.borrow_guide{
+  width: 100%;
+  height: 91rpx;
+  position: relative;
+  top: 190rpx;
+}
 /* 关于我们 */
 .user_about {
   width: 100%;

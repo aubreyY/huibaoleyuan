@@ -1,5 +1,5 @@
 {
     "component": true,
-    "disableScroll": true,
+    "enablePullDownRefresh": false,
     "navigationBarTitleText":"附近"
 }

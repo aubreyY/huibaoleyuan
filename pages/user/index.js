@@ -1,47 +1,57 @@
 var app = getApp();
 import $api from "../../base/api";
-import {shareConfig} from "../../base/config"
+import {
+  shareConfig
+} from "../../base/config"
 Page({
   data: {
-    userInfo:{},
+    userInfo: {
+      avatarUrl: "",
+      nickName: "",
+      wallet: "我的钱包",
+      borrowGuide: "借阅指南",
+      userAbout: "关于我们",
+      userTitle: "已经借阅3次啦!",
+      registered:"点击登录/注册"
+    },
   },
-  //事件处理函数
-  my_wallet: function() {
+  onLoad() {
+    var that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        var avatarUrl = 'userInfo.avatarUrl';
+        var nickName = 'userInfo.nickName';
+        that.setData({
+          [avatarUrl]: res.userInfo.avatarUrl,
+          [nickName]: res.userInfo.nickName
+        })
+      }
+    })
+  },
+  //处理页面跳转
+  my_login: function () {
+    wx.navigateTo({
+      url: '../login/index'
+    })
+  },
+  my_wallet: function () {
     wx.navigateTo({
       url: '../wallet/index'
     })
   },
-  my_guide: function() {
+  my_guide: function () {
     wx.navigateTo({
       url: '../borrow-guide/index'
     })
   },
-  my_about: function() {
+  my_about: function () {
     wx.navigateTo({
       url: '../about-us/index'
     })
   },
-  my_settings: function() {
+  my_settings: function () {
     wx.navigateTo({
       url: '../settings/index'
     })
-  },
-  onLoad() {
-
-  },
-
-  onShareAppMessage () {
-    return shareConfig();
-  },
-  // 刷新
-  onPullDownRefresh: function () {
-    
-  },
-  // onShow(){
-  //   if(!app.isLogined()){
-  //     wx.navigateTo({
-  //        url: '../login/index'
-  //     })
-  //   }
-  // },
+  }
 });

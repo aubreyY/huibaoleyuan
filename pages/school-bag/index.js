@@ -22,12 +22,6 @@ Page({
     showModal: function () {
         this.my_modal.showModal()
     },
-    prompt_hide: function () {
-        this.my_modal.prompt_hide()
-    },
-
-
-
     onLoad(query) {
 
 

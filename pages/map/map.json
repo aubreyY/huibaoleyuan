@@ -1,5 +1,4 @@
 {
-    "disableScroll": true,
-    "enablePullDownRefresh": true,
+    "enablePullDownRefresh": false,
     "navigationBarTitleText": "地图" 
 }

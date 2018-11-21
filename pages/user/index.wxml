@@ -1,39 +1,43 @@
 <!-- 头部背景 -->
 <view class="user_head_color">
   <image mode="widthFix" class="user_head_bg" src="/image/user_head.png" />
-  <view bindtap="my_settings" class="user_set"><image mode="widthFix" src="/image/user_set.png" /></view>
+  <view bindtap="my_settings" class="user_set">
+    <image mode="widthFix" src="/image/user_set.png" />
+  </view>
 </view>
 <!-- 头像信息 -->
 <view class="user_nav">
   <view class="user_nav_img">
-    <open-data type="userAvatarUrl" />
+    <image mode="widthFix" wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" />
+    <image mode="widthFix" wx:else src="/image/userhead.png" />
   </view>
   <view class="user_nav_name">
-    <open-data type="userNickName" />
+    <text wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</text>
+    <text wx:else=""></text>
   </view>
-  <view class="user_nav_tit">
-    <text>已经借阅3次啦!</text>
+  <view wx:if="{{userInfo.nickName}}" class="user_nav_tit_1">
+    <text>{{userInfo.userTitle}}</text>
+  </view>
+  <view wx:else="" class="user_nav_tit_2" bindtap="my_login">
+    <text>{{userInfo.registered}}</text>
   </view>
 </view>
 <view class="user_content">
   <!-- 钱包or借阅 -->
   <view class="user_wallet" bindtap="my_wallet">
     <image mode="widthFix" class="user_wallet_icon" src="/image/wallet_icon.png" />
-    <text class="user_wallet_tit">我的钱包</text>
+    <text class="user_wallet_tit">{{userInfo.wallet}}</text>
     <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
   </view>
-  <view class="user_wallet" bindtap="my_guide" style="border:1rpx solid #fff;">
+  <view class="borrow_guide" bindtap="my_guide">
     <image mode="widthFix" class="user_wallet_icon" src="/image/borrow_icon.png" />
-    <text class="user_wallet_tit">借阅指南</text>
+    <text class="user_wallet_tit">{{userInfo.borrowGuide}}</text>
     <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
   </view>
 </view>
 <!-- 关于我们 -->
 <view class="user_about" bindtap="my_about">
   <image mode="widthFix" class="user_about_icon" src="/image/about_icon.png" />
-  <text class="user_about_tit">关于我们</text>
+  <text class="user_about_tit">{{userInfo.userAbout}}</text>
   <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
 </view>
-<!-- 授权登录 -->
-<login isShow="{{isShowLogin}}"></login>
-<!-- <login></login> -->

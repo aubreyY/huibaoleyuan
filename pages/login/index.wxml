@@ -1,4 +1,18 @@
- <view class="user_top">
- 
-</view> 
-
+<!-- 登录 -->
+<view class="login_nav">
+    <view class="left_line"></view>
+    <text class="login_tit">{{logintit}}</text>
+    <view class="right_line"></view>
+</view>
+<view>
+    <!-- 微信授权 -->
+    <button class="wx_btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <image src="/image/wxlogo.png" mode="aspectFit" />
+        <text>{{wxfont}}</text>
+    </button>
+    <!-- 手机登录 -->
+    <!-- <button class="phone_btn">
+        <image src="/image/phone.png" mode="aspectFit" />
+        <text>{{phonefont}}</text>
+    </button> -->
+</view>

@@ -58,9 +58,7 @@
     </view>
 </view>
 <!-- 免费借阅 -->
-<view bindtap="prompt_hide">
-    <view class="borrow_button" bindtap="showModal">免费借阅</view>
-</view>
+<view class="borrow_button" bindtap="showModal">免费借阅</view>
 <!-- <view class="borrow_button" bindtap="my_confirm">免费借阅</view> -->
 <!-- 彈窗 -->
 <view>

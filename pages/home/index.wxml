@@ -42,29 +42,24 @@
 </view>
 <!-- 分类导航 -->
 <view class="{{navFixed?'classify_navbox':''}}">
-  <view class="classify_left" bindtap="showitem1">
-    <text class="age_calss">年龄</text>
-    <image class="age_icon" mode="widthFix" src="/image/search_x.png" />
+  <view class="classify_left">
+    <text class="{{fontColor1?'age_calss_col':'age_calss_show'}}">{{ageText}}</text>
+    <image bindtap="showitem1" class="age_icon" mode="widthFix" src="{{iconHide1?'/image/search_s_on.png':'/image/search_x.png'}}" />
+    <view class="border_line"></view>
   </view>
-  <view class="classify_right" bindtap="showitem2">
-    <text class="age_calss">分类</text>
-    <image class="age_icon" mode="widthFix" src="/image/search_x.png" />
+  <view class="classify_right">
+    <text class="{{fontColor2?'age_calss_col':'age_calss_show'}}">{{classText}}</text>
+    <image bindtap="showitem2" class="age_icon" mode="widthFix" src="{{iconHide2?'/image/search_s_on.png':'/image/search_x.png'}}" />
   </view>
   <view class="{{open1?'display_show':'display_none'}}">
-    <view class="classify_btn" bindtap="hideitem1">1~2岁</view>
-    <view class="classify_btn" bindtap="hideitem1">2~3岁</view>
-    <view class="classify_btn" bindtap="hideitem1">3~5岁</view>
-    <view class="classify_btn" bindtap="hideitem1">5~6岁</view>
-    <view class="classify_btn" bindtap="hideitem1">8岁以上</view>
-    <view class="classify_btn" bindtap="hideitem1">全部</view>
+    <view wx:for="{{btnList.btnArrey1}}" wx:key="key" wx:for-item="item" id="{{item}}" class="classify_btn_show" bindtap="hideitem1">
+      {{item}}
+    </view>
   </view>
   <view class="{{open2?'display_show':'display_none'}}">
-    <view class="classify_btn" bindtap="hideitem2">艺术创新</view>
-    <view class="classify_btn" bindtap="hideitem2">儿童启蒙</view>
-    <view class="classify_btn" bindtap="hideitem2">历史文学</view>
-    <view class="classify_btn" bindtap="hideitem2">自我保护</view>
-    <view class="classify_btn" bindtap="hideitem2">情感认知</view>
-    <view class="classify_btn" bindtap="hideitem2">全部</view>
+    <view wx:for="{{btnList.btnArrey2}}" wx:key="key" wx:for-item="item" id="{{item}}" class="classify_btn_show" bindtap="hideitem2">
+      {{item}}
+    </view>
   </view>
 </view>
 <!-- 图书列表 -->
@@ -87,6 +82,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -108,6 +104,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -129,6 +126,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -150,6 +148,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -171,6 +170,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -192,6 +192,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -213,6 +214,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -234,6 +236,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -255,6 +258,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>
@@ -276,6 +280,7 @@
       <view class="book_list_btn_tit">安徒生童话</view>
     </view>
     <view class="book_list_btn">
+      <view class="book_list_btn_tit">安徒生童话</view>
       <view class="book_list_btn_tit">查看更多</view>
     </view>
   </view>

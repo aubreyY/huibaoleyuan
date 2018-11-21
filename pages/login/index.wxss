@@ -1,116 +1,123 @@
-.userfrom {
-    display: flex;
+page{
     background: #fff;
-    text-align: center;
 }
-
-.userfrom_item {
-    flex: 1;
-    position: relative;
+.login_nav{
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
 }
-
-.userfrom_item {
-    padding: 50rpx 0;
-    /* display: block; */
-    color: #666666;
-    
+.left_line{
+    width: 40%;
+    height: 1rpx;
+    background: #f1f1f1;
+    float: left;
+    margin-top: 40rpx;
 }
-
-.userfrom_item image {
-    width: 50rpx;height: 50rpx;
-}
-
-.userfrom_item view {
+.login_tit{
     font-size: 24rpx;
-    color: #666666;
+    color: #999999;
+    float: left;
+    margin-left: 5rpx;
 }
-.userfrom_item:last-child view{
-  color: #f5315a ;
+.right_line{
+    width: 40%;
+    height: 1rpx;
+    background: #f1f1f1;
+    float: right;
+    margin-top: 40rpx;
 }
-.userfrom_item:last-child:after {
-    content: '';
-    display: block;
-    width: 1px;
-    background: #edeaea;
-    height: 100rpx;
-    position: absolute;
-    left: 0;
-    top: 45rpx;
+.wx_btn{
+    width: 95%;
+    height: 90rpx;
+    background: #3EDD8D;
+    border: 2rpx solid #fff;
+    border-radius: 70rpx;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    font-size: 32rpx;
+    color: #fff;
+    line-height: 90rpx;
 }
-
-.user_meta {
-  margin-top:20rpx;
+.wx_btn image{
+    width: 44rpx;
+    height: 44rpx;
+    margin-left: 28%;
+    margin-top: 22rpx;
+    float: left;
 }
-
-.user_meta navigator,.user_meta view {
-    display: block;
+.wx_btn text{
+    float: left;
+    margin-left: 11rpx;
+}
+.phone_btn{
+    width: 95%;
+    height: 90rpx;
     background: #fff;
-    position: relative;
-    line-height: 100rpx;
-    height: 100rpx;
-    padding-left: 30rpx;
-    color: #333333;
-    font-size: 34rpx;
-    border-bottom: 1px solid #f0f0f0;
+    border: 2rpx solid #3EDD8D;
+    border-radius: 70rpx;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    font-size: 32rpx;
+    color: #3EDD8D;
+    line-height: 90rpx;
+}
+.phone_btn image{
+    width: 44rpx;
+    height: 44rpx;
+    margin-left: 28%;
+    margin-top: 22rpx;
+    float: left;
+}
+.phone_btn text{
+    float: left;
+    margin-left: 11rpx;
 }
 
-.meta_jt{
+.pop {
     position: absolute;
-    right: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    overflow: hidden;
+}
+
+.tit {
+    font-size: 40rpx;
+    text-align: center;
+    display: block;
+    line-height: 80rpx;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 30rpx;
+    color: #252525;
+}
+
+.bg {
+    position: fixed;
+    left: 0;
     top: 0;
-    width: 100rpx;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999999;
 }
 
-.user_top{
-    height: 250rpx;
-    position: relative;
-    overflow: hidden;
-}
-.user_top_bg{
-    width: 100%;height: 250rpx;
-    position: absolute;
-   
-
-}
-.user_top_con{
-    position: absolute;
-    left: 30rpx;top: 70rpx;width: 100%;height: 250rpx;
-}
-.head{
-    width: 110rpx;height: 110rpx;
-    border-radius: 110rpx;
-    overflow: hidden;
-}
-.userinfo{
- color: #fff;
- position: absolute;
- left: 150rpx;
- top: 25rpx;
-}
-.nickname{
-   font-size: 36rpx;
-}
-.integral{
-  font-size: 24rpx;
-}
-.sign{
-  display: inline-block;
-  padding: 5rpx 20rpx;
-  border: 1px solid #fff;
-  border-radius: 10rpx;
-  font-size: 24rpx;
-  color: #fff;
-  position: absolute;right: 60rpx;top: 40rpx;
-}
-.sign image{
-  width: 30rpx;height: 30rpx;
-  vertical-align: middle;
-}
-.icon{
-  width: 50rpx;height: 50rpx;
-  vertical-align: middle;
-  margin-right: 10rpx;
+.boxbtn {
+    padding: 30rpx 30rpx;
 }
 
+.loginbtn {
+    background: #fff !important;
+    border: 1px solid #09bb07 !important;
+    color: #09bb07 !important;
+    font-size: 30rpx !important;
+    border-radius: 100rpx !important;
+}
 
-
+.loginbtn image {
+    width: 44rpx;
+    height: 44rpx;
+    vertical-align: middle;
+}

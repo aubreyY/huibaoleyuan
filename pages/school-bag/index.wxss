@@ -20,7 +20,7 @@
     line-height: 80rpx;
 }
 .bag_font_1{
-    font-size: 26rpx;
+    font-size: 30rpx;
     font-weight: 500;
     color: #252525;
     float: left;
@@ -35,7 +35,7 @@
 .bag_fonts{
     width: 684rpx;
     font-size: 26rpx;
-    color: #252525;
+    color: #999999;
     margin-left: 35rpx;
 }
 /* 包含图书 */
@@ -47,7 +47,7 @@
 }
 .contains_title{
     height: 80rpx;
-    font-size: 26rpx;
+    font-size: 30rpx;
     font-weight: 500;
     color: #252525;
     line-height: 80rpx;
@@ -56,7 +56,7 @@
 .contains_cont{
     width: 100%;
     height: 320rpx;
-    border-top: 1rpx solid #f3f3f3;
+    border-top: 1rpx solid #f1f1f1;
 }
 .contains_cont_left{
     width: 260rpx;
@@ -96,12 +96,14 @@
 /* 免费借阅 */
 .borrow_button{
     width: 100%;
-    height: 80rpx;
+    height: 100rpx;
     background: #3EDD8D;
     margin-top: 20rpx;
     font-size: 36rpx;
     font-weight: 500;
     color: #fff;
     text-align: center;
-    line-height: 80rpx;
+    line-height: 100rpx;
+    position: fixed;
+    bottom: 0;
 }

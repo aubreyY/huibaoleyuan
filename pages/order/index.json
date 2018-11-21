@@ -4,6 +4,6 @@
         "loading": "/components/loading/loading",
         "slide-tab": "/components/slideTab/slideTab"
     },
-    "disableScroll": true,
+    "enablePullDownRefresh": false,
     "navigationBarTitleText":"订单"
 }

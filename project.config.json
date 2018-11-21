@@ -11,8 +11,8 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.98",
-	"appid": "wx3c901e4666e0cb83",
+	"libVersion": "2.4.0",
+	"appid": "wx1c1372996cf53250",
 	"projectname": "weixin-app",
 	"isGameTourist": false,
 	"condition": {

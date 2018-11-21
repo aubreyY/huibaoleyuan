@@ -8,7 +8,7 @@
 
 .confirm_nav_tit {
     height: 90rpx;
-    border-bottom: 1rpx solid #f3f3f3;
+    border-bottom: 1rpx solid #f1f1f1;
     font-size: 34rpx;
     font-weight: 500;
     color: #252525;
@@ -107,7 +107,7 @@
 }
 .borrow_text_cont{
     height: 100rpx;
-    border-bottom: 1rpx solid #f3f3f3;
+    border-bottom: 1rpx solid #f1f1f1;
     line-height: 100rpx;
 }
 .borrow_text_left{

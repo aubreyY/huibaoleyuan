@@ -6,15 +6,21 @@
     position: fixed;
     top: 0;
     line-height: 90rpx;
+    border-bottom: 1rpx solid #f1f1f1;
 }
 
 .lang_nav_left {
     width: 50%;
     height: 90rpx;
-    border-right: 1rpx solid #f3f3f3;
     float: left;
 }
-
+.border_line{
+    width: 1rpx;
+    height: 45rpx;
+    float: left;
+    background: #f1f1f1;
+    margin-top: 25rpx;
+}
 .lang_nav_right {
     width: 49%;
     height: 90rpx;
@@ -22,24 +28,18 @@
 }
 
 .age_calss {
+    width: 130rpx;
     font-size: 30rpx;
-    color: #252525;
     float: left;
-    margin-left: 130rpx;
-}
-
-.font_class {
-    font-size: 30rpx;
-    color: #252525;
-    float: left;
-    margin-left: 95rpx;
+    margin-left: 80rpx;
+    text-align: center;
 }
 
 .age_icon {
     width: 60rpx;
     height: 60rpx;
     float: left;
-    margin-top: 19rpx;
+    margin-top: 15rpx;
     margin-left: 20rpx;
 }
 
@@ -49,13 +49,14 @@
     position: relative;
     float: left;
     background: #fff;
+    top: 1rpx;
 }
 
 .display_none {
     display: none;
 }
 
-.classify_btn {
+.classify_btn_show {
     width: 150rpx;
     height: 48rpx;
     background: #f3f3f3;

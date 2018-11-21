@@ -25,7 +25,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    height: 435rpx;
+    height: 500rpx;
     background-color: #fff;
     transform: translateY(100%);
 }
@@ -33,7 +33,7 @@
 .modal_cont_nav {
     width: 100%;
     height: 100rpx;
-    border-bottom: 1rpx solid #f3f3f3;
+    border-bottom: 1rpx solid #f1f1f1;
 }
 
 .modal_cont_nav_tit {
@@ -60,14 +60,13 @@
     color: #252525;
     text-align: center;
     line-height: 100rpx;
-    margin-top: 15rpx;
+    margin-top: 30rpx;
 }
 
 .modal_num_tit {
     width: 100%;
     height: 50rpx;
     font-size: 24rpx;
-    font-weight: bold;
     color: #999999;
     text-align: center;
     line-height: 50rpx;
@@ -80,84 +79,12 @@
     background: #3EDD8D;
     border-radius: 40rpx;
     margin: 0 auto;
-    margin-top: 45rpx;
+    margin-top: 60rpx;
     font-size: 36rpx;
     font-weight: 500;
     color: #fff;
     text-align: center;
     line-height: 80rpx;
-}
-
-/* 剩余押金弹窗 */
-.total_deposit {
-    width: 100%;
-    height: 85rpx;
-    border-bottom: 1rpx solid #f3f3f3;
-    line-height: 85rpx;
-}
-
-.modal_num_text_1 {
-    font-size: 30rpx;
-    color: #999999;
-    float: left;
-    margin-left: 25rpx;
-}
-
-.modal_num_text_2 {
-    font-size: 30rpx;
-    font-weight: 500;
-    color: #252525;
-    float: right;
-    margin-right: 25rpx;
-}
-
-/* Tost弹窗 */
-.tost {
-    width: 440rpx;
-    height: 210rpx;
-    background: #fff;
-    border-radius: 12rpx;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-}
-
-.tost_title {
-    height: 140rpx;
-    border-radius: 12rpx;
-    font-size: 30rpx;
-    color: #999999;
-    text-align: center;
-    line-height: 140rpx;
-}
-
-.tost_btn {
-    height: 68rpx;
-    border-radius: 12rpx;
-    border-top: 1rpx solid #f3f3f3;
-}
-
-.tost_btn_left {
-    width: 209rpx;
-    height: 68rpx;
-    border-right: 1rpx solid #f3f3f3;
-    font-size: 30rpx;
-    color: #999999;
-    text-align: center;
-    line-height: 68rpx;
-    float: left;
-}
-
-.tost_btn_right {
-    width: 209rpx;
-    height: 68rpx;
-    font-size: 30rpx;
-    color: #3EDD8D;
-    text-align: center;
-    line-height: 68rpx;
-    float: left;
 }
 
 /* 输入框弹窗 */
@@ -203,14 +130,13 @@
 .input_popup_btn {
     width: 100%;
     height: 80rpx;
-    border-top: 1rpx solid #f3f3f3;
+    border-top: 1rpx solid #f1f1f1;
     margin-top: 25rpx;
 }
 
 .btn_no {
     width: 295rpx;
     height: 80rpx;
-    border-right: 1rpx solid #f3f3f3;
     line-height: 80rpx;
     font-size: 36rpx;
     color: #999999;
@@ -218,10 +144,18 @@
     float: left;
 }
 
+.btn_line {
+    width: 1rpx;
+    height: 40rpx;
+    background: #f1f1f1;
+    float: left;
+    margin-top: 20rpx;
+}
+
 .btn_ok {
     width: 295rpx;
     height: 80rpx;
-    line-height: 90rpx;
+    line-height: 80rpx;
     font-size: 36rpx;
     color: #3EDD8D;
     text-align: center;

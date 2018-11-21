@@ -1,5 +1,5 @@
 {
   "disableScroll": true,
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "navigationBarTitleText": "借阅指南"
 }

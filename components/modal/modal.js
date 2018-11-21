@@ -1,3 +1,4 @@
+var app = getApp();
 Component({
   options: {
     multipleSlots: true
@@ -7,10 +8,6 @@ Component({
    */
   properties: {
     hideModal: {
-      type: Boolean,
-      value: true
-    },
-    tost: {
       type: Boolean,
       value: true
     },
@@ -86,19 +83,6 @@ Component({
         animationData: this.animation.export(),
       })
     },
-    // tost提示窗
-    prompt_show: function () {
-      var that = this;
-      that.setData({
-        tost: false
-      })
-    },
-    prompt_hide: function () {
-      var that = this;
-      that.setData({
-        tost: true
-      })
-    },
     //隐藏输入框弹窗
     hidePopup: function () {
       this.setData({
@@ -118,6 +102,38 @@ Component({
     _success() {
       //触发成功回调
       this.triggerEvent("success");
+    },
+    /**
+     * 微信支付功能
+     */
+    wxpay: function () {
+      var code = app.code;
+      wx.request({
+        url: "XXXXXXXXX",
+        data: {
+          code: code
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          console.log(res.data);
+          var data = res.data;
+          wx.requestPayment({
+            'timeStamp': data.timeStamp,
+            'nonceStr': data.nonceStr,
+            'package': data.package,
+            'signType': 'MD5',
+            'paySign': data.paySign,
+            success: function (res) {
+              console.log(res+"支付成功！")
+            },
+            fail: function (res) {
+              console.log(res+"支付失败！")
+            }
+          })
+        }
+      })
     }
   }
 })

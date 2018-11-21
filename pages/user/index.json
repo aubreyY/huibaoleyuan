@@ -1,9 +1,5 @@
 {
     "component": true,
-    "usingComponents": {
-        "login": "/components/login/login"
-    },
-    "disableScroll": true,
-    "enablePullDownRefresh":true,
+    "enablePullDownRefresh":false,
     "navigationBarTitleText":"我的"
 }

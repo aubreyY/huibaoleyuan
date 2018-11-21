@@ -1,6 +1,5 @@
 {
-  "disableScroll": true,
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "navigationBarTitleText": "设置",
   "usingComponents": {
     "popup": "/components/modal/modal"

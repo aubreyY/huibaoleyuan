@@ -1,4 +1,4 @@
 {
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "navigationBarTitleText": "情绪管理"
 }

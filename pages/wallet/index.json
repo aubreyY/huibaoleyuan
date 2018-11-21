@@ -1,6 +1,5 @@
 {
-    "disableScroll": true,
-    "enablePullDownRefresh": true,
+    "enablePullDownRefresh": false,
     "navigationBarTitleText": "我的钱包",
     "usingComponents": {  
         "modal": "/components/modal/modal"

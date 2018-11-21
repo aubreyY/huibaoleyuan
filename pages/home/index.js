@@ -4,7 +4,6 @@ import $api from "../../base/api";
 import {
   shareConfig
 } from "../../base/config";
-
 Page({
   data: {
     // 轮播属性
@@ -26,57 +25,30 @@ Page({
     navContent: {
       open1: false,
       open2: false,
+      iconHide1: false,
+      iconHide2: false,
+      fontColor1: false,
+      fontColor2: false,
       navFixed: false
+    },
+    ageText: '年龄',
+    classText: '分类',
+    // btn标签
+    btnList: {
+      btnArrey1: ['1~2岁', '2~3岁', '3~5岁', '5~6岁', '8岁以上', '全部'],
+      btnArrey2: ['艺术创想', '儿童启蒙', '历史文学', '自我保护', '情感认知', '全部']
     }
-
-    // timelineList: [
-    //   {
-    //     timelineid: 10001,
-    //     title:
-    //       "童颜巨乳萌神妹妹衣裳半裸秀魔鬼身材童颜巨乳萌神妹妹衣裳半裸秀魔鬼身材童颜巨乳萌神妹妹衣裳半裸秀魔鬼身材",
-    //     imglist: [
-    //       "https://www.privacypic.com/images/2018/10/15/13b7500795176e3dd0.jpg",
-    //       "https://www.touimg.com/u/20181016/23400073.jpg",
-    //       "https://www.touimg.com/u/20181016/23400135.jpg",
-    //       "https://www.touimg.com/u/20181016/23400275.jpg"
-    //     ],
-    //     stars: 1200
-    //   },
-    //   {
-    //     timelineid: 10001,
-    //     title:
-    //       "童颜巨乳萌神妹妹衣裳半裸秀魔鬼身材童颜巨乳萌神妹妹衣裳半裸秀魔鬼身材童颜巨乳萌神妹妹衣裳半裸秀魔鬼身材",
-    //     imglist: [
-    //       "https://www.privacypic.com/images/2018/10/15/13b7500795176e3dd0.jpg",
-    //       "https://www.touimg.com/u/20181016/23400073.jpg",
-    //       "https://www.touimg.com/u/20181016/23400135.jpg",
-    //       "https://www.touimg.com/u/20181016/23400275.jpg"
-    //     ],
-    //     stars: 1200
-    //   }
-    // ]
   },
   onLoad() {
-    this.init(() => {});
+    $api.bookbag.list(10).then(data => {
+      if (data.errcode === 0) {
+        console.log(data.data)
+      } else {
+        console.log(data.errinfo)
+      }
+    })
   },
-  onShareAppMessage() {
-    return shareConfig();
-  },
-
-  // 刷新
-  onPullDownRefresh: function () {
-    this.init(() => {
-      setTimeout(() => {
-        wx.stopPullDownRefresh();
-      }, 500);
-    });
-  },
-  init(callback) {
-    this.setData({
-      //timelineList: []
-    });
-  },
-  //处理跳转
+  //处理页面跳转
   my_bag: function () {
     wx.navigateTo({
       url: '../school-bag/index'
@@ -87,45 +59,64 @@ Page({
       url: '../map/map'
     })
   },
-  my_lang:function(){
+  my_lang: function () {
     wx.navigateTo({
-      url:'../language-class/index'
+      url: '../language-class/index'
     })
   },
-  my_mood:function(){
+  my_mood: function () {
     wx.navigateTo({
-      url:'../mood-class/index'
+      url: '../mood-class/index'
     })
   },
-  my_art:function(){
+  my_art: function () {
     wx.navigateTo({
-      url:'../art-class/index'
+      url: '../art-class/index'
     })
   },
-  my_science:function(){
+  my_science: function () {
     wx.navigateTo({
-      url:'../art-class/index'
+      url: '../science-class/index'
     })
   },
   // 下拉菜单
   showitem1: function () {
     this.setData({
-      open1: !this.data.open1
+      open1: !this.data.open1,
+      open2: false,
+      iconHide1: !this.data.iconHide1,
+      iconHide2: false,
+      fontColor1: !this.data.fontColor1,
+      fontColor2: false
     })
   },
-  hideitem1: function () {
+  hideitem1: function (event) {
+    var id = event.currentTarget.id;
+    console.log(id)
     this.setData({
-      open1: false
+      open1: false,
+      iconHide1: false,
+      ageText: id,
+      fontColor1: true
     })
   },
   showitem2: function () {
     this.setData({
-      open2: !this.data.open2
+      open2: !this.data.open2,
+      open1: false,
+      iconHide2: !this.data.iconHide2,
+      iconHide1: false,
+      fontColor2: !this.data.fontColor2,
+      fontColor1: false
     })
   },
-  hideitem2: function () {
+  hideitem2: function (event) {
+    var id = event.currentTarget.id;
     this.setData({
-      open2: false
+      open2: false,
+      iconHide2: false,
+      classText: id,
+      fontColor2: true
     })
   },
   // 吸顶导航
@@ -134,13 +125,10 @@ Page({
       this.setData({
         navFixed: true
       })
-      console.log(11111)
     } else if (e.scrollTop < 400 && this.data.navFixed) {
       this.setData({
         navFixed: false
       })
-      console.log(22222)
     }
   }
-
 })
