@@ -1,37 +1,27 @@
-<!-- 借阅记录 -->
-<view class="borrow_list">
-    <view class="borrow_time">
-        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
-        <text class="borrow_time_tit_2">已取消</text>
-    </view>
-    <view class="borrow_book">
-        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
-    </view>
-</view>
-<view class="borrow_list">
-    <view class="borrow_time">
-        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
+<!-- 订单借阅记录 -->
+<view class="borrow_list" wx:for="{{receordList}}" wx:key="itemIndex" wx:for-item="itemInfo">
+    <view class="order_content">
+        <text class="order_num">订单编号：{{itemInfo.orderid}}</text>
         <text class="borrow_time_tit_2">已完成</text>
     </view>
-    <view class="borrow_book">
-        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
-    </view>
-</view>
-<view class="borrow_list">
     <view class="borrow_time">
-        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
-        <text class="borrow_time_tit_2">已完成</text>
+        <text class="borrow_time_tit_1">{{itemInfo.startdate}} 至 {{itemInfo.enddate}}</text> 
+        <text class="order_monmy">支付费用: ¥{{itemInfo.total_feesNum}}</text>
     </view>
     <view class="borrow_book">
-        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
+        <text class="borrow_time_tit_3">书包系列: {{itemInfo.baginfo.title}}</text>
     </view>
-</view>
-<view class="borrow_list">
-    <view class="borrow_time">
-        <text class="borrow_time_tit_1">2018-11-7 20:00</text>
-        <text class="borrow_time_tit_2">已完成</text>
+    <view class="order_lable_content">
+        <view class="order_lable">{{itemInfo.baginfo.ageText}}</view>
+        <view class="order_lable">{{itemInfo.baginfo.typeText}}</view>
     </view>
-    <view class="borrow_book">
-        <text class="borrow_time_tit_3">安徒生童话系列图书</text>
+    <view class="order_lable_content">
+        <view class="order_lable" wx:for="{{itemInfo.baginfo.tags}}" wx:key="tagIndex" wx:for-item="tagName">
+            {{tagName}}
+        </view>
+    </view>
+    <view class="borrow_address_cont">
+        <text class="borrow_name">慧宝门店: {{itemInfo.orginfo.name}}</text>
+        <text class="borrow_address">门店地址: {{itemInfo.orginfo.address}}</text>
     </view>
 </view>

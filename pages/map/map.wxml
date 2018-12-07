@@ -2,16 +2,16 @@
 <view class="map_content">
     <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" show-location style="width: 100%; height: {{view.Height}}px;"></map>
     <cover-view class="map_nav_box">
-        <cover-view class="map_nav_tit">租东东绘本服务网点</cover-view>
+        <cover-view class="map_nav_tit">{{orgIfo.name}}</cover-view>
         <cover-view>
             <cover-image class="map_nav_time_icon" src="/image/near_add_time_icon.png"></cover-image>
+            <!-- <cover-image class="icon_x" src="/image/icon_x.png"></cover-image> -->
             <cover-view class="map_nav_time_num" style="width:150rpx">9:00~20:00</cover-view>
-            <cover-image class="icon_x" src="/image/icon_x.png"></cover-image>
-            <cover-view class="map_nav_time_m">500M</cover-view>
+            <cover-view class="map_nav_time_m">{{orgInfoDistance}} m</cover-view>
         </cover-view>
         <cover-view>
             <cover-image class="map_nav_near_icon" src="/image/add_icon.png"></cover-image>
-            <cover-view class="map_nav_near_tit">朝阳·望京摩托罗拉大厦</cover-view>
+            <cover-view class="map_nav_near_tit">{{orgIfo.address}}</cover-view>
         </cover-view>
         <cover-view class="map_nav_btn">
             <cover-view class="top_line"></cover-view>

@@ -1,7 +1,13 @@
 import {
-  BAES_DONMAIN, BASE_URL, UPLOAD_URL
+  BAES_DONMAIN,
+  BASE_URL,
+  UPLOAD_URL,
+  defaultUserCity,
+  defaultConfigInfo,
+  defaultConfigDict,
+  defaultBookbagType
 } from './config'
-
+var QQMapWX = require('qqmap-wx-jssdk.js');
 
 //生成Peerid   每个设备只生成一次，清除缓存重新生成
 export var createPeerid = () => {
@@ -29,14 +35,14 @@ export function getRandomString(len, onlyNumber, isLowercase) {
 //封装Promise 
 //金钱格式
 export var formatMoney = num => {
-  var wnux = "";
-  num = num.toFixed(2);
-  num = parseFloat(num);
-  if (!num.toString().split(".")[1]) {
-    wnux = ".00";
+  if(num.length  == 0){
+    return "0.00";
+  }else if(num.length  == 1){
+    return "0.0" + num;
+  }if(num.length  == 2){
+    return "0."+num;
   }
-  num = num.toLocaleString();
-  return num + wnux; //返回的是字符串23,245.12保留2位小数
+  return num.substring(0,num.length-2)+"."+num.substring(num.length-2);
 };
 // 随机数
 export var getRandomNumber = (Min, Max) => {
@@ -66,11 +72,17 @@ export var initSessionid = () => {
 
 export var initConfigDict = () => {
   var configDict = wx.getStorageSync("configDict");
+  if (!configDict) {
+    configDict = defaultConfigDict;
+  }
   return configDict;
 }
 
 export var initConfigInfo = () => {
   var configInfo = wx.getStorageSync("configInfo");
+  if (!configInfo) {
+    configInfo = defaultConfigInfo;
+  }
   return configInfo;
 }
 
@@ -78,6 +90,110 @@ export var initUserInfo = () => {
   var userInfo = wx.getStorageSync("userInfo");
   return userInfo;
 };
+
+export var initUserLocation = () => {
+  var userLocation = wx.getStorageSync("userLocation");
+  if (!userLocation) {
+    userLocation = {};
+  }
+  return userLocation;
+};
+
+export var initComefrom = () => {
+  var comefrom = wx.getStorageSync("comefrom");
+  if (!comefrom) {
+    comefrom = "";
+  }
+  return comefrom;
+};
+
+export var initMap = () => {
+  // 实例化API核心类
+  let map = new QQMapWX({
+    key: 'BKGBZ-DQCC4-D4TUK-XIP6U-MVEBE-TNFWR'
+  });
+  return map;
+};
+
+export var initAreaDict = () => {
+  var areaDict = wx.getStorageSync("areaDict");
+  if (!areaDict) {
+    areaDict = {};
+  }
+  return areaDict;
+}
+
+export var updateBookbagStat = (bookbag) => {
+  var bookbagStat = wx.getStorageSync("bookbagStat");
+  if (!bookbagStat) {
+    bookbagStat = {
+      bagid:{},
+      type:{},
+      age:{}
+    };
+  }
+  if(bookbagStat.bagid[bookbag.bagid]){
+    bookbagStat.bagid[bookbag.bagid] = bookbagStat.bagid[bookbag.bagid] + 1;
+  }else{
+    bookbagStat.bagid[bookbag.bagid] = 1;
+  }
+  if(bookbagStat.type[bookbag.type]){
+    bookbagStat.type[bookbag.type] = bookbagStat.type[bookbag.type] + 1;
+  }else{
+    bookbagStat.type[bookbag.type] = 1;
+  }
+  if(bookbagStat.age[bookbag.age]){
+    bookbagStat.age[bookbag.age] = bookbagStat.age[bookbag.age] + 1;
+  }else{
+    bookbagStat.age[bookbag.age] = 1;
+  }
+  wx.setStorageSync("bookbagStat", bookbagStat)
+}
+
+var  mapSort = (data, size) =>{
+  let objKeyChange = {}
+  let resultData = []
+  let objVal = []
+  let objKeys = Object.keys(data)
+  
+  if (!size) {
+  size = objKeys.length
+  }
+  objKeys.map(e => {
+  objKeyChange[data[e]] = e
+  objVal.push(data[e])
+  })
+  
+  objVal.sort((a, b) => {
+  return b - a
+  }).splice(0, size)
+  .map(e => {
+  resultData.push(objKeyChange[e])
+  })
+  return resultData
+}
+
+export var getBookbagStatTop = () => {
+  var topData = {
+    bagid:[],
+    type:[],
+    age:[]
+  };
+  var bookbagStat = wx.getStorageSync("bookbagStat");
+  if (!bookbagStat) {
+    return topData;
+  }
+  if(bookbagStat.bagid){
+    topData.bagid = mapSort(bookbagStat.bagid, 5);
+  }
+  if(bookbagStat.type){
+    topData.type = mapSort(bookbagStat.type, 2);
+  }
+  if(bookbagStat.age){
+    topData.age = mapSort(bookbagStat.age, 2);
+  }
+  return topData;
+}
 
 export var getImgurl = (url) => {
   return `http://img${getRandomNumber(1, 3)}.${BAES_DONMAIN}/${url}`
@@ -100,6 +216,4 @@ export var animationMain = (param) => {
   // }.bind(param.e), param.time || 500);
   return param.dom;
 }
-
-
 

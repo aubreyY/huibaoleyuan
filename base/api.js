@@ -4,9 +4,10 @@ import {
 } from './config'
 import {
   initPeerid,
-  initSessionid
+  initSessionid,
+  initUserLocation,
+  initComefrom
 } from './util';
-
 
 var httpGet = (url, data, loading) => {
   if (loading) {
@@ -25,28 +26,18 @@ var httpGet = (url, data, loading) => {
       data: data,
       dataType: "json",
       success(res) {
+        console.log(url, data, res)
         if (loading) {
           wx.hideLoading()
         }
         if (res.data.errcode === 4101) {
           wx.removeStorageSync('sessionid');
           wx.removeStorageSync('userInfo');
-          wx.showToast({
-            icon: 'none',
-            title: "登录状态失效，重新登录",
-            duration: 1000,
-            success() {
-              setTimeout(() => {
-                wx.switchTab({
-                  url: '/pages/user/index'
-                });
-              }, 1000)
-            }
-          });
           return;
         } else {
           resolve(res.data);
         }
+
       },
       fail(res) {
         if (!loading) {
@@ -69,9 +60,11 @@ var httpPost = (url, data, loading) => {
       title: '加载中',
     })
   }
-  // console.log(data);
   data.peerid = initPeerid();
   data.sessionid = initSessionid();
+  data.comefrom = initComefrom();
+  var userLocation = initUserLocation();
+  data.xekdiensdnloc = userLocation.location ? userLocation.location : "";
 
   return new Promise(function (resolve, reject) {
     wx.request({
@@ -83,6 +76,7 @@ var httpPost = (url, data, loading) => {
         'content-type': 'application/x-www-form-urlencoded'
       },
       success(res) {
+        console.log(url, data, res)
         if (loading) {
           wx.hideLoading()
         }
@@ -90,18 +84,6 @@ var httpPost = (url, data, loading) => {
         if (res.data.errcode === 4101) {
           wx.removeStorageSync('sessionid');
           wx.removeStorageSync('userInfo');
-          wx.showToast({
-            icon: 'none',
-            title: "登录状态失效，重新登录",
-            duration: 1000,
-            success() {
-              setTimeout(() => {
-                wx.switchTab({
-                  url: '/pages/user/index'
-                });
-              }, 1000)
-            }
-          });
           return;
         }
       },
@@ -121,157 +103,212 @@ var httpPost = (url, data, loading) => {
 }
 
 export default {
-  // 列表类
+  // 书包类
   bookbag: {
-    bookinfo(bookid) {
-      return httpGet(BASE_URL + '/bookbag/bookinfo', {
+    // 所有书籍内容
+    book_info(bookid) {
+      return httpGet(BASE_URL + '/bookbag/book_info', {
         bookid: bookid
       })
     },
+    // 所有书包内容
     info(bagid) {
       return httpGet(BASE_URL + '/bookbag/info', {
         bagid: bagid
       })
     },
+    // 所有书包列表
     list(pagenum) {
       return httpGet(BASE_URL + '/bookbag/list', {
         pagenum: pagenum
+      })
+    },
+    // 猜你喜欢
+    guess_list(city, county, bagids, ages, types) {
+      return httpGet(BASE_URL + '/bookbag/guess_list', {
+        city: city,
+        county: county,
+        bagids: bagids,
+        ages: ages,
+        types: types
       })
     }
   },
   // 通用类
   common: {
-    area_dict() {
-      return httpGet(BASE_URL + '/common/areadict', {})
+    // 轮播图
+    banner_list() {
+      return httpGet(BASE_URL + '/common/banner_list', {})
     },
+    // 区域列表
+    area_dict(province, ) {
+      return httpGet(BASE_URL + '/common/area_dict', {
+        province: province
+      })
+    },
+    // 城市列表
     area_list() {
-      return httpGet(BASE_URL + '/common/arealist', {})
+      return httpGet(BASE_URL + '/common/area_list', {})
     },
     captcha() {
       return httpGet(BASE_URL + '/common/captcha', {})
     },
-    config_dict(checksum) {
-      return httpGet(BASE_URL + '/common/configdict', {
+    // 字典翻译
+    config_dict(checksum, ) {
+      return httpGet(BASE_URL + '/common/config_dict', {
         checksum: checksum
       })
     },
-    config_info(checksum) {
+    // 翻译内容
+    config_info(checksum, ) {
       return httpGet(BASE_URL + '/common/config_info', {
         checksum: checksum
       })
     },
-    login(code, data, iv) {
+    // 登录
+    login(code, data, iv, ) {
       return httpPost(BASE_URL + '/common/login', {
         code: code,
         data: data,
         iv: iv
       })
     },
-    msgcode(biztype, tel, imageid, iconx, icony) {
+    msgcode(biztype, tel) {
       return httpPost(BASE_URL + '/common/msgcode', {
         biztype: biztype,
-        tel: tel,
-        imageid: imageid,
-        iconx: iconx,
-        icony: icony
+        tel: tel
       })
     }
   },
   // 订单类
   order: {
-    craete(orgid, bagid) {
-      return httpPost(BASE_URL + '/order/craete', {
+    // 创建订单
+    create(orgid, bagid, ) {
+      return httpPost(BASE_URL + '/order/create', {
         orgid: orgid,
         bagid: bagid
       })
     },
-    delete(orderid) {
+    // 取消订单
+    delete_order(orderid, ) {
       return httpPost(BASE_URL + '/order/delete', {
         orderid: orderid
       })
     },
-    info(orderid) {
+    // 订单内容
+    info(orderid, ) {
       return httpGet(BASE_URL + '/order/info', {
         orderid: orderid
       })
     },
+    // 订单列表
     list() {
       return httpGet(BASE_URL + '/order/list', {})
+    },
+    // 费用支付
+    fees_pay(orderid) {
+      return httpPost(BASE_URL + '/order/fees_pay', {
+        orderid: orderid
+      })
+    },
+    // 历史订单
+    history_list() {
+      return httpGet(BASE_URL + '/order/history_list', {})
     }
   },
   // 机构类
   org: {
-    area_list(city, county, town) {
-      return httpGet(BASE_URL + '/org/arealist', {
+    // 服务机构网点列表
+    area_list(city, county, town, ) {
+      return httpGet(BASE_URL + '/org/area_list', {
         city: city,
         county: county,
         town: town
       })
     },
-    bookbag_info(orgid, bagid) {
-      return httpGet(BASE_URL + '/org/bookbaginfo', {
+    // 当前机构位置书包列表
+    area_bookbag_list(city, county, town, age, type, pagenum, ) {
+      return httpGet(BASE_URL + '/org/area_bookbag_list', {
+        city: city,
+        county: county,
+        town: town,
+        age: age,
+        type: type,
+        pagenum: pagenum
+      })
+    },
+    // 当前机构位置书包内容
+    bookbag_info(orgid, bagid, ) {
+      return httpGet(BASE_URL + '/org/bookbag_info', {
         orgid: orgid,
         bagid: bagid
       })
     },
-    bookbag_list(orgid) {
-      return httpGet(BASE_URL + '/org/bookbaglist', {
-        orgid: orgid
+    //  机构书包列表
+    bookbag_list(orgid, pagenum, ) {
+      return httpGet(BASE_URL + '/org/bookbag_list', {
+        orgid: orgid,
+        pagenum: pagenum
       })
     },
-    info(orgid) {
+    // 服务机构网点内容
+    info(orgid, ) {
       return httpGet(BASE_URL + '/org/info', {
         orgid: orgid
       })
     },
-    order_delete(orderid) {
-      return httpPost(BASE_URL + '/org/orderdelete', {
+    order_delete(orderid, ) {
+      return httpPost(BASE_URL + '/org/order_delete', {
         orderid: orderid
       })
     },
-    order_finish(orderid, reparation, remake) {
-      return httpPost(BASE_URL + '/org/orderfinish', {
+    order_finish(orderid, reparation, remake, ) {
+      return httpPost(BASE_URL + '/org/order_finish', {
         orderid: orderid,
         reparation: reparation,
         remake: remake
       })
     },
-    order_info(orderid) {
-      return httpGet(BASE_URL + '/org/orderinfo', {
+    order_info(orderid, ) {
+      return httpGet(BASE_URL + '/org/order_info', {
         orderid: orderid
       })
     },
     order_list() {
-      return httpGet(BASE_URL + '/org/orderlist', {})
+      return httpGet(BASE_URL + '/org/order_list', {})
     },
-    order_loan(orderid) {
-      return httpPost(BASE_URL + '/org/orderloan', {
+    order_loan(orderid, ) {
+      return httpPost(BASE_URL + '/org/order_loan', {
         orderid: orderid
       })
     }
   },
   // 用户类
   user: {
-    deposit_cancel() {
-      return httpPost(BASE_URL + '/user/depositcancel', {})
+    // 取消支付
+    deposit_cancel(paymentid, ) {
+      return httpPost(BASE_URL + '/user/deposit_cancel', {
+        paymentid: paymentid
+      })
     },
-    deposit_list() {
-      return httpGet(BASE_URL + '/user/depositlist', {})
-    },
+    // 押金支付
     deposit_pay() {
-      return httpPost(BASE_URL + '/user/depositpay', {})
+      return httpPost(BASE_URL + '/user/deposit_pay', {})
     },
     deposit_withdraw() {
-      return httpPost(BASE_URL + '/user/depositwithdraw', {})
+      return httpPost(BASE_URL + '/user/deposit_withdraw', {})
     },
+    // 用户信息
     info() {
       return httpGet(BASE_URL + '/user/info', {})
     },
+    // 押金记录
     payment_list() {
-      return httpGet(BASE_URL + '/user/paymentlist', {})
+      return httpGet(BASE_URL + '/user/payment_list', {})
     },
-    telbind(tel, msgcode, comefrom) {
-      return httpPost(BASE_URL + '/user/telbind', {
+    // 绑定手机号
+    tel_bind(tel, msgcode, comefrom) {
+      return httpPost(BASE_URL + '/user/tel_bind', {
         tel: tel,
         msgcode: msgcode,
         comefrom: comefrom

@@ -1,0 +1,80 @@
+page {
+    background: #fff;
+}
+
+.logo {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 60rpx auto;
+}
+
+.logo image {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.PhoneInput {
+    width: 640rpx;
+    height: 110rpx;
+    margin: 0 auto;
+    border-bottom: 1rpx solid #3EDD8D;
+}
+
+.PhoneInput input {
+    width: 640rpx;
+    height: 90rpx;
+    font-size: 40rpx;
+    color: #252525;
+}
+
+.PhoneMsgcode {
+    width: 640rpx;
+    height: 110rpx;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    border-bottom: 1rpx solid #3EDD8D;
+}
+
+.PhoneMsgcode input {
+    width: 400rpx;
+    height: 90rpx;
+    float: left;
+}
+
+.inputClass {
+    font-size: 28rpx;
+    color: #D7D7D7;
+}
+
+.msgcodeBtn {
+    width: 239rpx;
+    height: 90rpx;
+    border-left: 1rpx solid #3EDD8D;
+    border-radius: 0rpx;
+    background: #fff;
+    float: left;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #3EDD8D;
+}
+
+.msgcodeBtn::after {
+    border: none;
+}
+
+.submitBtn {
+    width: 640rpx;
+    height: 80rpx;
+    border: none;
+    border-radius: 80rpx;
+    margin: 60rpx auto;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.submitBtn::after {
+    border: none;
+}

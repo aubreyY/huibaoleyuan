@@ -47,8 +47,9 @@
 .map_nav_time_m {
     font-size: 24rpx;
     color: #666666;
-    float: left;
+    float: right;
     margin-top: 25rpx;
+    margin-right: 30rpx;
 }
 
 .icon_x {

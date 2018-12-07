@@ -1,0 +1,43 @@
+<!-- 科学认知 -->
+<view class="lang_nav">
+    <view class="lang_nav_left" bindtap="showOptionBox" data-boxid="age">
+        <text class="{{navAgeShow?'age_calss_col':'age_calss_show'}}">{{navAgeText}}</text>
+        <image class="age_icon" mode="widthFix" src="{{navAgeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
+    </view>
+    <view class="border_line"></view>
+    <view class="lang_nav_right" bindtap="showOptionBox" data-boxid="type">
+        <text class="{{navTypeShow?'age_calss_col':'age_calss_show'}}">{{navTypeText}}</text>
+        <image class="age_icon" mode="widthFix" src="{{navTypeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
+    </view>
+    <view class="{{navAgeShow?'display_show':'display_none'}}">
+        <view wx:for="{{bookbagAgeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="age" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="age-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+            {{itemInfo.name}}
+        </view>
+        <view class="classify_btn_show" data-itemname="年龄" data-itemid="0" data-boxid="age" id="type-0" bindtap="changeOption">
+            全部
+        </view>
+    </view>
+    <view class="{{navTypeShow?'display_show':'display_none'}}">
+        <view wx:for="{{bookbagTypeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="type" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="type-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+            {{itemInfo.name}}
+        </view>
+        <view class="classify_btn_show" data-itemname="分类" data-itemid="0" data-boxid="type" id="type-0" bindtap="changeOption">
+            全部
+        </view>
+    </view>
+</view>
+<!-- 列表 -->
+<view class="bookbag_list">
+    <view class="book_list_first" wx:for="{{bookbagList}}" wx:key="itemIndex" wx:for-item="itemInfo" data-orgid="{{itemInfo.orgid}}" data-bagid="{{itemInfo.bagid}}" id="{{itemInfo.bagid}}" bindtap="showBookbagInfo">
+        <view class="book_img">
+            <image mode="widthFix" src="{{itemInfo.info.cover}}" />
+        </view>
+        <view class="book_text">
+            <text class="book_title">{{itemInfo.info.title}}</text>
+            <view class="book_font" wx:for="{{itemInfo.info.tags}}" wx:key="tagIndex" wx:for-item="tagName">
+                <text>{{tagName}}</text>
+            </view>
+        </view>
+        <image class="book_icon" mode="widthFix" src="/image/icon_d.png" />
+    </view>
+</view>

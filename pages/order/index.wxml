@@ -1,44 +1,143 @@
-<!-- 订单头部 -->
-<view class="order_color"></view>
-<view class="order">
-    <text class="order_tit">安徒生童话系列书包</text>
-    <view class="order_take_btn">待取书</view>
-    <view class="order_take_in">剩余 3 天</view>
-    <!-- <view class="order_take_btn">租赁中</view>
-    <view class="order_take_in">剩余 29 天</view> -->
-</view>
-<!-- 服务网点导航 -->
-<view class="order_content">
-    <view class="nav_box">
-        <view class="nav_logo">
-            <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
-        </view>
-        <view class="nav_add_li">
-            <text class="nav_add_tit_1">租东东绘本服务网点</text>
-            <text class="nav_add_tit_2">朝阳区·望京摩托罗拉大厦</text>
-        </view>
-        <view class="nav_add_li">
-            <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
-            <text class="nav_add_tit_3">500M</text>
-        </view>
-    </view>
-    <!-- 还书 -->
-    <!-- <view class="return_book">
-        <text class="return_book_time">2018-11-8 11: 00</text>
-        <view class="return_book_btn" bindtap="my_return_book">去还书</view>
-    </view> -->
-    <!-- 二维码 -->
-    <view class="code_box">
-        <image mode="widthFix" class="code_img" src="/image/code_img.png" />
-        <text class="code_title">取书时将此二维码展示给店员</text>
-    </view>
-    <!-- 取消订单 -->
-    <view class="cancel_order">
-        <view class="cancel_order_btn">取消订单</view>
-    </view>
-</view>
 <!-- 借阅记录 -->
-<view class="borrow_box" bindtap="my_borrow">
+<view class="borrow_box" bindtap="borrowRecord">
     <text class="borrow_tit">借阅记录</text>
     <image mode="widthFix" class="borrow_icon" src="/image/icon_d.png" />
+</view>
+<view class="order_content" wx:for="{{orderList}}" wx:key="orderIndex" wx:for-item="orderInfo">
+    <!-- 结束的订单内容 -->
+    <view class="order_list_box" wx:if="{{orderInfo.status==OrderStatus.finished}}">
+        <view class="nav_box">
+            <view class="nav_logo">
+                <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
+            </view>
+            <view class="nav_add_li">
+                <text class="nav_add_tit_1">{{orderInfo.orginfo.name}}</text>
+                <text class="nav_add_tit_2">{{orderInfo.orginfo.address}}</text>
+                <view>
+                    <view class="order_take_btn">已结束</view>
+                    <view class="order_take_in">已租 {{orderInfo.total_daysNum}} 天</view>
+                </view>
+            </view>
+        </view>
+        <view class="order_list">
+            <view class="order_list_img">
+                <image mode="widthFix" src="{{orderInfo.baginfo.cover}}" />
+            </view>
+            <text class="order_list_tit">{{orderInfo.baginfo.title}}</text>
+            <view class="order_list_label">
+                <view class="order_list_label_tit" wx:for="{{orderInfo.baginfo.tags}}" wx:key="tagIndex" wx:for-item="tagName">
+                    {{tagName}}
+                </view>
+                <view class="order_list_time">{{orderInfo.startdate}} 至 {{orderInfo.enddate}}</view>
+            </view>
+        </view>
+        <view class="damaged_cont">
+            <view class="damaged_text" wx:if="{{orderInfo.overdue_fees > 0}}">
+                逾期 {{orderInfo.overdue_feesNum}}元
+            </view>
+            <view class="damaged_text" wx:if="{{orderInfo.damaged_fees > 0}}">
+                定损 {{orderInfo.damaged_feesNum}}元
+            </view>
+            <view class="damaged_text">总费用 {{orderInfo.total_feesNum}}元</view>
+        </view>
+        <view class="damaged_pay" data-orderid="{{orderInfo.orderid}}" bindtap="feesPay">立即支付</view>
+    </view>
+    <!-- 预定订单 -->
+    <view class="create_order_list_box" wx:elif="{{orderInfo.status==OrderStatus.booking}}">
+        <view class="nav_box">
+            <view class="nav_logo">
+                <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
+            </view>
+            <view class="nav_add_li">
+                <text class="nav_add_tit_1">{{orderInfo.orginfo.name}}</text>
+                <text class="nav_add_tit_2">{{orderInfo.orginfo.address}}</text>
+                <view class="take_btn">待取书</view>
+            </view>
+        </view>
+        <view class="order_list">
+            <view class="order_list_img">
+                <image mode="widthFix" src="{{orderInfo.baginfo.cover}}" />
+            </view>
+            <text class="order_list_tit">{{orderInfo.baginfo.title}}</text>
+            <view class="order_list_label">
+                <view class="order_list_label_tit">{{orderInfo.baginfo.ageText}}</view>
+                <view class="order_list_label_tit" style="margin-left:10rpx">
+                    {{orderInfo.baginfo.typeText}}
+                </view>
+                <view class="order_list_time">{{orderInfo.ymdhms0}}</view>
+            </view>
+        </view>
+        <view class="cancel_order" bindtap="deleteOrder" data-orderid="{{orderInfo.orderid}}">
+            取消订单
+        </view>
+        <view class="code_btn" data-orderid="{{orderInfo.orderid}}" bindtap="showOrderQrcode">
+            点击出示此二维码
+        </view>
+    </view>
+    <!-- 订单内容 -->
+    <view class="order_list_box" wx:elif="{{orderInfo.status==OrderStatus.borrowing}}">
+        <view class="nav_box">
+            <view class="nav_logo">
+                <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
+            </view>
+            <view class="nav_add_li">
+                <text class="nav_add_tit_1">{{orderInfo.orginfo.name}}</text>
+                <text class="nav_add_tit_2">{{orderInfo.orginfo.address}}</text>
+                <view>
+                    <view class="take_btn">租借中</view>
+                </view>
+            </view>
+        </view>
+        <view class="order_list">
+            <view class="order_list_img">
+                <image mode="widthFix" src="{{orderInfo.baginfo.cover}}" />
+            </view>
+            <text class="order_list_tit">{{orderInfo.baginfo.title}}</text>
+            <view class="order_list_label">
+                <view class="order_list_label_tit" wx:for="{{orderInfo.baginfo.tags}}" wx:key="tagIndex" wx:for-item="tagName">
+                    {{tagName}}
+                </view>
+                <view class="order_list_time">{{orderInfo.startdate}}</view>
+                <view class="order_list_time"></view>
+            </view>
+        </view>
+        <view class="return_book" bindtap="returnBook" data-orgid="{{orderInfo.orgid}}">去还书</view>
+        <view class="code_btn" data-orderid="{{orderInfo.orderid}}" bindtap="showOrderQrcode">
+            点击出示此二维码
+        </view>
+    </view>
+    <!-- 订单二维码弹窗 -->
+    <view class="modal" hidden="{{qrcodeModal}}">
+        <view class="modal_bg"></view>
+        <view class="bottom_modal" animation="{{animationData}}">
+            <view class="modal_cont_nav">
+                <text class="modal_cont_nav_tit">订单二维码</text>
+                <image bindtap="hideQrcodeModal" class="modal_exit_icon" mode="widthFix" src="/image/exit_icon.png" />
+            </view>
+            <canvas canvas-id="canvas-qrcode" style="width:320rpx; height:320rpx;margin:30rpx auto; "></canvas>
+            <view class="order_number">{{orderInfo.orderid}}</view>
+        </view>
+    </view>
+</view>
+<!-- 空白区 -->
+<view class="default_blank" style="{{defaultBlank?'display:none':'display:block'}}">
+    <view class="default_blank_title">暂无订单</view>
+</view>
+<!-- 猜你喜欢 -->
+<view class="guess_like">
+    <view class="guess_like_title">
+        <view class="guess_like_line_left"></view>
+        <text>猜你喜欢</text>
+        <view class="guess_like_line_right"></view>
+    </view>
+    <view class="guess_like_list" wx:for="{{guessBookbagList}}" wx:key="bookbagIndex" wx:for-item="bookbagInfo" data-orgid="{{bookbagInfo.orgid}}" data-bagid="{{bookbagInfo.bagid}}" bindtap="showBookbagInfo">
+        <image mode="aspectFill" src="{{bookbagInfo.info.cover}}" />
+        <view class="guess_like_list_tit">{{bookbagInfo.info.title}}</view>
+        <view class="guess_like_list_label">{{bookbagInfo.ageText}}</view>
+        <view class="guess_like_list_label">{{bookbagInfo.typeText}}</view>
+        <view class="guess_like_list_add">
+            <image mode="widthFix" src="/image/add_icon.png" />
+            <text>{{bookbagInfo.countyName}} {{bookbagInfo.townName}}</text>
+        </view>
+    </view>
 </view>

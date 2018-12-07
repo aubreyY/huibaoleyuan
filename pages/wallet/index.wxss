@@ -1,59 +1,207 @@
 /* 押金 */
-.deposit {
-    width: 100%;
-    height: 250rpx;
-    background: #ffffff;
-    margin-top: 20rpx;
-}
-
 .deposit_content {
     width: 100%;
-    height: 150rpx;
+    height: 629rpx;
+    background: #ffffff;
+    margin-top: 15rpx;
+}
+
+.my_deposit_tit {
+    width: 100%;
+    height: 40rpx;
+    font-size: 36rpx;
+    color: #252525;
+    margin: 0 auto;
+    padding-top: 130rpx;
+    text-align: center;
+}
+
+.my_deposit {
+    width: 270rpx;
+    height: 60rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+    color: #252525;
+    margin: 0 auto;
+    margin-top: 48rpx;
+    text-align: center;
+}
+
+.deposit_btn {
+    width: 93%;
+    height: 80rpx;
+    background: #3EDD8D;
+    border-radius: 40rpx;
+    margin: 0 auto;
+    margin-top: 85rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.deposit_mention {
+    width: 93%;
+    height: 76rpx;
+    border: 1rpx solid #999999;
+    border-radius: 40rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #999999;
+    line-height: 76rpx;
+    text-align: center;
+}
+
+.deposit_mention_tit {
+    height: 30rpx;
+    width: 100%;
+    font-size: 22rpx;
+    color: #999999;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    line-height: 30rpx;
+    text-align: center;
+}
+
+/* 交易记录 */
+.trading_title {
+    width: 100%;
+    height: 99rpx;
+    background: #fff;
+    border-bottom: 1rpx solid #f1f1f1;
+    font-size: 36rpx;
+    color: #252525;
+    line-height: 100rpx;
+    margin-top: 15rpx;
+}
+
+.trading_title text {
+    margin-left: 25rpx;
+}
+
+.trading_list {
+    width: 100%;
+    height: 129rpx;
+    background: #fff;
     border-bottom: 1rpx solid #f1f1f1;
 }
 
-.deposit_tit {
+.trading_list_tit {
+    width: 70%;
     font-size: 30rpx;
     color: #252525;
-    font-weight: bold;
     float: left;
-    margin-top: 62rpx;
+    margin-top: 30rpx;
     margin-left: 30rpx;
 }
 
-.deposit_num {
-    font-size: 42rpx;
-    color: #252525;
-    font-weight: bold;
-    float: right;
-    margin-right: 30rpx;
-    margin-top: 55rpx;
-}
-
-/* 交易记录or支付押金/提现 */
-.deal {
-    width: 100%;
-    height: 100rpx;
-}
-
-.deal_tit {
-    font-size: 24rpx;
+.trading_list_time {
+    width: 70%;
+    font-size: 20rpx;
     color: #999999;
     float: left;
+    margin-top: 10rpx;
     margin-left: 30rpx;
-    margin-top: 33rpx;
 }
 
-.deal_btn {
-    width: 160rpx;
-    height: 48rpx;
-    background: #3EDD8D;
-    border-radius: 30rpx;
+.trading_list_num {
+    font-size: 36rpx;
+    color: #252525;
+    font-weight: 500;
     float: right;
     margin-right: 35rpx;
-    margin-top: 33rpx;
-    font-size: 24rpx;
-    line-height: 48rpx;
+    position: relative;
+    bottom: 25rpx;
+}
+
+/* 支付弹窗*/
+.modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal_bg {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.bottom_modal {
+    position: absolute;
+    z-index: 10001;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 500rpx;
+    background-color: #fff;
+    transform: translateY(100%);
+}
+
+.modal_cont_nav {
+    width: 100%;
+    height: 100rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+
+.modal_cont_nav_tit {
+    font-size: 36rpx;
+    color: #252525;
+    float: left;
+    margin-left: 41%;
+    margin-top: 30rpx;
+}
+
+.modal_exit_icon {
+    width: 60rpx;
+    height: 60rpx;
+    float: right;
+    margin-right: 35rpx;
+    margin-top: 23rpx;
+}
+
+.modal_num {
+    width: 100%;
+    height: 100rpx;
+    font-size: 58rpx;
+    font-weight: bold;
+    color: #252525;
     text-align: center;
-    color: #ffffff;
+    line-height: 100rpx;
+    margin-top: 30rpx;
+}
+
+.modal_num_tit {
+    width: 100%;
+    height: 50rpx;
+    font-size: 24rpx;
+    color: #999999;
+    text-align: center;
+    line-height: 50rpx;
+    margin-top: 15rpx;
+}
+
+.modal_btn {
+    width: 690rpx;
+    height: 80rpx;
+    background: #3EDD8D;
+    border-radius: 40rpx;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    line-height: 80rpx;
 }

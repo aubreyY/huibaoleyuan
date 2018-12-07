@@ -1,70 +1,35 @@
 <!-- 搜索附近 -->
-<view class="nav_color"></view>
-<view class="search">
-    <text class="search_tit">北京</text>
-    <image mode="widthFix" class="search_x" src="/image/search_x.png" />
-    <view class="search_box">
-        <image mode="widthFix" class="search_s" src="/image/search_s.png" />
-        <input class="search_box_tit" placeholder="搜索附近网点" />
+<view class="near-header">
+    <view class="header-bg"></view>
+    <view class="header-location" bindtap="showCountyModel">
+        <view>
+            <text class="address_tit">{{cityInfo.name}} · {{countyInfo.name}}</text>
+            <image mode="widthFix" class="choose_icon" src="/image/search_x.png" />
+        </view>
+        <view class="{{chooseCountyModal?'choose_content_show':'choose_content_none'}}">
+            <view class="choose_list" wx:for="{{locationCountyList}}" wx:key="itemIndex" wx:for-item="countyInfo" data-countyid="{{countyInfo.id}}" bindtap="chooseCounty">
+                {{countyInfo.fullname}}
+            </view>
+        </view>
     </view>
 </view>
 <!-- 附近的网点 -->
-<view class="near_add" bindtap="my_map">
-    <text class="near_add_tit">租东东服务网点</text>
-    <view class="near_add_time">
-        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
-        <text class="near_add_time_tit">9:00 ~ 20:00</text>
-        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
-        <text class="near_add_time_num">500M</text>
-        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
-    </view>
-    <view class="near_add_icon">
-        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
-        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
-    </view>
-</view>
-
-<view class="near_add" bindtap="my_map">
-    <text class="near_add_tit">租东东服务网点</text>
-    <view class="near_add_time">
-        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
-        <text class="near_add_time_tit">9:00 ~ 20:00</text>
-        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
-        <text class="near_add_time_num">500M</text>
-        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
-    </view>
-    <view class="near_add_icon">
-        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
-        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
-    </view>
-</view>
-
-<view class="near_add" bindtap="my_map">
-    <text class="near_add_tit">租东东服务网点</text>
-    <view class="near_add_time">
-        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
-        <text class="near_add_time_tit">9:00 ~ 20:00</text>
-        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
-        <text class="near_add_time_num">500M</text>
-        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
-    </view>
-    <view class="near_add_icon">
-        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
-        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
-    </view>
-</view>
-
-<view class="near_add" bindtap="my_map">
-    <text class="near_add_tit">租东东服务网点</text>
-    <view class="near_add_time">
-        <image mode="widthFix" class="near_add_time_icon" src="/image/near_add_time_icon.png" />
-        <text class="near_add_time_tit">9:00 ~ 20:00</text>
-        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
-        <text class="near_add_time_num">500M</text>
-        <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
-    </view>
-    <view class="near_add_icon">
-        <image mode="widthFix" class="add_icon" src="/image/add_icon.png" />
-        <text class="near_add_icon_tit">朝阳区·望京摩托罗拉大厦</text>
+<view class="near-org-list">
+    <view class="org-item" wx:for="{{orgList}}" wx:key="orgIndex" wx:for-item="orgInfo" data-orgid="{{orgInfo.orgid}}" bindtap="showMap">
+        <view class="org-item-tit">{{orgInfo.name}}</view>
+        <view class="org-box">
+            <view class="org-row org-item-time">
+                <image mode="aspectFit" class="org-item-time-ico" src="/image/near_add_time_icon.png" />
+                <text class="org-item-time-txt">9:00 ~ 20:00</text>
+            </view>
+            <view class="org-row org-item-dis">
+                <!-- <image mode="aspectFit" class="org-item-dis-ico" src="/image/icon_x.png" /> -->
+                <text class="org-item-dis-txt">{{orgInfo.distance}} m</text>
+            </view>
+        </view>
+        <view class=" org-item-addr">
+            <image mode="aspectFit" class="org-item-addr-ico" src="/image/add_icon.png" />
+            <text class="org-item-addr-txt">{{orgInfo.address}}</text>
+        </view>
     </view>
 </view>

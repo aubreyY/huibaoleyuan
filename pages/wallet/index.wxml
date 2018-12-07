@@ -1,18 +1,32 @@
 <!-- 押金 -->
-<view class="deposit">
-    <view class="deposit_content">
-        <text class="deposit_tit">押金</text>
-        <!-- <text class="deposit_num">¥199.00</text> -->
-        <text class="deposit_num">¥0.00</text>
-    </view>
-    <!-- 交易记录or支付押金/提现 -->
-    <view class="deal" bindtap="prompt_hide">
-        <text class="deal_tit">交易记录</text>
-        <!-- <view class="deal_btn" bindtap="showModal">提现</view> -->
-        <view class="deal_btn" bindtap="showModal">支付押金</view>
-    </view>
+<view class="deposit_content">
+    <view class="my_deposit_tit">我的押金</view>
+    <view class="my_deposit">¥{{userDeposit}}</view>
+    <view class="deposit_btn" style="{{paymentButton?'display:block':'display:none'}}" bindtap="showModal">押金支付</view>
+     <view class="deposit_btn">已支付</view>
+    <view class="deposit_mention">押金提现</view>
+    <view class="deposit_mention_tit">提现须知：提现需人工审核，3~5个工作日到账！</view>
 </view>
-<!-- 彈窗 -->
-<view>
-    <modal class="my_modal">{{modalText}}</modal>
+<!-- 交易记录 -->
+<view class="trading_title">
+    <text>交易记录</text>
+</view>
+<!-- 交易列表 -->
+<view class="trading_list" wx:for="{{paymentList}}" wx:key="itemIndex" wx:for-item="itemInfo">
+    <text class="trading_list_tit">押金支付</text>
+    <text class="trading_list_time">{{itemInfo.ymdhms1}}</text>
+    <text class="trading_list_num">¥{{itemInfo.moneyNum}}</text>
+</view>
+<!-- 支付彈窗 -->
+<view class="modal" hidden="{{hideModal}}">
+    <view class="modal_bg"></view>
+    <view class="bottom_modal" animation="{{animationData}}">
+        <view class="modal_cont_nav">
+            <text class="modal_cont_nav_tit">支付押金</text>
+            <image bindtap="hideModal" class="modal_exit_icon" mode="widthFix" src="/image/exit_icon.png" />
+        </view>
+        <view class="modal_num">¥{{depositMoney}}</view>
+        <view class="modal_num_tit">一次性支付，随时可退</view>
+        <view bindtap="wxpay" class="modal_btn">微信支付</view>
+    </view>
 </view>

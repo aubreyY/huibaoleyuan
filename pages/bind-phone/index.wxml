@@ -1,0 +1,13 @@
+<view class="logo">
+    <image mode="widthFix" src="/image/logo.png" />
+</view>
+<view class="PhoneInput">
+    <input name="phone" placeholder="请输入手机号" placeholder-class="inputClass" bindinput="getPhoneValue" value="{{tel}}" />
+</view>
+<view class="PhoneMsgcode">
+    <input name="msgcode" placeholder="请输入验证码" placeholder-class="inputClass" bindinput="getCodeValue" value="{{masgcode}}" />
+    <button  class='msgcodeBtn' bindtap="getMsgcode" value="{{masgcode}}">{{msgcodeText}}</button >
+</view>
+<button class="submitBtn" style="{{tel?'background: #3EDD8D':'background:rgba(62, 221, 141, 0.3)'}}" bindtap="submitForm">
+    确定
+</button>

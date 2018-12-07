@@ -1,14 +1,14 @@
-/* 借阅记录 */
+/* 订单借阅记录 */
 .borrow_list{
     width: 100%;
-    height: 200rpx;
+    height: 475rpx;
     background: #fff;
     margin-top: 20rpx;
 }
 .borrow_time{
-    height: 90rpx;
+    height: 79rpx;
     border-bottom: 1rpx solid #f1f1f1;
-    line-height: 90rpx
+    line-height: 80rpx
 }
 .borrow_time_tit_1{
     font-size:24rpx;
@@ -23,8 +23,8 @@
     margin-right: 30rpx;
 }
 .borrow_book{
-    height: 109rpx;
-    line-height: 109rpx;
+    height: 80rpx;
+    line-height: 80rpx;
 }
 .borrow_time_tit_3{
     font-size: 30rpx;
@@ -32,4 +32,56 @@
     color: #252525;
     float: left;
     margin-left: 30rpx;
+}
+.borrow_address_cont{
+    height: 79rpx;
+    line-height: 80rpx;
+    border-top: 1rpx solid #f1f1f1;
+}
+.borrow_name{
+    font-size: 24rpx;
+    color: #999999;
+    float: left;
+    margin-left: 30rpx;
+}
+.borrow_address{
+    font-size: 24rpx;
+    color: #999999;
+    float: right;
+    margin-right: 30rpx;
+}
+.order_content{
+    height: 78rpx;
+    line-height: 80rpx;
+    border-top: 1rpx solid #f1f1f1;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+.order_num{
+    font-size: 24rpx;
+    color: #999999;
+    float: left;
+    margin-left: 30rpx;
+}
+.order_monmy{
+    font-size: 24rpx;
+    color: #999999;
+    float: right;
+    margin-right: 30rpx;
+}
+.order_lable_content{
+    height: 79rpx;
+    border-top: 1rpx solid #ffffff;
+}
+.order_lable{
+    width: 135rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #252525;
+    background: #f3f3f3;
+    border-radius: 40rpx;
+    margin-left: 25rpx;
+    margin-top: 11rpx;
+    float: left;
 }

@@ -8,12 +8,8 @@
         <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
     </view>
     <view class="nav_add_li">
-        <text class="nav_add_tit_1">租东东绘本服务网点</text>
-        <text class="nav_add_tit_2">朝阳区·望京摩托罗拉大厦</text>
-    </view>
-    <view class="nav_add_li">
-        <text class="nav_add_tit_3">500M</text>
-        <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
+        <text class="nav_add_tit_1">{{orgInfo.name}}</text>
+        <text class="nav_add_tit_2">{{orgInfo.address}}</text>
     </view>
 </view>
 <!-- 营业时间 -->
@@ -24,7 +20,7 @@
 <!-- 联系电话 -->
 <view class="phone_box">
     <text class="phone_title">联系电话</text>
-    <text class="phone_time">010-61233333</text>
+    <text class="phone_time">{{orgInfo.tel}}</text>
 </view>
 <!-- 地图导航Button -->
-<view class="navigation_btn" bindtap="my_map">导航去门店</view>
+<view class="navigation_btn" bindtap="mapNav" data-orgid="{{orgInfo.orgid}}">导航去门店</view>

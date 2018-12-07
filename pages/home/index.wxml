@@ -1,287 +1,58 @@
 <!-- 轮播图 -->
 <swiper class="banner-swiper" indicator-active-color='#6ba5f0' indicator-dots="{{bannerInfo.indicatorDots}}" indicator-color="{{bannerInfo.beforeColor}}" indicator-active-color="{{bannerInfo.afterColor}}" autoplay="{{bannerInfo.autoplay}}" vertical="{{bannerInfo.vertical}}" interval="{{bannerInfo.interval}}" circular="{{bannerInfo.circular}}">
-  <block wx:for="{{bannerInfo.imgUrls}}" wx:for-index="i" wx:for-item="item" wx:key="{{i}}">
+  <block wx:for="{{bannerList}}" wx:key="itemIndex" wx:for-item="itemInfo">
     <swiper-item>
-      <image class="swiper-item" src="{{item}}" />
+      <image class="swiper-item" src="{{itemInfo.imgurl}}" />
     </swiper-item>
   </block>
 </swiper>
-<!-- 服务网点导航 -->
-<view class="nav_box" bindtap="my_map">
-  <view class="nav_logo">
-    <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
-  </view>
-  <view class="nav_add_li">
-    <text class="nav_add_tit_1">租东东绘本服务网点</text>
-    <text class="nav_add_tit_2">朝阳区·望京摩托罗拉大厦</text>
-  </view>
-  <view class="nav_add_li">
-    <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
-    <text class="nav_add_tit_3">500M</text>
-    <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
-  </view>
-</view>
 <!-- 分类 -->
 <view class="classify_box">
-  <view class="classify_box_li" bindtap="my_lang">
-    <image mode="widthFix" class="classify_box_img" src="/image/classify_01.png" />
-    <text class="classify_box_title">语言发展</text>
-  </view>
-  <view class="classify_box_li" bindtap="my_mood">
-    <image mode="widthFix" class="classify_box_img" src="/image/classify_02.png" />
-    <text class="classify_box_title">情绪管理</text>
-  </view>
-  <view class="classify_box_li" bindtap="my_art">
-    <image mode="widthFix" class="classify_box_img" src="/image/classify_03.png" />
-    <text class="classify_box_title">艺术创想</text>
-  </view>
-  <view class="classify_box_li" bindtap="my_science">
-    <image mode="widthFix" class="classify_box_img" src="/image/classify_04.png" />
-    <text class="classify_box_title">科学认知</text>
+  <view class="classify_box_li" bindtap="showBookbagList" wx:for="{{bookbagTypeArray}}" wx:key="itemIndex" wx:for-index="itemIndex" wx:for-item="itemInfo" data-classifytypeid="{{itemInfo.itemid}}">
+    <image mode="widthFix" class="classify_box_img" src="{{bookbagTypeIconMap[itemInfo.itemid]}}" />
+    <text class="classify_box_title">{{itemInfo.name}}</text>
   </view>
 </view>
 <!-- 分类导航 -->
-<view class="{{navFixed?'classify_navbox':''}}">
-  <view class="classify_left">
-    <text class="{{fontColor1?'age_calss_col':'age_calss_show'}}">{{ageText}}</text>
-    <image bindtap="showitem1" class="age_icon" mode="widthFix" src="{{iconHide1?'/image/search_s_on.png':'/image/search_x.png'}}" />
+<view class="{{navFixed?'classify_navbox_show':'classify_navbox_none'}}">
+  <view class="classify_left" bindtap="showOptionBox" data-boxid="age">
+    <text class="{{navAgeShow?'age_calss_col':'age_calss_show'}}">{{navAgeText}}</text>
+    <image class="age_icon" mode="widthFix" src="{{navAgeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
     <view class="border_line"></view>
   </view>
-  <view class="classify_right">
-    <text class="{{fontColor2?'age_calss_col':'age_calss_show'}}">{{classText}}</text>
-    <image bindtap="showitem2" class="age_icon" mode="widthFix" src="{{iconHide2?'/image/search_s_on.png':'/image/search_x.png'}}" />
+  <view class="classify_right" bindtap="showOptionBox" data-boxid="type">
+    <text class="{{navTypeShow?'age_calss_col':'age_calss_show'}}">{{navTypeText}}</text>
+    <image class="age_icon" mode="widthFix" src="{{navTypeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
   </view>
-  <view class="{{open1?'display_show':'display_none'}}">
-    <view wx:for="{{btnList.btnArrey1}}" wx:key="key" wx:for-item="item" id="{{item}}" class="classify_btn_show" bindtap="hideitem1">
-      {{item}}
+  <view class="{{navAgeShow?'display_show':'display_none'}}">
+    <view wx:for="{{bookbagAgeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="age" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="age-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+      {{itemInfo.name}}
     </view>
+    <view class="classify_btn_show" data-itemname="年龄" data-itemid="0" data-boxid="age" id="type-0" bindtap="changeOption">全部</view>
   </view>
-  <view class="{{open2?'display_show':'display_none'}}">
-    <view wx:for="{{btnList.btnArrey2}}" wx:key="key" wx:for-item="item" id="{{item}}" class="classify_btn_show" bindtap="hideitem2">
-      {{item}}
+  <view class="{{navTypeShow?'display_show':'display_none'}}">
+    <view wx:for="{{bookbagTypeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="type" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="type-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+      {{itemInfo.name}}
     </view>
+    <view class="classify_btn_show" data-itemname="分类" data-itemid="0" data-boxid="type" id="type-0" bindtap="changeOption">全部</view>
   </view>
 </view>
 <!-- 图书列表 -->
 <view class="book_box">
-  <!-- 商品一 -->
-  <view class="book_list" bindtap="my_bag">
+  <view class="book_list" wx:for="{{bookbagList}}" wx:key="itemIndex" wx:for-item="itemInfo" data-orgid="{{itemInfo.orgid}}" data-bagid="{{itemInfo.bagid}}" data-age="{{itemInfo.age}}" data-type="{{itemInfo.type}}" bindtap="showBookbagInfo">
     <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
+      <image class="book_list_img" mode="widthFix" src="{{itemInfo.info.cover}}" />
     </view>
     <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
+      <text class="book_list_name_tit">{{itemInfo.info.title}}</text>
+      <text class="book_list_name_num">共{{itemInfo.info.bookNum}}本</text>
     </view>
     <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
+      <view class="book_list_btn_tit" wx:for="{{itemInfo.info.tags}}" wx:key="tagIndex" wx:for-item="tagName">{{tagName}}</view>
     </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品二 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品三 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品四 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品四 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品四 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品四 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品四 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品四 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
-    </view>
-  </view>
-  <!-- 商品四 -->
-  <view class="book_list" bindtap="my_bag">
-    <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="/image/book_list.png" />
-    </view>
-    <view class="book_list_name">
-      <text class="book_list_name_tit">安徒生童话系列包</text>
-      <text class="book_list_name_num">共10本</text>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">安徒生童话</view>
-    </view>
-    <view class="book_list_btn">
-      <view class="book_list_btn_tit">安徒生童话</view>
-      <view class="book_list_btn_tit">查看更多</view>
+    <view class="book_list_add">
+      <image mode="widthFix" src="/image/add_icon.png" />
+      <view class="book_list_add_tit">{{itemInfo.countyName}} {{itemInfo.townName}}</view>
     </view>
   </view>
 </view>

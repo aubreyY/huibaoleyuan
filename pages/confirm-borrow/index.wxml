@@ -8,8 +8,8 @@
             <image class="nav_logo_img" mode="widthFix" src="/image/logo.png" />
         </view>
         <view class="nav_add_li">
-            <text class="nav_add_tit_1">租东东绘本服务网点</text>
-            <text class="nav_add_tit_2">朝阳区·望京摩托罗拉大厦</text>
+            <text class="nav_add_tit_1">{{orgInfo.name}}</text>
+            <text class="nav_add_tit_2">{{orgInfo.address}}</text>
         </view>
         <view class="nav_add_li">
             <image mode="widthFix" class="icon_x" src="/image/icon_x.png" />
@@ -27,10 +27,9 @@
 <view class="borrow_text">
     <view class="borrow_text_cont">
         <text class="borrow_text_left">借阅须知</text>
-        <view class="borrow_text_right">
-            <image mode="widthFix" src="/image/text_r.png" />
-            <!-- <image mode="widthFix" src="/image/text_r_on.png" /> -->
-            <text>同意《借阅条款》</text>
+        <view class="borrow_text_right" bindtap="changIcon">
+            <image mode="widthFix" src="{{agreedIcon?'/image/text_r_on.png':'/image/text_r.png'}}" />
+            <text style="{{agreedIcon?'color:#3edd8d':'color:#999999'}}">同意《借阅条款》</text>
         </view>
     </view>
     <view class="borrow_font_cont">
@@ -40,4 +39,4 @@
     </view>
 </view>
 <!-- 免费借阅 -->
-<view class="borrow_button">免费借阅</view>
+<view class="borrow_button" bindtap="confirmBorrow">免费借阅</view>

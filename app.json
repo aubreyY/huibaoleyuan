@@ -1,13 +1,10 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/language-class/index",
-    "pages/mood-class/index",
-    "pages/art-class/index",
-    "pages/science-class/index",
-    "pages/school-bag/index",
+    "pages/bookbag-list/index",
+    "pages/bookbag/index",
     "pages/confirm-borrow/index",
-    "pages/book-details/index",
+    "pages/book-detail/index",
     "pages/near/index",
     "pages/map/map",
     "pages/order/index",
@@ -17,8 +14,8 @@
     "pages/wallet/index",
     "pages/borrow-guide/index",
     "pages/about-us/index",
-    "pages/settings/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/bind-phone/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

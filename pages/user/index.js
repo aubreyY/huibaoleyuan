@@ -11,45 +11,54 @@ Page({
       wallet: "我的钱包",
       borrowGuide: "借阅指南",
       userAbout: "关于我们",
-      userTitle: "已经借阅3次啦!",
-      registered:"点击登录/注册"
+      // userTitle: "已经借阅3次啦!",
+      registered: "点击登录/注册"
     },
   },
-  onLoad() {
-    var that = this;
-    wx.getUserInfo({
-      success: function (res) {
+  onShow() {
+    // 用户信息
+    $api.user.info().then(data => {
+      if (data.errcode === 0) {
         var avatarUrl = 'userInfo.avatarUrl';
         var nickName = 'userInfo.nickName';
-        that.setData({
-          [avatarUrl]: res.userInfo.avatarUrl,
-          [nickName]: res.userInfo.nickName
+        this.setData({
+          [avatarUrl]: data.data.avatar,
+          [nickName]: data.data.nickname
         })
+        console.log(data.data)
+      } else {
+        console.log(data)
       }
     })
   },
   //处理页面跳转
-  my_login: function () {
+  userLogin: function () {
     wx.navigateTo({
       url: '../login/index'
     })
   },
-  my_wallet: function () {
-    wx.navigateTo({
-      url: '../wallet/index'
-    })
+  userWallet: function () {
+    if (!app.isLogined()) {
+      wx.navigateTo({
+        url: '../login/index'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../wallet/index'
+      })
+    }
   },
-  my_guide: function () {
+  borrowGuide: function () {
     wx.navigateTo({
       url: '../borrow-guide/index'
     })
   },
-  my_about: function () {
+  about: function () {
     wx.navigateTo({
       url: '../about-us/index'
     })
   },
-  my_settings: function () {
+  userSettings: function () {
     wx.navigateTo({
       url: '../settings/index'
     })

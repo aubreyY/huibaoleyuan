@@ -1,42 +1,42 @@
 <!-- 头部背景 -->
 <view class="user_head_color">
   <image mode="widthFix" class="user_head_bg" src="/image/user_head.png" />
-  <view bindtap="my_settings" class="user_set">
+  <!-- <view bindtap="my_settings" class="user_set">
     <image mode="widthFix" src="/image/user_set.png" />
-  </view>
+  </view> -->
 </view>
 <!-- 头像信息 -->
 <view class="user_nav">
   <view class="user_nav_img">
     <image mode="widthFix" wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" />
-    <image mode="widthFix" wx:else src="/image/userhead.png" />
+    <image mode="widthFix" wx:else src="/image/default_headimg.png" />
   </view>
   <view class="user_nav_name">
     <text wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</text>
     <text wx:else=""></text>
   </view>
   <view wx:if="{{userInfo.nickName}}" class="user_nav_tit_1">
-    <text>{{userInfo.userTitle}}</text>
+    <!-- <text>{{userInfo.userTitle}}</text> -->
   </view>
-  <view wx:else="" class="user_nav_tit_2" bindtap="my_login">
+  <view wx:else="" class="user_nav_tit_2" bindtap="userLogin">
     <text>{{userInfo.registered}}</text>
   </view>
 </view>
 <view class="user_content">
   <!-- 钱包or借阅 -->
-  <view class="user_wallet" bindtap="my_wallet">
+  <view class="user_wallet" bindtap="userWallet">
     <image mode="widthFix" class="user_wallet_icon" src="/image/wallet_icon.png" />
     <text class="user_wallet_tit">{{userInfo.wallet}}</text>
     <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
   </view>
-  <view class="borrow_guide" bindtap="my_guide">
+  <view class="borrow_guide" bindtap="borrowGuide">
     <image mode="widthFix" class="user_wallet_icon" src="/image/borrow_icon.png" />
     <text class="user_wallet_tit">{{userInfo.borrowGuide}}</text>
     <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
   </view>
 </view>
 <!-- 关于我们 -->
-<view class="user_about" bindtap="my_about">
+<view class="user_about" bindtap="about">
   <image mode="widthFix" class="user_about_icon" src="/image/about_icon.png" />
   <text class="user_about_tit">{{userInfo.userAbout}}</text>
   <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />

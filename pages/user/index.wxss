@@ -58,7 +58,7 @@
 .user_nav_tit_1 {
   width: 200rpx;
   height: 40rpx;
-  border: 1rpx solid #f1f1f1;
+  /* border: 1rpx solid #f1f1f1; */
   border-radius: 30rpx;
   margin: 0 auto;
   position: relative;

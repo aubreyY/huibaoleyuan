@@ -8,72 +8,6 @@
   height: 375rpx;
 }
 
-/* 网点导航 */
-.nav_box {
-  display: flex;
-  width: 750rpx;
-  background: #fff;
-  margin: auto;
-  margin-top: 15rpx;
-  height: 120rpx;
-  align-items: center;
-}
-
-.nav_logo {
-  width: 70rpx;
-  height: 70rpx;
-  margin-left: 30rpx;
-}
-
-.nav_logo_img {
-  width: 70rpx;
-  height: 70rpx;
-}
-
-.nav_add_li {
-  flex: 1;
-  margin-left: 20rpx;
-}
-
-.nav_add_tit_1 {
-  font-size: 30rpx;
-  font-weight: 500;
-  color: #252525;
-  margin-top: 22rpx;
-  float: left;
-}
-
-.nav_add_tit_2 {
-  font-size: 24rpx;
-  color: #999999;
-  margin-top: 20rpx;
-  margin-bottom: 27rpx;
-  float: left;
-}
-
-.nav_add_tit_3 {
-  font-size: 24rpx;
-  color: #666666;
-  float: left;
-  margin-top: 12rpx;
-}
-
-.icon_x {
-  width: 20rpx;
-  height: 20rpx;
-  float: left;
-  margin-top: 20rpx;
-  margin-left: 110rpx;
-}
-
-.icon_d {
-  width: 35rpx;
-  height: 35rpx;
-  float: left;
-  margin-top: 12rpx;
-  margin-left: 45rpx;
-}
-
 /* 分类 */
 .classify_box {
   width: 100%;
@@ -81,6 +15,8 @@
   background: #fff;
   margin-top: 15rpx;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .classify_box_li {
@@ -90,26 +26,35 @@
 .classify_box_img {
   width: 70rpx;
   height: 70rpx;
-  float: left;
-  margin-left: 58rpx;
-  margin-top: 35rpx;
+  margin-left: 35rpx;
+  margin-top: 40rpx;
 }
 
 .classify_box_title {
+  width: 100rpx;
+  height: 40rpx;
   font-size: 24rpx;
   font-weight: 500;
   color: #252525;
   float: left;
-  margin-left: 45rpx;
-  margin-top: 25rpx;
+  margin-left: 25rpx;
 }
 
 /* 分类导航or吸顶 */
-.classify_navbox {
+.classify_navbox_show {
   width: 100%;
   height: 90rpx;
   background: #fff;
   position: fixed;
+  top: -15rpx;
+  float: left;
+}
+
+.classify_navbox_none {
+  width: 100%;
+  height: 90rpx;
+  background: #fff;
+  position: relative;
   top: -15rpx;
   float: left;
 }
@@ -134,6 +79,7 @@
   margin-left: 110rpx;
   text-align: center;
 }
+
 .age_calss_col {
   width: 130rpx;
   font-size: 30rpx;
@@ -150,7 +96,8 @@
   margin-top: 15rpx;
   margin-left: 20rpx;
 }
-.border_line{
+
+.border_line {
   width: 1rpx;
   height: 45rpx;
   float: left;
@@ -160,6 +107,7 @@
   top: 23rpx;
   z-index: 9999;
 }
+
 .classify_right {
   width: 49.7%;
   height: 88rpx;
@@ -175,13 +123,18 @@
 .display_show {
   width: 100%;
   height: 190rpx;
-  position: relative;
-  float: left;
+  position: absolute;
   background: #fff;
-  top: 15rpx;
+  top: 106rpx;
 }
 
 .display_none {
+  width: 100%;
+  height: 190rpx;
+  position: absolute;
+  float: left;
+  background: #fff;
+  top: 15rpx;
   display: none;
 }
 
@@ -202,14 +155,14 @@
 /* 图书列表 */
 .book_box {
   width: 100%;
-  height: 2900rpx;
+  height: 1500px;
   background: #fff;
   margin-top: 105rpx;
 }
 
 .book_list {
   width: 347rpx;
-  height: 542rpx;
+  height: 552rpx;
   background: #fff;
   border-radius: 12rpx;
   box-shadow: 0rpx 5rpx 5rpx rgba(54, 72, 64, 0.2);
@@ -231,6 +184,7 @@
   height: 240rpx;
   margin-left: 50rpx;
   margin-top: 25rpx;
+  border-radius: 12rpx;
 }
 
 .book_list_name {
@@ -240,6 +194,7 @@
 }
 
 .book_list_name_tit {
+  width: 240rpx;
   font-size: 24rpx;
   font-weight: 500;
   color: #252525;
@@ -257,13 +212,12 @@
 }
 
 .book_list_btn {
-  width: 100%;
-  height: 50rpx;
-  margin-top: 4rpx;
+  width: 350rpx;
+  height: 130rpx;
 }
 
 .book_list_btn_tit {
-  width: 140rpx;
+  width: 130rpx;
   height: 30rpx;
   background: #f3f3f3;
   border-radius: 20rpx;
@@ -272,8 +226,33 @@
   color: #999999;
   line-height: 30rpx;
   text-align: center;
-  margin-left: 18rpx;
+  margin-left: 20rpx;
   margin-top: 10rpx;
+}
+
+.book_list_add {
+  width: 100%;
+  border-top: 1rpx solid #f1f1f1;
+}
+
+.book_list_add image {
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+.book_list_add_tit {
+  width: 275rpx;
+  font-size: 20rpx;
+  color: #999999;
+  float: left;
+  margin-left: 15rpx;
+  margin-top: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 底部 */

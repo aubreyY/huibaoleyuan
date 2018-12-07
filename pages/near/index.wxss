@@ -1,19 +1,27 @@
 /* 搜索附近 */
-.nav_color {
+.near-header {
+  position: relative;
+  height: 180rpx;
+}
+
+.header-bg {
   width: 100%;
   height: 90rpx;
   background: #3edd8d;
 }
-.search {
+
+.header-location {
   width: 93%;
   height: 120rpx;
   background: #fff;
   border-radius: 10rpx;
   margin: 0 auto;
-  position: relative;
-  top: -60rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 3%;
 }
-.search_tit {
+
+.address_tit {
   font-size: 30rpx;
   font-weight: 500;
   color: #252525;
@@ -21,107 +29,127 @@
   margin-left: 20rpx;
   float: left;
 }
-.search_x {
-  width: 60rpx;
-  height: 60rpx;
+
+.choose_icon {
+  width: 40rpx;
+  height: 40rpx;
   float: left;
-  margin-top: 30rpx;
-  margin-left: 10rpx;
-}
-.search_box {
-  width: 510rpx;
-  height: 70rpx;
-  background: #f3f3f3;
-  float: right;
-  margin-top: 25rpx;
-  margin-right: 30rpx;
-  border-radius: 35rpx;
-}
-.search_s {
-  width: 35rpx;
-  height: 35rpx;
-  float: left;
-  margin-top: 20rpx;
-  margin-left: 25rpx;
-}
-.search_box_tit {
-  font-size: 20rpx;
-  color: #999;
-  float: left;
-  margin-top: 15rpx;
+  margin-top: 45rpx;
   margin-left: 20rpx;
 }
+
+.choose_content_show {
+  width: 100%;
+  height: 500rpx;
+  position: absolute;
+  background: #fff;
+  border-radius: 10rpx;
+  top: 130rpx;
+  z-index: 9999;
+}
+
+.choose_content_none {
+  width: 100%;
+  height: 500rpx;
+  position: absolute;
+  background: #fff;
+  border-radius: 10rpx;
+  top: 130rpx;
+  z-index: 9999;
+  display: none;
+}
+
+.choose_list {
+  width: 120rpx;
+  height: 50rpx;
+  border: 1rpx solid #f1f1f1;
+  float: left;
+  margin-left: 14rpx;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #252525;
+  line-height: 50rpx;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.near-org-list {
+  width: 94%;
+  margin: 0 auto;
+}
+
 /* 附近网点 */
-.near_add {
-  width: 93%;
+.org-item {
+  width: 100%;
   height: 180rpx;
   background: #fff;
   border-radius: 10rpx;
-  margin: 0 auto;
   position: relative;
-  top: -60rpx;
-  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
 }
-.near_add_tit {
+
+.org-item-tit {
   font-size: 30rpx;
   color: #252525;
   margin-left: 20rpx;
-  position: relative;
-  top: 10rpx;
-  float: left;
 }
-.near_add_time {
-  float: left;
-  margin-top: 8rpx;
+
+.org-row {
+  flex: 1;
 }
-.near_add_time_icon {
+
+.org-item-time-ico {
   width: 30rpx;
   height: 30rpx;
   margin-left: 20rpx;
   margin-top: 25rpx;
-  float: left;
 }
-.near_add_time_tit {
+
+.org-item-time-txt {
   font-size: 24rpx;
   color: #999;
   margin-left: 10rpx;
   margin-top: 23rpx;
-  float: left;
+
 }
-.icon_x {
-  width: 20rpx;
-  height: 20rpx;
-  float: left;
-  margin-left: 320rpx;
-  margin-top: 28rpx;
+
+.org-box {
+  display: flex;
 }
-.near_add_time_num {
+
+.org-item-dis {
   font-size: 24rpx;
   color: #999;
-  float: left;
   margin-top: 20rpx;
+  text-align: right;
+  margin-right: 25rpx;
 }
-.icon_d {
+
+.org-item-dis-ico {
   width: 35rpx;
   height: 35rpx;
-  float: left;
-  margin-top: 20rpx;
-  margin-left: 30rpx;
+  vertical-align: middle;
 }
-.near_add_icon {
-  float: left;
+
+.org-item-addr {
+  font-size: 24rpx;
+  color: #999;
 }
-.add_icon {
+
+.org-item-addr-ico {
   width: 35rpx;
   height: 35rpx;
-  float: left;
   margin-top: 27rpx;
   margin-left: 20rpx;
 }
-.near_add_icon_tit {
+
+.org-item-addr-txt {
   font-size: 24rpx;
   color: #999;
   margin-left: 10rpx;
   margin-top: 27rpx;
-  float: left;
 }

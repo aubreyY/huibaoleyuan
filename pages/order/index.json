@@ -1,9 +1,5 @@
 {
     "component": true,
-    "usingComponents": {
-        "loading": "/components/loading/loading",
-        "slide-tab": "/components/slideTab/slideTab"
-    },
-    "enablePullDownRefresh": false,
-    "navigationBarTitleText":"订单"
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "订单"
 }

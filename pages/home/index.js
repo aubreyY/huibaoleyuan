@@ -1,18 +1,14 @@
-var app = getApp();
 import $api from "../../base/api";
-
 import {
-  shareConfig
+  shareConfig,
+  IMG_URL,
 } from "../../base/config";
+var app = getApp();
 Page({
   data: {
+    bannerList: [],
     // 轮播属性
     bannerInfo: {
-      imgUrls: [
-        "../../image/banner_img.png",
-        "../../image/banner_img.png",
-        "../../image/banner_img.png"
-      ],
       indicatorDots: true,
       autoplay: true,
       vertical: false,
@@ -22,103 +18,176 @@ Page({
       afterColor: "#3EDD8D"
     },
     // 导航属性
-    navContent: {
-      open1: false,
-      open2: false,
-      iconHide1: false,
-      iconHide2: false,
-      fontColor1: false,
-      fontColor2: false,
-      navFixed: false
-    },
-    ageText: '年龄',
-    classText: '分类',
+    navAgeText: '年龄',
+    navTypeText: '分类',
+    navAgeValue: 0,
+    navTypeValue: 0,
+    navAgeShow: false,
+    navTypeShow: false,
+    navFixed: false,
+
+    bookbagTypeIconMap: app.globalData.configDict.bookbag_type_icon,
+    classifyAgeArray: app.globalData.configDict.bookbag_age,
     // btn标签
-    btnList: {
-      btnArrey1: ['1~2岁', '2~3岁', '3~5岁', '5~6岁', '8岁以上', '全部'],
-      btnArrey2: ['艺术创想', '儿童启蒙', '历史文学', '自我保护', '情感认知', '全部']
-    }
+    bookbagAgeArray: app.globalData.configInfo.bookbag_age.items,
+    bookbagTypeArray: app.globalData.configInfo.bookbag_type.items,
+    // 数据页
+    pagenum: 1,
+    // 列表内容
+    bookbagList: [],
   },
   onLoad() {
-    $api.bookbag.list(10).then(data => {
+    var _this = this;
+    // 轮播图
+    $api.common.banner_list().then(data => {
       if (data.errcode === 0) {
-        console.log(data.data)
+        var bannerList = data.data;
+        bannerList.forEach(item => {
+          item.imgurl = IMG_URL + item.imgurl;
+        });
+        this.setData({
+          bannerList: bannerList
+        })
       } else {
-        console.log(data.errinfo)
+        console.log(data)
+      }
+    })
+    // 获取当前定位的经纬度
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res1) {
+        // 使用腾讯定位服务逆地理解析经纬度
+        app.globalData.map.reverseGeocoder({
+          location: res1,
+          success: function (res2) {
+            var userLocation = res2.result.ad_info;
+            var county = userLocation.adcode;
+            userLocation.county = county;
+            userLocation.city = county.substring(0, 4);
+            userLocation.province = county.substring(0, 2);
+            var areaDict = app.globalData.areaDict[userLocation.province];
+            if (!areaDict) {
+              $api.common.area_dict(userLocation.province).then(data => {
+                if (data.errcode === 0) {
+                  areaDict = data.data;
+                  app.setAreaDict(userLocation.province, areaDict);
+                  if (_this.data.bookbagList.length > 0) {
+                    var bookbagList = _this.data.bookbagList;
+                    bookbagList.forEach(item => {
+                      item.countyName = areaDict[item.county];
+                      item.townName = areaDict[item.town];
+                    });
+                    _this.setData({
+                      bookbagList: bookbagList
+                    })
+                  }
+                }
+              });
+            }
+            app.saveUserLocation(userLocation);
+            $api.org.area_bookbag_list("", county, "", _this.data.navAgeValue, _this.data.navTypeValue, "").then(data => {
+              if (data.errcode === 0) {
+                var bookbagList = data.data.data;
+                bookbagList.forEach(item => {
+                  item.info.tags = JSON.parse(item.info.tags);
+                  item.info.bookids = JSON.parse(item.info.bookids);
+                  item.info.bookNum = item.info.bookids.length;
+                  item.info.cover = IMG_URL + item.info.cover;
+                  if (areaDict) {
+                    item.countyName = areaDict[item.county];
+                    item.townName = areaDict[item.town];
+                  } else {
+                    item.countyName = '';
+                    item.townName = '';
+                  }
+                });
+                _this.setData({
+                  bookbagList: bookbagList
+                })
+              } else {
+                console.log(data)
+              }
+            })
+          },
+          fail: function (res2) {
+            console.log(res2);
+          },
+        });
       }
     })
   },
-  //处理页面跳转
-  my_bag: function () {
-    wx.navigateTo({
-      url: '../school-bag/index'
-    })
-  },
-  my_map: function () {
-    wx.navigateTo({
-      url: '../map/map'
-    })
-  },
-  my_lang: function () {
-    wx.navigateTo({
-      url: '../language-class/index'
-    })
-  },
-  my_mood: function () {
-    wx.navigateTo({
-      url: '../mood-class/index'
-    })
-  },
-  my_art: function () {
-    wx.navigateTo({
-      url: '../art-class/index'
-    })
-  },
-  my_science: function () {
-    wx.navigateTo({
-      url: '../science-class/index'
-    })
-  },
   // 下拉菜单
-  showitem1: function () {
+  showOptionBox: function (event) {
+    var boxid = event.currentTarget.dataset.boxid;
+    var ageShow = boxid == 'age' ? true : false;
+    var typeShow = boxid == 'type' ? true : false;
     this.setData({
-      open1: !this.data.open1,
-      open2: false,
-      iconHide1: !this.data.iconHide1,
-      iconHide2: false,
-      fontColor1: !this.data.fontColor1,
-      fontColor2: false
+      navAgeShow: ageShow,
+      navTypeShow: typeShow
     })
   },
-  hideitem1: function (event) {
-    var id = event.currentTarget.id;
-    console.log(id)
-    this.setData({
-      open1: false,
-      iconHide1: false,
-      ageText: id,
-      fontColor1: true
-    })
+  changeOption: function (event) {
+    var boxid = event.currentTarget.dataset.boxid;
+    var itemid = event.currentTarget.dataset.itemid;
+    var name = event.currentTarget.dataset.itemname;
+    var updateFlag = true;
+    if (boxid == 'age') {
+      if (!this.data.navAgeShow) {
+        return;
+      }
+      console.log(this.data.navAgeValue, itemid)
+      if (this.data.navAgeValue == itemid) {
+        updateFlag = false;
+      }
+      this.setData({
+        navAgeShow: false,
+        navAgeText: name,
+        navAgeValue: itemid
+      });
+    }
+    if (boxid == 'type') {
+      if (!this.data.navTypeShow) {
+        return;
+      }
+      console.log(this.data.navTypeValue, itemid)
+      if (this.data.navTypeValue == itemid) {
+        updateFlag = false;
+      }
+      this.setData({
+        navTypeShow: false,
+        navTypeText: name,
+        navTypeValue: itemid
+      });
+    }
+    if (updateFlag) {
+      var county = app.globalData.userLocation.adcode;
+      var province = county.substring(0, 2);
+      $api.org.area_bookbag_list("", county, "", this.data.navAgeValue, this.data.navTypeValue, "").then(data => {
+        if (data.errcode === 0) {
+          var bookbagList = data.data.data;
+          bookbagList.forEach(item => {
+            item.info.tags = JSON.parse(item.info.tags);
+            item.info.bookids = JSON.parse(item.info.bookids);
+            item.info.bookNum = item.info.bookids.length;
+            item.info.cover = IMG_URL + item.info.cover;
+            if (app.globalData.areaDict[province]) {
+              item.countyName = app.globalData.areaDict[item.county];
+              item.townName = app.globalData.areaDict[item.town];
+            } else {
+              item.countyName = '';
+              item.townName = '';
+            }
+          });
+          this.setData({
+            bookbagList: bookbagList
+          })
+        } else {
+          console.log(data)
+        }
+      })
+    }
   },
-  showitem2: function () {
-    this.setData({
-      open2: !this.data.open2,
-      open1: false,
-      iconHide2: !this.data.iconHide2,
-      iconHide1: false,
-      fontColor2: !this.data.fontColor2,
-      fontColor1: false
-    })
-  },
-  hideitem2: function (event) {
-    var id = event.currentTarget.id;
-    this.setData({
-      open2: false,
-      iconHide2: false,
-      classText: id,
-      fontColor2: true
-    })
-  },
+
   // 吸顶导航
   onPageScroll: function (e) {
     if (e.scrollTop >= 400 && !this.data.navFixed) {
@@ -130,5 +199,19 @@ Page({
         navFixed: false
       })
     }
-  }
+  },
+  //处理页面跳转
+  showBookbagInfo: function (event) {
+    var bagid = event.currentTarget.dataset.bagid;
+    var orgid = event.currentTarget.dataset.orgid;
+    wx.navigateTo({
+      url: '../bookbag/index?bagid=' + bagid + '&orgid=' + orgid
+    })
+  },
+  showBookbagList: function (event) {
+    var classifytypeid = event.currentTarget.dataset.classifytypeid;
+    wx.navigateTo({
+      url: '../bookbag-list/index?age=' + '&type=' + classifytypeid
+    })
+  },
 })

@@ -1,5 +1,4 @@
 {
-    "disableScroll": true,
     "enablePullDownRefresh": false,
     "navigationBarTitleText": "借阅记录" 
 }
