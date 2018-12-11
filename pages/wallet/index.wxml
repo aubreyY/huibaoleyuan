@@ -2,8 +2,8 @@
 <view class="deposit_content">
     <view class="my_deposit_tit">我的押金</view>
     <view class="my_deposit">¥{{userDeposit}}</view>
-    <view class="deposit_btn" style="{{paymentButton?'display:block':'display:none'}}" bindtap="showModal">押金支付</view>
-     <view class="deposit_btn">已支付</view>
+    <view wx:if="{{depositPaid}}" class="already-deposit">押金已支付</view>
+    <view class="deposit-payment" wx:else bindtap="showModal">押金支付</view>
     <view class="deposit_mention">押金提现</view>
     <view class="deposit_mention_tit">提现须知：提现需人工审核，3~5个工作日到账！</view>
 </view>
@@ -12,7 +12,7 @@
     <text>交易记录</text>
 </view>
 <!-- 交易列表 -->
-<view class="trading_list" wx:for="{{paymentList}}" wx:key="itemIndex" wx:for-item="itemInfo">
+<view class="trading_list clearfix" wx:for="{{paymentList}}" wx:key="itemIndex" wx:for-item="itemInfo">
     <text class="trading_list_tit">押金支付</text>
     <text class="trading_list_time">{{itemInfo.ymdhms1}}</text>
     <text class="trading_list_num">¥{{itemInfo.moneyNum}}</text>

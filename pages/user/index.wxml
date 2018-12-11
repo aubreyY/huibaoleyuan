@@ -6,38 +6,46 @@
   </view> -->
 </view>
 <!-- 头像信息 -->
-<view class="user_nav">
+<view class="user_nav" wx:if="{{isLogined}}">
   <view class="user_nav_img">
-    <image mode="widthFix" wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" />
-    <image mode="widthFix" wx:else src="/image/default_headimg.png" />
+    <image mode="widthFix" src="{{userInfo.avatar}}" />
   </view>
   <view class="user_nav_name">
-    <text wx:if="{{userInfo.nickName}}">{{userInfo.nickName}}</text>
-    <text wx:else=""></text>
+    <text>{{userInfo.nickname}}</text>
   </view>
-  <view wx:if="{{userInfo.nickName}}" class="user_nav_tit_1">
-    <!-- <text>{{userInfo.userTitle}}</text> -->
-  </view>
-  <view wx:else="" class="user_nav_tit_2" bindtap="userLogin">
-    <text>{{userInfo.registered}}</text>
+  <view class="user_nav_tit_1">
+    <view class="user_nav_phone" bindtap="bindPhone" wx:if="{{userInfo.tel==''}}">绑定手机号</view>
+    <view>{{userInfo.tel2}}</view>
   </view>
 </view>
+<view class="user_nav" wx:else>
+  <view class="user_nav_img">
+    <image mode="widthFix" src="/image/default_headimg.png" />
+  </view>
+  <view class="user_nav_name">
+    <text></text>
+  </view>
+  <view class="user_nav_tit_2" bindtap="userLogin">
+    <view>点击登录/注册</view>
+  </view>
+</view>
+
 <view class="user_content">
   <!-- 钱包or借阅 -->
   <view class="user_wallet" bindtap="userWallet">
     <image mode="widthFix" class="user_wallet_icon" src="/image/wallet_icon.png" />
-    <text class="user_wallet_tit">{{userInfo.wallet}}</text>
+    <text class="user_wallet_tit">我的钱包</text>
     <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
   </view>
   <view class="borrow_guide" bindtap="borrowGuide">
     <image mode="widthFix" class="user_wallet_icon" src="/image/borrow_icon.png" />
-    <text class="user_wallet_tit">{{userInfo.borrowGuide}}</text>
+    <text class="user_wallet_tit">借阅指南</text>
     <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
   </view>
 </view>
 <!-- 关于我们 -->
 <view class="user_about" bindtap="about">
   <image mode="widthFix" class="user_about_icon" src="/image/about_icon.png" />
-  <text class="user_about_tit">{{userInfo.userAbout}}</text>
+  <text class="user_about_tit">关于我们</text>
   <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
 </view>

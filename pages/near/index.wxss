@@ -38,6 +38,59 @@
   margin-left: 20rpx;
 }
 
+
+
+
+/* 选择服务网点 */
+.county-list-show {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  background: #fff;
+  border-radius: 10rpx;
+  top: 125rpx;
+  z-index: 99999;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.county-list-none {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  background: #fff;
+  border-radius: 10rpx;
+  top: 125rpx;
+  z-index: 99999;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: none;
+}
+
+.county-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160rpx;
+  height: 50rpx;
+  margin: 20rpx;
+  border: 1rpx solid #3EDD8D;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #252525;
+  line-height: 50rpx;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
 .choose_content_show {
   width: 100%;
   height: 500rpx;
@@ -112,9 +165,9 @@
 .org-item-time-txt {
   font-size: 24rpx;
   color: #999;
-  margin-left: 10rpx;
-  margin-top: 23rpx;
-
+  margin-left: 15rpx;
+  position: relative;
+  top: -4rpx;
 }
 
 .org-box {
@@ -143,13 +196,14 @@
 .org-item-addr-ico {
   width: 35rpx;
   height: 35rpx;
-  margin-top: 27rpx;
+  margin-top: 33rpx;
   margin-left: 20rpx;
 }
 
 .org-item-addr-txt {
   font-size: 24rpx;
   color: #999;
-  margin-left: 10rpx;
-  margin-top: 27rpx;
+  margin-left: 15rpx;
+  position: relative;
+  top: -5rpx;
 }

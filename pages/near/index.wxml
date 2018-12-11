@@ -6,8 +6,8 @@
             <text class="address_tit">{{cityInfo.name}} · {{countyInfo.name}}</text>
             <image mode="widthFix" class="choose_icon" src="/image/search_x.png" />
         </view>
-        <view class="{{chooseCountyModal?'choose_content_show':'choose_content_none'}}">
-            <view class="choose_list" wx:for="{{locationCountyList}}" wx:key="itemIndex" wx:for-item="countyInfo" data-countyid="{{countyInfo.id}}" bindtap="chooseCounty">
+        <view class="{{chooseCountyModal?'county-list-show':'county-list-none'}}">
+            <view class="county-item" wx:for="{{locationCountyList}}" wx:key="itemIndex" wx:for-item="countyInfo" data-countyid="{{countyInfo.id}}" bindtap="chooseCounty">
                 {{countyInfo.fullname}}
             </view>
         </view>

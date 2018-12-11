@@ -7,6 +7,7 @@ var app = getApp();
 Page({
   data: {
     bannerList: [],
+    winHeight: "",
     // 轮播属性
     bannerInfo: {
       indicatorDots: true,
@@ -205,7 +206,7 @@ Page({
     var bagid = event.currentTarget.dataset.bagid;
     var orgid = event.currentTarget.dataset.orgid;
     wx.navigateTo({
-      url: '../bookbag/index?bagid=' + bagid + '&orgid=' + orgid
+      url: '../bookbag-org/index?bagid=' + bagid + '&orgid=' + orgid
     })
   },
   showBookbagList: function (event) {
@@ -214,4 +215,19 @@ Page({
       url: '../bookbag-list/index?age=' + '&type=' + classifytypeid
     })
   },
+  showBannerDetail: function (event) {
+    var bannerid = event.currentTarget.dataset.bannerid;
+    var bannertype = event.currentTarget.dataset.bannertype;
+    var datas = event.currentTarget.dataset.datas;
+    if ("2" == bannertype) { //bookbag
+      wx.navigateTo({
+        url: '../bookbag/index?bagid=' + datas
+      })
+    } else { //pageurl
+      wx.navigateTo({
+        url: '../webview/index?url=' + datas
+      })
+    }
+
+  }
 })

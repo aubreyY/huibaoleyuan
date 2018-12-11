@@ -1,6 +1,7 @@
-page{
+page {
   height: 100%;
 }
+
 /* 借阅记录 */
 .borrow_box {
   width: 93%;
@@ -304,7 +305,8 @@ page{
   line-height: 48rpx;
   text-align: center;
 }
-.order_number{
+
+.order_number {
   width: 350rpx;
   height: 30rpx;
   margin: 0 auto;
@@ -313,6 +315,7 @@ page{
   text-align: center;
   line-height: 30rpx;
 }
+
 /* 订单二维码弹窗 */
 .modal {
   position: fixed;
@@ -366,8 +369,9 @@ page{
   margin-right: 35rpx;
   margin-top: 23rpx;
 }
+
 /* 空白区 */
-.default_blank{
+.default_blank {
   width: 100%;
   height: 300rpx;
   margin-top: 15rpx;
@@ -377,18 +381,21 @@ page{
   color: #999999;
   font-weight: 500;
 }
-.default_blank_title{
+
+.default_blank_title {
   margin: 0 auto;
 }
+
 /* 猜你喜欢 */
 .guess_like {
   width: 93%;
-  height: 100%;
+  height: auto;
   background: #fff;
   border-top-left-radius: 12rpx;
   border-top-right-radius: 12rpx;
   margin: 0 auto;
   margin-top: 15rpx;
+  padding-bottom: 20rpx;
 }
 
 .guess_like_title {
@@ -446,6 +453,11 @@ page{
   font-size: 20rpx;
   color: #252525;
   margin-left: 15rpx;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .guess_like_list_label {
@@ -470,20 +482,19 @@ page{
 }
 
 .guess_like_list_add image {
-  width: 30rpx;
-  height: 30rpx;
+  width: 35rpx;
+  height: 35rpx;
   float: left;
   margin-left: 10rpx;
   margin-top: 10rpx;
 }
 
 .guess_like_list_add text {
-  width: 165rpx;
   font-size: 20rpx;
   color: #999999;
   float: left;
-  margin-left: 5rpx;
-  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-top: 14rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

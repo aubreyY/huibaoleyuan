@@ -1,9 +1,10 @@
 /* 押金 */
 .deposit_content {
     width: 100%;
-    height: 629rpx;
+    height: auto;
     background: #ffffff;
     margin-top: 15rpx;
+    padding-bottom: 15rpx;
 }
 
 .my_deposit_tit {
@@ -12,7 +13,7 @@
     font-size: 36rpx;
     color: #252525;
     margin: 0 auto;
-    padding-top: 130rpx;
+    padding-top: 100rpx;
     text-align: center;
 }
 
@@ -27,7 +28,22 @@
     text-align: center;
 }
 
-.deposit_btn {
+.already-deposit {
+    width: 93%;
+    height: 80rpx;
+    background: #fff;
+    border: 1rpx solid #3EDD8D;
+    border-radius: 40rpx;
+    margin: 0 auto;
+    margin-top: 85rpx;
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #999999;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.deposit-payment {
     width: 93%;
     height: 80rpx;
     background: #3EDD8D;

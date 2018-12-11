@@ -6,41 +6,17 @@ import {
 } from "../../base/config";
 Page({
     data: {
-        bookbagInfo: {},
-        chooseAreaOrgModal: false,
-        cityInfo: {
-            id: '',
-            name: '',
-        },
-        countyInfo: {
-            id: '',
-            name: '',
-        },
-        orgList: []
+        bookbagInfo: {}
     },
     onLoad(options) {
-        var userLocation = app.globalData.userLocation;
-        var areaDict = app.globalData.areaDict[userLocation.province];
-        this.setData({
-            cityInfo: {
-                id: userLocation.city,
-                name: areaDict[userLocation.city],
-            },
-            countyInfo: {
-                id: userLocation.county,
-                name: areaDict[userLocation.county],
-            }
-        })
-        // 服务网点机构列表
-        this.getAreaOrgList();
         // 书包内容
-        $api.bookbag.info(options.bagid).then(data => {
+        $api.org.bookbag_info(options.orgid, options.bagid).then(data => {
             if (data.errcode === 0) {
                 var bookbagInfo = data.data;
-                bookbagInfo.cover = IMG_URL + bookbagInfo.cover;
-                bookbagInfo.imglist = JSON.parse(bookbagInfo.imglist);
-                bookbagInfo.imglist.forEach((imgurl, index) => {
-                    bookbagInfo.imglist[index] = IMG_URL + imgurl;
+                bookbagInfo.info.cover = IMG_URL + bookbagInfo.info.cover;
+                bookbagInfo.info.imglist = JSON.parse(bookbagInfo.info.imglist);
+                bookbagInfo.info.imglist.forEach((imgurl, index) => {
+                    bookbagInfo.info.imglist[index] = IMG_URL + imgurl;
                 });
 
                 bookbagInfo.books.forEach(item => {
@@ -56,22 +32,6 @@ Page({
             }
         })
     },
-    getAreaOrgList: function () {
-        $api.org.area_list(this.data.cityInfo.id, this.data.countyInfo.id, "").then(data => {
-            if (data.errcode === 0) {
-                this.setData({
-                    orgList: data.data
-                })
-            } else {
-                console.log(data)
-            }
-        })
-    },
-    showAreaOrgModel: function (event) {
-        this.setData({
-            chooseAreaOrgModal: !this.data.chooseAreaOrgModal,
-        })
-    },
     //处理页面跳转
     showBookInfo: function (event) {
         var bookid = event.currentTarget.id;
@@ -80,8 +40,6 @@ Page({
         })
     },
     confirmBorrow: function (event) {
-        this.showAreaOrgModel();
-        var orgid = event.currentTarget.dataset.orgid;
         if (!app.isLogined()) {
             wx.navigateTo({
                 url: '../login/index?require_tel=true'
@@ -105,7 +63,7 @@ Page({
             })
         } else {
             wx.navigateTo({
-                url: '../confirm-borrow/index?orgid=' + orgid + "&bagid=" + this.data.bookbagInfo.bagid
+                url: '../confirm-borrow/index?orgid=' + this.data.bookbagInfo.orgid + "&bagid=" + this.data.bookbagInfo.bagid
             })
         }
     }

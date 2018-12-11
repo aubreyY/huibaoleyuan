@@ -1,13 +1,13 @@
 <!-- 书包详情 -->
 <view class="bag_conent">
-    <image class="bag_content_img" mode="aspectFill" src="{{bookbagInfo.imglist[0]}}" />
+    <image class="bag_content_img" mode="aspectFill" src="{{bookbagInfo.info.imglist[0]}}" />
 </view>
 <view class="bag_title_box">
     <view class="bag_title">
-        <text class="bag_font_1">{{bookbagInfo.title}}</text>
+        <text class="bag_font_1">{{bookbagInfo.info.title}}</text>
         <text class="bag_font_2">免费借阅</text>
     </view>
-    <view class="bag_fonts">{{bookbagInfo.profile}}</view>
+    <view class="bag_fonts">{{bookbagInfo.info.profile}}</view>
 </view>
 <!-- 包含图书 -->
 <view class="contains_box">
@@ -25,9 +25,4 @@
     </view>
 </view>
 <!-- 免费借阅 -->
-<view class="borrow_button" bindtap="showAreaOrgModel">免费借阅</view>
-<view class="{{chooseAreaOrgModal?'area-org-list-show':'area-org-list-none'}}">
-    <view class="area-org-item" wx:for="{{orgList}}" wx:key="orgIndex" wx:for-item="orgInfo" data-orgid="{{orgInfo.orgid}}" bindtap="confirmBorrow">
-        {{orgInfo.name}}
-    </view>
-</view>
+<view class="borrow_button" bindtap="confirmBorrow">免费借阅</view>

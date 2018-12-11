@@ -57,17 +57,29 @@
 
 .user_nav_tit_1 {
   width: 200rpx;
-  height: 40rpx;
-  /* border: 1rpx solid #f1f1f1; */
+  height: 50rpx;
   border-radius: 30rpx;
   margin: 0 auto;
   position: relative;
   top: -60rpx;
-  margin-top: 35rpx;
-  font-size: 20rpx;
+  margin-top: 25rpx;
+  font-size: 24rpx;
   color: #999999;
   text-align: center;
-  line-height: 40rpx;
+  line-height: 50rpx;
+}
+.user_nav_phone {
+  width: 200rpx;
+  height: 50rpx;
+  border: 1rpx solid #3edd8d;
+  border-radius: 30rpx;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 25rpx;
+  font-size: 24rpx;
+  color: #252525;
+  text-align: center;
+  line-height: 50rpx;
 }
 .user_nav_tit_2{
   width: 235rpx;

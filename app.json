@@ -1,8 +1,10 @@
 {
   "pages": [
+    
     "pages/home/index",
     "pages/bookbag-list/index",
     "pages/bookbag/index",
+    "pages/bookbag-org/index",
     "pages/confirm-borrow/index",
     "pages/book-detail/index",
     "pages/near/index",
@@ -14,8 +16,7 @@
     "pages/wallet/index",
     "pages/borrow-guide/index",
     "pages/about-us/index",
-    "pages/login/index",
-    "pages/bind-phone/index"
+    "pages/login/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

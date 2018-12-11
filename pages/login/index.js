@@ -84,9 +84,8 @@ Page({
                     wx.showToast({
                       icon: 'none',
                       title: "授权登录成功",
-                      duration: 2000,
+                      duration: 2000
                     });
-
                     if (_this.data.requireTel) {
                       if (data.data.userinfo.tel) {
                         wx.navigateBack({
@@ -95,6 +94,9 @@ Page({
                       } else {
                         _this.setData({
                           notBound: true
+                        })
+                        wx.navigateBack({
+                          delta: 1
                         })
                       }
                     } else {
@@ -296,13 +298,8 @@ Page({
           duration: 1000,
           success: function () {
             app.saveUserInfo(data.data);
-            wx.switchTab({
-              url: '../home/index',
-              success: function (e) {
-                var page = getCurrentPages().pop();
-                if (page == undefined || page == null) return;
-                page.onLoad();
-              }
+            wx.navigateBack({
+              delta: 1
             })
           }
         })

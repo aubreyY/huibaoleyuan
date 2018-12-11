@@ -5,30 +5,13 @@ import {
 } from "../../base/config"
 Page({
   data: {
-    userInfo: {
-      avatarUrl: "",
-      nickName: "",
-      wallet: "我的钱包",
-      borrowGuide: "借阅指南",
-      userAbout: "关于我们",
-      // userTitle: "已经借阅3次啦!",
-      registered: "点击登录/注册"
-    },
+    userInfo: {},
+    isLogined: null
   },
   onShow() {
-    // 用户信息
-    $api.user.info().then(data => {
-      if (data.errcode === 0) {
-        var avatarUrl = 'userInfo.avatarUrl';
-        var nickName = 'userInfo.nickName';
-        this.setData({
-          [avatarUrl]: data.data.avatar,
-          [nickName]: data.data.nickname
-        })
-        console.log(data.data)
-      } else {
-        console.log(data)
-      }
+    this.setData({ 
+      userInfo: app.globalData.userInfo,
+      isLogined: app.isLogined()
     })
   },
   //处理页面跳转
@@ -40,7 +23,11 @@ Page({
   userWallet: function () {
     if (!app.isLogined()) {
       wx.navigateTo({
-        url: '../login/index'
+        url: '../login/index?require_tel=true'
+      })
+    } else if (app.globalData.userInfo.tel == '') {
+      wx.navigateTo({
+        url: '../login/index?require_tel=true'
       })
     } else {
       wx.navigateTo({
@@ -61,6 +48,11 @@ Page({
   userSettings: function () {
     wx.navigateTo({
       url: '../settings/index'
+    })
+  },
+  bindPhone: function () {
+    wx.navigateTo({
+      url: '../login/index?require_tel=true'
     })
   }
 });

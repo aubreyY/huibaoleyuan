@@ -1,49 +1,57 @@
 /* 书包详情 */
-.bag_conent{
+.bag_conent {
     width: 100%;
     height: 330rpx;
 }
-.bag_content_img{
+
+.bag_content_img {
     width: 100%;
     height: 100%;
 }
-.bag_title_box{
+
+.bag_title_box {
     width: 100%;
     height: 190rpx;
     background: #fff;
 }
-.bag_title{
+
+.bag_title {
     height: 80rpx;
     line-height: 80rpx;
 }
-.bag_font_1{
+
+.bag_font_1 {
     font-size: 30rpx;
     font-weight: 500;
     color: #252525;
     float: left;
     margin-left: 35rpx;
 }
-.bag_font_2{
+
+.bag_font_2 {
     font-size: 26rpx;
     color: #999999;
     float: right;
     margin-right: 35rpx;
 }
-.bag_fonts{
+
+.bag_fonts {
     width: 684rpx;
     font-size: 26rpx;
     color: #999999;
     margin-left: 35rpx;
 }
+
 /* 包含图书 */
-.contains_box{
+.contains_box {
     width: 100%;
     height: auto;
     background: #fff;
     margin-top: 20rpx;
     padding-bottom: 110rpx;
 }
-.contains_title{
+
+.contains_title {
     height: 80rpx;
     font-size: 30rpx;
     font-weight: 500;
@@ -51,28 +59,33 @@
     line-height: 80rpx;
     margin-left: 35rpx;
 }
-.contains_cont{
+
+.contains_cont {
     width: 100%;
     height: 320rpx;
     border-top: 1rpx solid #f1f1f1;
 }
-.contains_cont_left{
+
+.contains_cont_left {
     width: 260rpx;
     height: 260rpx;
     margin: 30rpx 0rpx 30rpx 30rpx;
     float: left;
 }
-.contains_cont_left image{
+
+.contains_cont_left image {
     width: 260rpx;
     height: 260rpx;
     border-radius: 12rpx;
 }
-.contains_cont_right{
+
+.contains_cont_right {
     width: 430rpx;
     height: 320rpx;
     float: left;
 }
-.book_name{
+
+.book_name {
     width: 430rpx;
     font-size: 26rpx;
     font-weight: 500;
@@ -81,7 +94,10 @@
     margin-top: 30rpx;
     float: left;
 }
-.book_author,.book_Press,.book_description{
+
+.book_author,
+.book_Press,
+.book_description {
     width: 400rpx;
     font-size: 22rpx;
     color: #999999;
@@ -89,8 +105,9 @@
     margin-left: 30rpx;
     float: left;
 }
+
 /* 免费借阅 */
-.borrow_button{
+.borrow_button {
     width: 100%;
     height: 100rpx;
     background: #3EDD8D;
@@ -102,4 +119,52 @@
     line-height: 100rpx;
     position: fixed;
     bottom: 0;
+}
+
+/* 选择服务网点 */
+.area-org-list-show {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background: #fff;
+    border-radius: 10rpx;
+    bottom: 100rpx;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.area-org-list-none {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    background: #fff;
+    border-radius: 10rpx;
+    bottom: 100rpx;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: none;
+}
+
+.area-org-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250rpx;
+    height: 60rpx;
+    margin: 25rpx;
+    border: 1rpx solid #3EDD8D;
+    border-radius: 8rpx;
+    font-size: 24rpx;
+    color: #252525;
+    line-height: 60rpx;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

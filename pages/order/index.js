@@ -267,7 +267,7 @@ Page({
     var bagid = event.currentTarget.dataset.bagid;
     var orgid = event.currentTarget.dataset.orgid;
     wx.navigateTo({
-      url: '../bookbag/index?bagid=' + bagid + '&orgid=' + orgid
+      url: '../bookbag-org/index?bagid=' + bagid + '&orgid=' + orgid
     })
   },
   onPullDownRefresh() {

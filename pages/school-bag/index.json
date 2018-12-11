@@ -1,7 +1,0 @@
-{
-    "enablePullDownRefresh": false,
-    "navigationBarTitleText": "书包",
-    "usingComponents": {
-        "modal": "/components/modal/modal"
-    }
-}

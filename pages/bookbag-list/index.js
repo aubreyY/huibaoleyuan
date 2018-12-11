@@ -19,8 +19,6 @@ Page({
         bookbagTypeArray: app.globalData.configInfo.bookbag_type.items,
     },
     onLoad: function (options) {
-        // 书包类型列表
-        console.log(options)
         var county = app.globalData.userLocation.adcode;
         $api.org.area_bookbag_list("", county, "", options.age, options.type, "").then(data => {
             if (data.errcode === 0) {
@@ -84,7 +82,7 @@ Page({
         if (updateFlag) {
             var county = app.globalData.userLocation.adcode;
             var province = county.substring(0, 2);
-            $api.org.area_bookbag_list("", county, "", this.data.navAgeValue, this.data.navTypeValue, this.data.pagenum).then(data => {
+            $api.org.area_bookbag_list("", county, "", this.data.navAgeValue, this.data.navTypeValue).then(data => {
                 if (data.errcode === 0) {
                     var bookbagList = data.data.data;
                     bookbagList.forEach(item => {
@@ -113,7 +111,7 @@ Page({
         var bagid = event.currentTarget.dataset.bagid;
         var orgid = event.currentTarget.dataset.orgid;
         wx.navigateTo({
-            url: '../bookbag/index?bagid=' + bagid + '&orgid=' + orgid
+            url: '../bookbag-org/index?bagid=' + bagid + '&orgid=' + orgid
         })
     }
 })

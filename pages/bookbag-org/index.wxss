@@ -1,14 +1,11 @@
 /* 书包详情 */
 .bag_conent{
     width: 100%;
-    height: 375rpx;
-    background: #F8FDFA;
+    height: 330rpx;
 }
 .bag_content_img{
-    width: 200rpx;
-    height: 200rpx;
-    margin-left: 35%;
-    margin-top: 25rpx;
+    width: 100%;
+    height: 100%;
 }
 .bag_title_box{
     width: 100%;
@@ -44,6 +41,7 @@
     height: auto;
     background: #fff;
     margin-top: 20rpx;
+    padding-bottom: 110rpx;
 }
 .contains_title{
     height: 80rpx;
@@ -61,15 +59,13 @@
 .contains_cont_left{
     width: 260rpx;
     height: 260rpx;
-    background: #F8FDFA;
     margin: 30rpx 0rpx 30rpx 30rpx;
     float: left;
 }
 .contains_cont_left image{
-    width: 200rpx;
-    height: 200rpx;
-    margin-left: 28rpx;
-    margin-top: 13rpx;
+    width: 260rpx;
+    height: 260rpx;
+    border-radius: 12rpx;
 }
 .contains_cont_right{
     width: 430rpx;

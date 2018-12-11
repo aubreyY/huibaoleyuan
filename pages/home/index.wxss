@@ -55,7 +55,6 @@
   height: 90rpx;
   background: #fff;
   position: relative;
-  top: -15rpx;
   float: left;
 }
 
@@ -68,7 +67,6 @@
   line-height: 88rpx;
   float: left;
   position: relative;
-  top: 15rpx;
 }
 
 .age_calss_show {
@@ -117,7 +115,6 @@
   line-height: 88rpx;
   float: left;
   position: relative;
-  top: 15rpx;
 }
 
 .display_show {
@@ -155,9 +152,10 @@
 /* 图书列表 */
 .book_box {
   width: 100%;
-  height: 1500px;
+  height: auto;
   background: #fff;
-  margin-top: 105rpx;
+  margin-top: 15rpx;
+  padding-bottom: 25rpx;
 }
 
 .book_list {
@@ -201,6 +199,10 @@
   float: left;
   margin-left: 20rpx;
   margin-top: 10rpx;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book_list_name_num {
@@ -227,7 +229,7 @@
   line-height: 30rpx;
   text-align: center;
   margin-left: 20rpx;
-  margin-top: 10rpx;
+  margin-top: 15rpx;
 }
 
 .book_list_add {
@@ -240,7 +242,7 @@
   height: 30rpx;
   float: left;
   margin-left: 20rpx;
-  margin-top: 10rpx;
+  margin-top: 15rpx;
 }
 
 .book_list_add_tit {
@@ -249,7 +251,7 @@
   color: #999999;
   float: left;
   margin-left: 15rpx;
-  margin-top: 10rpx;
+  margin-top: 18rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

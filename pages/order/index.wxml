@@ -124,7 +124,7 @@
     <view class="default_blank_title">暂无订单</view>
 </view>
 <!-- 猜你喜欢 -->
-<view class="guess_like">
+<view class="guess_like clearfix">
     <view class="guess_like_title">
         <view class="guess_like_line_left"></view>
         <text>猜你喜欢</text>

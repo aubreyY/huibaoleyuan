@@ -2,7 +2,7 @@
 <swiper class="banner-swiper" indicator-active-color='#6ba5f0' indicator-dots="{{bannerInfo.indicatorDots}}" indicator-color="{{bannerInfo.beforeColor}}" indicator-active-color="{{bannerInfo.afterColor}}" autoplay="{{bannerInfo.autoplay}}" vertical="{{bannerInfo.vertical}}" interval="{{bannerInfo.interval}}" circular="{{bannerInfo.circular}}">
   <block wx:for="{{bannerList}}" wx:key="itemIndex" wx:for-item="itemInfo">
     <swiper-item>
-      <image class="swiper-item" src="{{itemInfo.imgurl}}" />
+      <image class="swiper-item" src="{{itemInfo.imgurl}}" bindtap="showBannerDetail" data-bannerid="{{itemInfo.bannerid}}" data-bannertype="{{itemInfo.type}}" data-datas="{{itemInfo.data}}" />
     </swiper-item>
   </block>
 </swiper>
@@ -13,32 +13,36 @@
     <text class="classify_box_title">{{itemInfo.name}}</text>
   </view>
 </view>
-<!-- 分类导航 -->
-<view class="{{navFixed?'classify_navbox_show':'classify_navbox_none'}}">
-  <view class="classify_left" bindtap="showOptionBox" data-boxid="age">
-    <text class="{{navAgeShow?'age_calss_col':'age_calss_show'}}">{{navAgeText}}</text>
-    <image class="age_icon" mode="widthFix" src="{{navAgeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
-    <view class="border_line"></view>
-  </view>
-  <view class="classify_right" bindtap="showOptionBox" data-boxid="type">
-    <text class="{{navTypeShow?'age_calss_col':'age_calss_show'}}">{{navTypeText}}</text>
-    <image class="age_icon" mode="widthFix" src="{{navTypeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
-  </view>
-  <view class="{{navAgeShow?'display_show':'display_none'}}">
-    <view wx:for="{{bookbagAgeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="age" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="age-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
-      {{itemInfo.name}}
+<view class="book_box clearfix">
+  <!-- 分类导航 -->
+  <view class="{{navFixed?'classify_navbox_show':'classify_navbox_none'}}">
+    <view class="classify_left" bindtap="showOptionBox" data-boxid="age">
+      <text class="{{navAgeShow?'age_calss_col':'age_calss_show'}}">{{navAgeText}}</text>
+      <image class="age_icon" mode="widthFix" src="{{navAgeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
+      <view class="border_line"></view>
     </view>
-    <view class="classify_btn_show" data-itemname="年龄" data-itemid="0" data-boxid="age" id="type-0" bindtap="changeOption">全部</view>
-  </view>
-  <view class="{{navTypeShow?'display_show':'display_none'}}">
-    <view wx:for="{{bookbagTypeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="type" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="type-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
-      {{itemInfo.name}}
+    <view class="classify_right" bindtap="showOptionBox" data-boxid="type">
+      <text class="{{navTypeShow?'age_calss_col':'age_calss_show'}}">{{navTypeText}}</text>
+      <image class="age_icon" mode="widthFix" src="{{navTypeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
     </view>
-    <view class="classify_btn_show" data-itemname="分类" data-itemid="0" data-boxid="type" id="type-0" bindtap="changeOption">全部</view>
+    <view class="{{navAgeShow?'display_show':'display_none'}}">
+      <view wx:for="{{bookbagAgeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="age" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="age-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+        {{itemInfo.name}}
+      </view>
+      <view class="classify_btn_show" data-itemname="年龄" data-itemid="0" data-boxid="age" id="type-0" bindtap="changeOption">
+        全部
+      </view>
+    </view>
+    <view class="{{navTypeShow?'display_show':'display_none'}}">
+      <view wx:for="{{bookbagTypeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="type" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="type-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+        {{itemInfo.name}}
+      </view>
+      <view class="classify_btn_show" data-itemname="分类" data-itemid="0" data-boxid="type" id="type-0" bindtap="changeOption">
+        全部
+      </view>
+    </view>
   </view>
-</view>
-<!-- 图书列表 -->
-<view class="book_box">
+  <!-- 图书列表 -->
   <view class="book_list" wx:for="{{bookbagList}}" wx:key="itemIndex" wx:for-item="itemInfo" data-orgid="{{itemInfo.orgid}}" data-bagid="{{itemInfo.bagid}}" data-age="{{itemInfo.age}}" data-type="{{itemInfo.type}}" bindtap="showBookbagInfo">
     <view class="book_list_top">
       <image class="book_list_img" mode="widthFix" src="{{itemInfo.info.cover}}" />
@@ -48,7 +52,9 @@
       <text class="book_list_name_num">共{{itemInfo.info.bookNum}}本</text>
     </view>
     <view class="book_list_btn">
-      <view class="book_list_btn_tit" wx:for="{{itemInfo.info.tags}}" wx:key="tagIndex" wx:for-item="tagName">{{tagName}}</view>
+      <view class="book_list_btn_tit" wx:for="{{itemInfo.info.tags}}" wx:key="tagIndex" wx:for-item="tagName">
+        {{tagName}}
+      </view>
     </view>
     <view class="book_list_add">
       <image mode="widthFix" src="/image/add_icon.png" />
