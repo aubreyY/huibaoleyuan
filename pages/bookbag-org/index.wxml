@@ -14,7 +14,7 @@
     <view class="contains_title">包含图书</view>
     <view class="contains_cont" wx:for="{{bookbagInfo.books}}" wx:key="itemIndex" wx:for-item="bookInfo" id="{{bookInfo.bookid}}" bindtap="showBookInfo">
         <view class="contains_cont_left">
-            <image mode="widthFix" src="{{bookInfo.cover}}" />
+            <image mode="aspectFill" src="{{bookInfo.cover}}" />
         </view>
         <view class="contains_cont_right">
             <text class="book_name">{{bookInfo.title}}</text>

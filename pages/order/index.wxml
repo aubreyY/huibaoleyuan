@@ -1,9 +1,9 @@
 <!-- 借阅记录 -->
-<view class="borrow_box" bindtap="borrowRecord">
+<view class="borrow_box clearfix" bindtap="borrowRecord">
     <text class="borrow_tit">借阅记录</text>
     <image mode="widthFix" class="borrow_icon" src="/image/icon_d.png" />
 </view>
-<view class="order_content" wx:for="{{orderList}}" wx:key="orderIndex" wx:for-item="orderInfo">
+<view class="order_content clearfix" wx:for="{{orderList}}" wx:key="orderIndex" wx:for-item="orderInfo">
     <!-- 结束的订单内容 -->
     <view class="order_list_box" wx:if="{{orderInfo.status==OrderStatus.finished}}">
         <view class="nav_box">
@@ -21,7 +21,7 @@
         </view>
         <view class="order_list">
             <view class="order_list_img">
-                <image mode="widthFix" src="{{orderInfo.baginfo.cover}}" />
+                <image mode="aspectFill" src="{{orderInfo.baginfo.cover}}" />
             </view>
             <text class="order_list_tit">{{orderInfo.baginfo.title}}</text>
             <view class="order_list_label">
@@ -33,14 +33,21 @@
         </view>
         <view class="damaged_cont">
             <view class="damaged_text" wx:if="{{orderInfo.overdue_fees > 0}}">
-                逾期 {{orderInfo.overdue_feesNum}}元
+                逾期:
+                <text style="color:#f00;font-size:24rpx">{{orderInfo.overdue_feesNum}}元</text>
             </view>
             <view class="damaged_text" wx:if="{{orderInfo.damaged_fees > 0}}">
-                定损 {{orderInfo.damaged_feesNum}}元
+                定损:
+                <text style="color:#f00;font-size:24rpx">{{orderInfo.damaged_feesNum}}元</text>
             </view>
-            <view class="damaged_text">总费用 {{orderInfo.total_feesNum}}元</view>
+            <view class="damaged_text">
+                总费用:
+                <text style="color:#f00;font-size:24rpx">{{orderInfo.total_feesNum}}元</text>
+            </view>
+            <view class="damaged_pay" data-orderid="{{orderInfo.orderid}}" bindtap="feesPay">
+                立即支付
+            </view>
         </view>
-        <view class="damaged_pay" data-orderid="{{orderInfo.orderid}}" bindtap="feesPay">立即支付</view>
     </view>
     <!-- 预定订单 -->
     <view class="create_order_list_box" wx:elif="{{orderInfo.status==OrderStatus.booking}}">
@@ -56,7 +63,7 @@
         </view>
         <view class="order_list">
             <view class="order_list_img">
-                <image mode="widthFix" src="{{orderInfo.baginfo.cover}}" />
+                <image mode="aspectFill" src="{{orderInfo.baginfo.cover}}" />
             </view>
             <text class="order_list_tit">{{orderInfo.baginfo.title}}</text>
             <view class="order_list_label">
@@ -90,7 +97,7 @@
         </view>
         <view class="order_list">
             <view class="order_list_img">
-                <image mode="widthFix" src="{{orderInfo.baginfo.cover}}" />
+                <image mode="aspectFill" src="{{orderInfo.baginfo.cover}}" />
             </view>
             <text class="order_list_tit">{{orderInfo.baginfo.title}}</text>
             <view class="order_list_label">
@@ -124,7 +131,7 @@
     <view class="default_blank_title">暂无订单</view>
 </view>
 <!-- 猜你喜欢 -->
-<view class="guess_like clearfix">
+<view class="guess_like clearfix clearfix">
     <view class="guess_like_title">
         <view class="guess_like_line_left"></view>
         <text>猜你喜欢</text>

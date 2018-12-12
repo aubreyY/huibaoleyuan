@@ -31,13 +31,14 @@ Page({
     classifyAgeArray: app.globalData.configDict.bookbag_age,
     // btn标签
     bookbagAgeArray: app.globalData.configInfo.bookbag_age.items,
-    bookbagTypeArray: app.globalData.configInfo.bookbag_type.items,
+    bookbagTypeArray: app.globalData.configInfo.book_type.items,
     // 数据页
     pagenum: 1,
     // 列表内容
     bookbagList: [],
   },
   onLoad() {
+    console.log(app.globalData.configInfo)
     var _this = this;
     // 轮播图
     $api.common.banner_list().then(data => {
@@ -228,6 +229,17 @@ Page({
         url: '../webview/index?url=' + datas
       })
     }
-
+  },
+  // 分享
+  onShareAppMessage: function (res) {
+    return {
+      title: '您身边的便捷儿童绘本租借平台!',
+      path: '/pages/home/index',
+      imageUrl: '',
+      success: function (res) {},
+      fail: function (res) {
+        console.log(res)
+      }
+    }
   }
 })

@@ -18,9 +18,9 @@
         </view>
         <view class="contains_cont_right">
             <text class="book_name">{{bookInfo.title}}</text>
-            <text class="book_author">{{bookInfo.author}}</text>
-            <text class="book_Press">{{bookInfo.publisher}}</text>
-            <text class="book_description">{{bookInfo.profile}}</text>
+            <text class="book_author">作者: {{bookInfo.author}}</text>
+            <text class="book_Press">出版社: {{bookInfo.publisher}}</text>
+            <text class="book_description">简介: {{bookInfo.profile}}</text>
         </view>
     </view>
 </view>
@@ -28,6 +28,13 @@
 <view class="borrow_button" bindtap="showAreaOrgModel">免费借阅</view>
 <view class="{{chooseAreaOrgModal?'area-org-list-show':'area-org-list-none'}}">
     <view class="area-org-item" wx:for="{{orgList}}" wx:key="orgIndex" wx:for-item="orgInfo" data-orgid="{{orgInfo.orgid}}" bindtap="confirmBorrow">
-        {{orgInfo.name}}
+        <view class="area-org-txt">
+            <view>门店 : {{orgInfo.name}}</view>
+            <view>营业时间 : 9:00 ~ 18:00</view>
+        </view>
+        <view class="area-org-add">
+            <view>地址 : {{orgInfo.address}}</view>
+            <view>联系电话 : {{orgInfo.tel}}</view>
+        </view>
     </view>
 </view>

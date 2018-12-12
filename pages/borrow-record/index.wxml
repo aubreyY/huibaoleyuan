@@ -1,11 +1,11 @@
 <!-- 订单借阅记录 -->
-<view class="borrow_list" wx:for="{{receordList}}" wx:key="itemIndex" wx:for-item="itemInfo">
+<view class="borrow_list clearfix" wx:for="{{receordList}}" wx:key="itemIndex" wx:for-item="itemInfo">
     <view class="order_content">
         <text class="order_num">订单编号：{{itemInfo.orderid}}</text>
         <text class="borrow_time_tit_2">已完成</text>
     </view>
     <view class="borrow_time">
-        <text class="borrow_time_tit_1">{{itemInfo.startdate}} 至 {{itemInfo.enddate}}</text> 
+        <text class="borrow_time_tit_1">{{itemInfo.startdate}} 至 {{itemInfo.enddate}}</text>
         <text class="order_monmy">支付费用: ¥{{itemInfo.total_feesNum}}</text>
     </view>
     <view class="borrow_book">

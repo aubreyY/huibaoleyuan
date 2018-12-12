@@ -2,11 +2,13 @@
 .user_head_color,
 .user_head_bg {
   width: 100%;
-  height: 273rpx;
+  height: 360rpx;
+  background: #fff;
   position: relative;
   z-index: 100;
 }
-.user_set{
+
+.user_set {
   width: 60rpx;
   height: 60rpx;
   position: absolute;
@@ -14,10 +16,12 @@
   right: 35rpx;
   z-index: 9999;
 }
-.user_set image{
+
+.user_set image {
   width: 60rpx;
   height: 60rpx;
 }
+
 /* 头像信息 */
 .user_nav {
   width: 90%;
@@ -27,7 +31,7 @@
   box-shadow: 0rpx 6rpx 14rpx rgba(34, 25, 25, 0.3);
   margin: 0 auto;
   position: absolute;
-  top: 100rpx;
+  top: 80rpx;
   left: 38rpx;
   z-index: 1000;
 }
@@ -41,7 +45,8 @@
   top: -60rpx;
   overflow: hidden;
 }
-.user_nav_img image{
+
+.user_nav_img image {
   width: 120rpx;
   height: 120rpx;
 }
@@ -68,6 +73,7 @@
   text-align: center;
   line-height: 50rpx;
 }
+
 .user_nav_phone {
   width: 200rpx;
   height: 50rpx;
@@ -81,7 +87,8 @@
   text-align: center;
   line-height: 50rpx;
 }
-.user_nav_tit_2{
+
+.user_nav_tit_2 {
   width: 235rpx;
   height: 80rpx;
   margin: 0 auto;
@@ -98,18 +105,14 @@
 /* 钱包or借阅 */
 .user_content {
   width: 100%;
-  height: 370rpx;
+  height: auto;
   background: #fff;
-  position: relative;
-  top: -80rpx;
 }
 
 .user_wallet {
   width: 100%;
-  height: 90rpx;
+  height: 89rpx;
   border-bottom: 1rpx solid #f1f1f1;
-  position: relative;
-  top: 190rpx;
 }
 
 .user_wallet_icon {
@@ -135,19 +138,20 @@
   margin-top: 29rpx;
   margin-right: 30rpx;
 }
-.borrow_guide{
+
+.borrow_guide,
+.scan-code {
   width: 100%;
-  height: 91rpx;
-  position: relative;
-  top: 190rpx;
+  height: 89rpx;
+  border-bottom: 1rpx solid #f1f1f1;
 }
+
 /* 关于我们 */
 .user_about {
   width: 100%;
   height: 90rpx;
   background: #fff;
-  position: relative;
-  top: -60rpx;
+  margin-top: 15rpx;
 }
 
 .user_about_icon {

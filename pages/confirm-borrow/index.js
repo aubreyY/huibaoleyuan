@@ -7,7 +7,8 @@ Page({
         bagid: "",
         orderid: "",
         depositGrade: app.globalData.configDict.deposit_grade['1'],
-        userLocation: app.globalData.userLocation
+        userLocation: app.globalData.userLocation,
+        orgInfoDistance: ""
     },
 
     onLoad(options) {
@@ -18,13 +19,30 @@ Page({
         })
         // 服务机构网点内容
         $api.org.info(options.orgid).then(data => {
-            if (data.errcode === 0) {
-                this.setData({
-                    orgInfo: data.data
+            var _this = this;
+            var coordinate = data.data.coordinate.split(",");
+            if (coordinate.length > 1) {
+                app.globalData.map.calculateDistance({
+                    to: [{
+                        longitude: parseFloat(coordinate[0]),
+                        latitude: parseFloat(coordinate[1]),
+                    }],
+                    success: function (res) {
+                        var orgInfoDistance = Math.floor(res.result.elements[0].distance / 1000 * 100) / 100;
+                        _this.setData({
+                            orgInfoDistance: orgInfoDistance
+                        })
+                    },
+                    fail: function (res) {
+                        console.log(res);
+                    }
                 })
             } else {
-                console.log(data)
+                orgInfo.distance = 0;
             }
+            this.setData({
+                orgInfo: data.data
+            })
         })
     },
     // 同意条款

@@ -8,11 +8,12 @@
 </swiper>
 <!-- 分类 -->
 <view class="classify_box">
-  <view class="classify_box_li" bindtap="showBookbagList" wx:for="{{bookbagTypeArray}}" wx:key="itemIndex" wx:for-index="itemIndex" wx:for-item="itemInfo" data-classifytypeid="{{itemInfo.itemid}}">
-    <image mode="widthFix" class="classify_box_img" src="{{bookbagTypeIconMap[itemInfo.itemid]}}" />
-    <text class="classify_box_title">{{itemInfo.name}}</text>
+  <view class="classify_box_li" bindtap="showBookbagList" wx:for="{{bookbagTypeArray}}" wx:key="typeIndex" wx:if="{{typeIndex<5}}" wx:for-index="typeIndex" wx:for-item="typeInfo" data-classifytypeid="{{typeInfo.itemid}}">
+    <image mode="aspectFill" class="classify_box_img" src="{{bookbagTypeIconMap[typeInfo.itemid]}}" />
+    <text class="classify_box_title">{{typeInfo.name}}</text>
   </view>
 </view>
+
 <view class="book_box clearfix">
   <!-- 分类导航 -->
   <view class="{{navFixed?'classify_navbox_show':'classify_navbox_none'}}">
@@ -26,16 +27,16 @@
       <image class="age_icon" mode="widthFix" src="{{navTypeShow?'/image/search_s_on.png':'/image/search_x.png'}}" />
     </view>
     <view class="{{navAgeShow?'display_show':'display_none'}}">
-      <view wx:for="{{bookbagAgeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="age" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="age-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
-        {{itemInfo.name}}
+      <view wx:for="{{bookbagAgeArray}}" wx:key="ageIndex" wx:for-item="ageInfo" data-boxid="age" data-itemname="{{ageInfo.name}}" data-itemid="{{ageInfo.itemid}}" id="age-{{ageInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+        {{ageInfo.name}}
       </view>
       <view class="classify_btn_show" data-itemname="年龄" data-itemid="0" data-boxid="age" id="type-0" bindtap="changeOption">
         全部
       </view>
     </view>
     <view class="{{navTypeShow?'display_show':'display_none'}}">
-      <view wx:for="{{bookbagTypeArray}}" wx:key="itemIndex" wx:for-item="itemInfo" data-boxid="type" data-itemname="{{itemInfo.name}}" data-itemid="{{itemInfo.itemid}}" id="type-{{itemInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
-        {{itemInfo.name}}
+      <view wx:for="{{bookbagTypeArray}}" wx:key="typeIndex" wx:for-item="typeInfo" data-boxid="type" data-itemname="{{typeInfo.name}}" data-itemid="{{typeInfo.itemid}}" id="type-{{typeInfo.itemid}}" class="classify_btn_show" bindtap="changeOption">
+        {{typeInfo.name}}
       </view>
       <view class="classify_btn_show" data-itemname="分类" data-itemid="0" data-boxid="type" id="type-0" bindtap="changeOption">
         全部
@@ -43,22 +44,22 @@
     </view>
   </view>
   <!-- 图书列表 -->
-  <view class="book_list" wx:for="{{bookbagList}}" wx:key="itemIndex" wx:for-item="itemInfo" data-orgid="{{itemInfo.orgid}}" data-bagid="{{itemInfo.bagid}}" data-age="{{itemInfo.age}}" data-type="{{itemInfo.type}}" bindtap="showBookbagInfo">
+  <view class="book_list" wx:for="{{bookbagList}}" wx:key="bookbagIndex" wx:for-item="bookbagInfo" data-orgid="{{bookbagInfo.orgid}}" data-bagid="{{bookbagInfo.bagid}}" data-age="{{bookbagInfo.age}}" data-type="{{bookbagInfo.type}}" bindtap="showBookbagInfo">
     <view class="book_list_top">
-      <image class="book_list_img" mode="widthFix" src="{{itemInfo.info.cover}}" />
+      <image class="book_list_img" mode="aspectFit" src="{{bookbagInfo.info.cover}}" />
     </view>
     <view class="book_list_name">
-      <text class="book_list_name_tit">{{itemInfo.info.title}}</text>
-      <text class="book_list_name_num">共{{itemInfo.info.bookNum}}本</text>
+      <text class="book_list_name_tit">{{bookbagInfo.info.title}}</text>
+      <text class="book_list_name_num">共{{bookbagInfo.info.bookNum}}本</text>
     </view>
     <view class="book_list_btn">
-      <view class="book_list_btn_tit" wx:for="{{itemInfo.info.tags}}" wx:key="tagIndex" wx:for-item="tagName">
+      <view class="book_list_btn_tit" wx:for="{{bookbagInfo.info.tags}}" wx:key="tagIndex" wx:for-item="tagName">
         {{tagName}}
       </view>
     </view>
     <view class="book_list_add">
       <image mode="widthFix" src="/image/add_icon.png" />
-      <view class="book_list_add_tit">{{itemInfo.countyName}} {{itemInfo.townName}}</view>
+      <view class="book_list_add_tit">{{bookbagInfo.countyName}} {{bookbagInfo.townName}}</view>
     </view>
   </view>
 </view>

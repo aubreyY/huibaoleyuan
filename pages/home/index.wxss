@@ -119,20 +119,22 @@
 
 .display_show {
   width: 100%;
-  height: 190rpx;
+  height: auto;
   position: absolute;
   background: #fff;
   top: 106rpx;
+  padding-bottom: 30rpx;
 }
 
 .display_none {
   width: 100%;
-  height: 190rpx;
+  height: auto;
   position: absolute;
   float: left;
   background: #fff;
   top: 15rpx;
   display: none;
+  padding-bottom: 30rpx;
 }
 
 .classify_btn_show {
@@ -155,7 +157,7 @@
   height: auto;
   background: #fff;
   margin-top: 15rpx;
-  padding-bottom: 25rpx;
+  padding-bottom: 65rpx;
 }
 
 .book_list {

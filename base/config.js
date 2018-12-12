@@ -7,10 +7,16 @@ let BAES_DOMAIN = APP_TYPE == 'test' ? 'test.huibaoleyuan.cn/' : 'wx.huibaoleyua
 // let UPLOAD_URL = 'https://upload.'+BAES_DOMAIN
 // let IMG_PRIVATE_URL = 'https://img.'+BAES_DOMAIN
 
-
 let BASE_URL = 'https://wxapp.huibaoleyuan.com'
 let UPLOAD_URL = 'https://upload.huibaoleyuan.com'
-let IMG_URL = 'http://img.' + BAES_DOMAIN
+let IMG_URL = 'http://img.huibaoleyuan.com/'
+
+
+// 生产环境
+let QRCODE_URL = 'http://wx.huibaoleyuan.com'
+
+// 测试环境
+// let QRCODE_URL = 'http://wx.test.huibaoleyuan.cn'
 
 let ORDER_NORMAL_DAYS = 30;
 
@@ -35,9 +41,97 @@ let shareConfig = (param) => {
     }
 }
 
-let defaultConfigInfo = {"bookbag_age":{"name":"书包-年龄","cfgid":"bookbag_age","items":[{"itemid":"1","name":"0~2岁"},{"itemid":"2","name":"2~3岁"},{"itemid":"3","name":"3~5岁"},{"itemid":"4","name":"5~6岁"},{"itemid":"5","name":"8岁以上"}]},"book_type":{"name":"书籍-分类","cfgid":"book_type","items":[{"itemid":"3","name":"亲情"},{"itemid":"2","name":"爱心"},{"itemid":"1","name":"勇气"}]},"deposit_grade":{"name":"押金等级","cfgid":"deposit_grade","items":[{"itemid":"1","name":"19900"}]},"bookbag_type_icon":{"name":"分类图标","cfgid":"bookbag_type_icon","items":[{"itemid":"1","name":"/image/classify_01.png"},{"itemid":"2","name":"/image/classify_02.png"},{"itemid":"3","name":"/image/classify_03.png"},{"itemid":"4","name":"/image/classify_04.png"},{"itemid":"5","name":"/image/classify_05.png"}]},"checksum":"b76b535adb203112bf933d80c9132fe5","bookbag_type":{"name":"书包-分类","cfgid":"bookbag_type","items":[{"itemid":"1","name":"性格养成"},{"itemid":"2","name":"情绪管理"},{"itemid":"3","name":"语言发展"},{"itemid":"4","name":"科普认知"},{"itemid":"5","name":"艺术创想"}]}}
+// 默认配置
+let defaultConfigInfo = {
+    "bookbag_age": {
+        "name": "书包-年龄",
+        "cfgid": "bookbag_age",
+        "items": [{
+            "itemid": "1",
+            "name": "0~2岁"
+        }, {
+            "itemid": "2",
+            "name": "3~6岁"
+        }, {
+            "itemid": "3",
+            "name": "7~12岁"
+        }]
+    },
+    "book_type": {
+        "name": "书籍-分类",
+        "cfgid": "book_type",
+        "items": [{
+            "itemid": "1",
+            "name": "性格养成"
+        }, {
+            "itemid": "2",
+            "name": "人际交往"
+        }, {
+            "itemid": "3",
+            "name": "科普知识"
+        }, {
+            "itemid": "4",
+            "name": "安全教育"
+        }, {
+            "itemid": "5",
+            "name": "经典国学"
+        }]
+    },
+    "deposit_grade": {
+        "name": "押金等级",
+        "cfgid": "deposit_grade",
+        "items": [{
+            "itemid": "1",
+            "name": "19900"
+        }]
+    },
+    "bookbag_type_icon": {
+        "name": "分类图标",
+        "cfgid": "bookbag_type_icon",
+        "items": [{
+            "itemid": "1",
+            "name": "/image/classify_01.png"
+        }, {
+            "itemid": "2",
+            "name": "/image/classify_02.png"
+        }, {
+            "itemid": "3",
+            "name": "/image/classify_03.png"
+        }, {
+            "itemid": "4",
+            "name": "/image/classify_04.png"
+        }, {
+            "itemid": "5",
+            "name": "/image/classify_05.png"
+        }]
+    }
+}
 
-let defaultConfigDict = {"bookbag_age":{"1":"0~2岁","2":"2~3岁","3":"3~5岁","4":"5~6岁","5":"8岁以上"},"book_type":{"1":"勇气","2":"爱心","3":"亲情"},"deposit_grade":{"1":"19900"},"bookbag_type_icon":{"1":"/image/classify_01.png","2":"/image/classify_02.png","3":"/image/classify_03.png","4":"/image/classify_04.png","5":"/image/classify_05.png"},"checksum":"013d6bbf7063839f9224787fb340b6d6","bookbag_type":{"1":"性格养成","2":"情绪管理","3":"语言发展","4":"科普认知","5":"艺术创想"}}
+// 默认配置
+let defaultConfigDict = {
+    "bookbag_age": {
+        "1": "0~2岁",
+        "2": "3~6岁",
+        "3": "7~12岁"
+    },
+    "book_type": {
+        "1": "性格养成",
+        "2": "人际交往",
+        "3": "科普知识",
+        "4": "安全教育",
+        "5": "经典国学"
+    },
+    "deposit_grade": {
+        "1": "19900"
+    },
+    "bookbag_type_icon": {
+        "1": "/image/classify_01.png",
+        "2": "/image/classify_02.png",
+        "3": "/image/classify_03.png",
+        "4": "/image/classify_04.png",
+        "5": "/image/classify_05.png"
+    }
+}
 
 export {
     BAES_DOMAIN,

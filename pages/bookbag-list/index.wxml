@@ -30,7 +30,7 @@
 <view class="bookbag_list">
     <view class="book_list_first" wx:for="{{bookbagList}}" wx:key="itemIndex" wx:for-item="itemInfo" data-orgid="{{itemInfo.orgid}}" data-bagid="{{itemInfo.bagid}}" id="{{itemInfo.bagid}}" bindtap="showBookbagInfo">
         <view class="book_img">
-            <image mode="widthFix" src="{{itemInfo.info.cover}}" />
+            <image mode="aspectFill" src="{{itemInfo.info.cover}}" />
         </view>
         <view class="book_text">
             <text class="book_title">{{itemInfo.info.title}}</text>

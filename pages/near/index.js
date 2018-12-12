@@ -50,11 +50,12 @@ Page({
             // 使用城市ID查询区县
             app.globalData.map.getDistrictByCityId({
               id: userLocation.city + "00",
+              // id:"110000",
               success: function (data) {
+                console.log(data)
                 _this.setData({
                   locationCountyList: data.result[0]
                 })
-                console.log(data.result);
               },
               fail: function (data) {
                 console.log(data);
@@ -76,7 +77,6 @@ Page({
         orgList.forEach(orgInfo => {
           var coordinate = orgInfo.coordinate.split(",");
           if (coordinate.length > 1) {
-            console.log(parseFloat(coordinate[0]), parseFloat(coordinate[1]));
             app.globalData.map.calculateDistance({
               to: [{
                 longitude: parseFloat(coordinate[0]),

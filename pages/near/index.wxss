@@ -78,7 +78,7 @@
   width: 160rpx;
   height: 50rpx;
   margin: 20rpx;
-  border: 1rpx solid #3EDD8D;
+  border: 2rpx solid #3EDD8D;
   border-radius: 8rpx;
   font-size: 24rpx;
   color: #252525;

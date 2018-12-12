@@ -49,7 +49,7 @@
 
 .book_label_cont {
     width: 400rpx;
-    margin-top: 20rpx;
+    margin-top: 30rpx;
     margin-left: 20rpx;
     float: left;
 }
@@ -70,9 +70,10 @@
 /* 简介 */
 .book_des {
     width: 100%;
-    height: 270rpx;
+    height: auto;
     background: #fff;
     margin-top: 20rpx;
+    padding-bottom: 20rpx;
 }
 
 .book_des_title {
@@ -87,24 +88,22 @@
 
 .book_des_cont {
     width: 684rpx;
-    height: 160rpx;
     font-size: 26rpx;
     color: #252525;
     margin-left: 35rpx;
     margin-top: 20rpx;
     line-height: 45rpx;
-    /* overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap */
 }
+
 /* 简介图片 */
-.des_img{
+.des_img {
     width: 100%;
     height: auto;
     background: #fff;
     margin-top: 20rpx;
 }
-.des_img image{
+
+.des_img image {
     width: 100%;
     height: 100%;
 }

@@ -63,7 +63,7 @@
     font-size: 24rpx;
     color: #666666;
     float: left;
-    margin-top: 12rpx;
+    margin-left: 140rpx;
 }
 
 .icon_x {

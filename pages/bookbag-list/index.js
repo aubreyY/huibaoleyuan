@@ -16,7 +16,7 @@ Page({
         navFixed: false,
         // btn标签
         bookbagAgeArray: app.globalData.configInfo.bookbag_age.items,
-        bookbagTypeArray: app.globalData.configInfo.bookbag_type.items,
+        bookbagTypeArray: app.globalData.configInfo.book_type.items,
     },
     onLoad: function (options) {
         var county = app.globalData.userLocation.adcode;

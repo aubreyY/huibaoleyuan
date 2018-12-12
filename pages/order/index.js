@@ -2,7 +2,8 @@ var app = getApp();
 import $api from '../../base/api'
 import {
   IMG_URL,
-  ORDER_NORMAL_DAYS
+  ORDER_NORMAL_DAYS,
+  QRCODE_URL
 } from "../../base/config";
 import {
   getBookbagStatTop,
@@ -59,6 +60,7 @@ Page({
           item.overdue_feesNum = formatMoney(item.overdue_fees);
           item.damaged_feesNum = formatMoney(item.damaged_fees);
           item.total_feesNum = formatMoney(item.total_fees);
+          console.log(item.damaged)
         });
         if (data.data.length == 0) {
           this.setData({
@@ -118,7 +120,7 @@ Page({
           _this.setData({
             paymentFlag: false
           })
-          this.onShow()
+          this.onShow();
         }
         // 失败
         paymentConfig.fail = function (res) {
@@ -153,7 +155,7 @@ Page({
   showOrderQrcode: function (event) {
     this.showQrcodeModal();
     var orderid = event.currentTarget.dataset.orderid;
-    var url = "http://wx.test.huibaoleyuan.cn/?orderid=" + orderid;
+    var url = QRCODE_URL + "?orderid=" + orderid;
     if (!this.data.qrCode) {
       var qrCode = new QRCode('canvas-qrcode', {
         text: url,

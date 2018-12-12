@@ -1,40 +1,41 @@
-<!-- 头部背景 -->
+<!-- 头像信息 -->
 <view class="user_head_color">
   <image mode="widthFix" class="user_head_bg" src="/image/user_head.png" />
   <!-- <view bindtap="my_settings" class="user_set">
     <image mode="widthFix" src="/image/user_set.png" />
   </view> -->
-</view>
-<!-- 头像信息 -->
-<view class="user_nav" wx:if="{{isLogined}}">
-  <view class="user_nav_img">
-    <image mode="widthFix" src="{{userInfo.avatar}}" />
+  <!-- 已登录 -->
+  <view class="user_nav" wx:if="{{isLogined}}">
+    <view class="user_nav_img">
+      <image mode="widthFix" src="{{userInfo.avatar}}" />
+    </view>
+    <view class="user_nav_name">
+      <text>{{userInfo.nickname}}</text>
+    </view>
+    <view class="user_nav_tit_1">
+      <view class="user_nav_phone" bindtap="bindPhone" wx:if="{{userInfo.tel==''}}">绑定手机号</view>
+      <view wx:else>{{userInfo.tel2}}</view>
+    </view>
   </view>
-  <view class="user_nav_name">
-    <text>{{userInfo.nickname}}</text>
-  </view>
-  <view class="user_nav_tit_1">
-    <view class="user_nav_phone" bindtap="bindPhone" wx:if="{{userInfo.tel==''}}">绑定手机号</view>
-    <view>{{userInfo.tel2}}</view>
-  </view>
-</view>
-<view class="user_nav" wx:else>
-  <view class="user_nav_img">
-    <image mode="widthFix" src="/image/default_headimg.png" />
-  </view>
-  <view class="user_nav_name">
-    <text></text>
-  </view>
-  <view class="user_nav_tit_2" bindtap="userLogin">
-    <view>点击登录/注册</view>
+  <!-- 未登录 -->
+  <view class="user_nav" wx:else>
+    <view class="user_nav_img">
+      <image mode="widthFix" src="/image/default_headimg.png" />
+    </view>
+    <view class="user_nav_name"></view>
+    <view class="user_nav_tit_2" bindtap="userLogin">点击登录/注册</view>
   </view>
 </view>
-
+<!-- 钱包or借阅 -->
 <view class="user_content">
-  <!-- 钱包or借阅 -->
   <view class="user_wallet" bindtap="userWallet">
     <image mode="widthFix" class="user_wallet_icon" src="/image/wallet_icon.png" />
     <text class="user_wallet_tit">我的钱包</text>
+    <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
+  </view>
+  <view class="scan-code" bindtap="getScancode">
+    <image mode="widthFix" class="user_wallet_icon" src="/image/scanning_icon.png" />
+    <text class="user_wallet_tit">书包扫码</text>
     <image mode="widthFix" class="icon_d" src="/image/icon_d.png" />
   </view>
   <view class="borrow_guide" bindtap="borrowGuide">

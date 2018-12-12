@@ -1,16 +1,15 @@
 <!-- 书籍详情 -->
 <view class="contains_cont">
     <view class="contains_cont_left">
-        <image mode="widthFix" src="{{bookDetailInfo.cover}}" />
+        <image mode="aspectFit" src="{{bookDetailInfo.cover}}" />
     </view>
     <view class="contains_cont_right">
         <text class="book_name">{{bookDetailInfo.title}}</text>
         <text class="book_author">作者: {{bookDetailInfo.author}}</text>
         <text class="book_Press">出版社: {{bookDetailInfo.publisher}}</text>
-        <text class="book_Press_time">出版日期: {{bookDetailInfo.isbn}}</text>
+        <!-- <text class="book_Press_time">出版日期: {{bookDetailInfo.isbn}}</text> -->
         <view class="book_label_cont">
-            <view class="book_lable_list">{{bookDetailInfo.ageText}}</view>
-            <view class="book_lable_list">{{bookDetailInfo.tags}}</view>
+            <!-- <view class="book_lable_list">{{bookDetailInfo.ageText}}</view> -->
             <view class="book_lable_list">{{bookDetailInfo.tags}}</view>
         </view>
     </view>
