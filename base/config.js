@@ -142,4 +142,5 @@ export {
     shareConfig,
     defaultConfigInfo,
     defaultConfigDict,
+    QRCODE_URL
 }

@@ -33,3 +33,8 @@
         </view>
     </view>
 </view>
+<!-- 空白区 -->
+<view class="default_blank" style="{{defaultBlank?'display:none':'display:block'}}">
+    <image mode="widthFix" src="/image/area-org-ico.png" />
+    <text>未找到服务网点</text>
+</view>

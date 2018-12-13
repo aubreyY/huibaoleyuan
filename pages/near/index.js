@@ -13,11 +13,15 @@ Page({
       name: '',
     },
     chooseCountyModal: false,
-    locationCountyList: []
+    locationCountyList: [],
+    defaultBlank: false
   },
   onLoad() {
     var userLocation = app.globalData.userLocation;
     var areaDict = app.globalData.areaDict[userLocation.province];
+    if (userLocation.city == "1101") {
+      userLocation.city = "11"
+    }
     this.setData({
       cityInfo: {
         id: userLocation.city,
@@ -37,6 +41,7 @@ Page({
     wx.getLocation({
       type: 'gcj02',
       success: function (res1) {
+        console.log(res1)
         // 使用腾讯定位服务逆地理解析经纬度
         app.globalData.map.reverseGeocoder({
           location: res1,
@@ -46,13 +51,15 @@ Page({
             userLocation.county = county;
             userLocation.city = county.substring(0, 4);
             userLocation.province = county.substring(0, 2);
+            if (userLocation.city == "1101") {
+              userLocation.city = "1100"
+            }
             app.saveUserLocation(userLocation);
             // 使用城市ID查询区县
             app.globalData.map.getDistrictByCityId({
               id: userLocation.city + "00",
               // id:"110000",
               success: function (data) {
-                console.log(data)
                 _this.setData({
                   locationCountyList: data.result[0]
                 })
@@ -96,6 +103,16 @@ Page({
             orgInfo.distance = 0;
           }
         });
+        if (data.data.length == 0) {
+          this.setData({
+            defaultBlank: false
+          })
+        }
+        if (data.data.length > 0) {
+          this.setData({
+            defaultBlank: true
+          })
+        }
         this.setData({
           orgList: orgList
         })
@@ -104,7 +121,7 @@ Page({
       }
     })
   },
-  showCountyModel: function (event) {
+  showCountyModel: function () {
     this.setData({
       chooseCountyModal: !this.data.chooseCountyModal,
     })

@@ -1,49 +1,63 @@
 /* 书包详情 */
-.bag_conent{
+.bag_conent {
     width: 100%;
     height: 330rpx;
 }
-.bag_content_img{
+
+.bag_content_img {
     width: 100%;
     height: 100%;
 }
-.bag_title_box{
+
+.bag_title_box {
     width: 100%;
-    height: 190rpx;
+    height: auto;
     background: #fff;
 }
-.bag_title{
+
+.bag_title {
     height: 80rpx;
     line-height: 80rpx;
 }
-.bag_font_1{
+
+.bag_font_1 {
     font-size: 30rpx;
     font-weight: 500;
     color: #252525;
     float: left;
     margin-left: 35rpx;
 }
-.bag_font_2{
+
+.bag_font_2 {
     font-size: 26rpx;
     color: #999999;
     float: right;
     margin-right: 35rpx;
 }
-.bag_fonts{
+
+.bag_fonts {
     width: 684rpx;
     font-size: 26rpx;
     color: #999999;
     margin-left: 35rpx;
+    word-break: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-bottom: 8rpx;
 }
+
 /* 包含图书 */
-.contains_box{
+.contains_box {
     width: 100%;
     height: auto;
     background: #fff;
     margin-top: 20rpx;
     padding-bottom: 110rpx;
 }
-.contains_title{
+
+.contains_title {
     height: 80rpx;
     font-size: 30rpx;
     font-weight: 500;
@@ -51,28 +65,33 @@
     line-height: 80rpx;
     margin-left: 35rpx;
 }
-.contains_cont{
+
+.contains_cont {
     width: 100%;
     height: 320rpx;
     border-top: 1rpx solid #f1f1f1;
 }
-.contains_cont_left{
+
+.contains_cont_left {
     width: 260rpx;
     height: 260rpx;
     margin: 30rpx 0rpx 30rpx 30rpx;
     float: left;
 }
-.contains_cont_left image{
+
+.contains_cont_left image {
     width: 260rpx;
     height: 260rpx;
     border-radius: 12rpx;
 }
-.contains_cont_right{
+
+.contains_cont_right {
     width: 430rpx;
     height: 320rpx;
     float: left;
 }
-.book_name{
+
+.book_name {
     width: 430rpx;
     font-size: 26rpx;
     font-weight: 500;
@@ -81,7 +100,10 @@
     margin-top: 30rpx;
     float: left;
 }
-.book_author,.book_Press,.book_description{
+
+.book_author,
+.book_Press,
+.book_description {
     width: 400rpx;
     font-size: 22rpx;
     color: #999999;
@@ -89,8 +111,20 @@
     margin-left: 30rpx;
     float: left;
 }
+
+.book_description {
+    width: 100%;
+    height: 94rpx;
+    text-align: left;
+    word-break: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
 /* 免费借阅 */
-.borrow_button{
+.borrow_button {
     width: 100%;
     height: 100rpx;
     background: #3EDD8D;
@@ -102,4 +136,23 @@
     line-height: 100rpx;
     position: fixed;
     bottom: 0;
+}
+
+/* 空白区 */
+.default_blank {
+    width: 100%;
+    height: 700rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #999999;
+    font-weight: 500;
+    text-align: center;
+}
+
+.default_blank image {
+    width: 200rpx;
+    height: 200rpx;
+    display: block;
+    margin: 0 auto;
+    padding-top: 180rpx;
 }

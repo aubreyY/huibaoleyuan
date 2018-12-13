@@ -30,7 +30,7 @@
     <view class="area-org-item" wx:for="{{orgList}}" wx:key="orgIndex" wx:for-item="orgInfo" data-orgid="{{orgInfo.orgid}}" bindtap="confirmBorrow">
         <view class="area-org-txt">
             <view>门店 : {{orgInfo.name}}</view>
-            <view>营业时间 : 9:00 ~ 18:00</view>
+            <view>营业时间 : 9:00 ~ 20:00</view>
         </view>
         <view class="area-org-add">
             <view>地址 : {{orgInfo.address}}</view>

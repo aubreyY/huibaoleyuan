@@ -31,7 +31,7 @@ page{
     text-align: center;
 }
 .logo_text_2{
-    font-size: 30rpx;
+    font-size: 28rpx;
     font-weight: 500;
     color: #252525;
     margin-top: 10rpx;

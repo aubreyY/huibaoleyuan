@@ -370,17 +370,20 @@ page {
 /* 空白区 */
 .default_blank {
   width: 100%;
-  height: 300rpx;
-  margin-top: 15rpx;
+  height: 700rpx;
   text-align: center;
-  line-height: 300rpx;
   font-size: 24rpx;
   color: #999999;
   font-weight: 500;
+  text-align: center;
 }
 
-.default_blank_title {
+.default_blank image {
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
   margin: 0 auto;
+  padding-top: 180rpx;
 }
 
 /* 猜你喜欢 */
@@ -487,11 +490,12 @@ page {
 }
 
 .guess_like_list_add text {
-  font-size: 20rpx;
+  width: 155rpx;
   color: #999999;
-  float: left;
+  font-size: 20rpx;
   margin-left: 10rpx;
   margin-top: 14rpx;
+  float: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

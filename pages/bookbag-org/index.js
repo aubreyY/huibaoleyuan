@@ -6,7 +6,9 @@ import {
 } from "../../base/config";
 Page({
     data: {
-        bookbagInfo: {}
+        bookbagInfo: {},
+        successCode: "",
+        errCode: ""
     },
     onLoad(options) {
         // 书包内容
@@ -24,10 +26,13 @@ Page({
                 });
                 this.setData({
                     bookbagInfo: bookbagInfo,
+                    successCode: data
                 })
                 app.updateBookbagStat(bookbagInfo);
-                console.log(data)
             } else {
+                this.setData({
+                    errCode: data
+                })
                 console.log(data)
             }
         })

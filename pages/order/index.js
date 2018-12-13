@@ -9,7 +9,7 @@ import {
   getBookbagStatTop,
   formatMoney
 } from "../../base/util";
-import QRCode from "../../base/weapp-qrcode"
+import QRCode from "../../base/wxqrcode"
 Page({
   data: {
     orderList: [],
@@ -120,7 +120,15 @@ Page({
           _this.setData({
             paymentFlag: false
           })
-          this.onShow();
+          app.reloadUserInfo(function (userInfo) {
+            console.log(userInfo)
+            _this.onShow();
+          });
+          wx.showToast({
+            icon: 'success',
+            title: "支付成功",
+            duration: 2000,
+          });
         }
         // 失败
         paymentConfig.fail = function (res) {
@@ -151,29 +159,14 @@ Page({
       }
     })
   },
-  // 订单二维码
+  // 生成订单二维码
   showOrderQrcode: function (event) {
     this.showQrcodeModal();
     var orderid = event.currentTarget.dataset.orderid;
-    var url = QRCODE_URL + "?orderid=" + orderid;
-    if (!this.data.qrCode) {
-      var qrCode = new QRCode('canvas-qrcode', {
-        text: url,
-        width: this.data.qrcodeCanvasSize,
-        height: this.data.qrcodeCanvasSize,
-        colorDark: "#3EDD8D",
-        colorLight: "white",
-        correctLevel: QRCode.CorrectLevel.H,
-      });
-
-      this.setData({
-        qrCode: qrCode
-      })
-    } else {
-      console.log(this.data.qrCode)
-      // this.data.qrCode.clear();
-      this.data.qrCode.makeCode(url);
-    }
+    var url = QRCODE_URL + '?orderid=' + orderid;
+    this.setData({
+      qrCode: QRCode.createQrCodeImg(url)
+    })
   },
   /**
    * 订单二维码弹窗

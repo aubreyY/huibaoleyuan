@@ -32,10 +32,9 @@ Page({
     // btn标签
     bookbagAgeArray: app.globalData.configInfo.bookbag_age.items,
     bookbagTypeArray: app.globalData.configInfo.book_type.items,
-    // 数据页
-    pagenum: 1,
     // 列表内容
     bookbagList: [],
+    defaultBlank: false
   },
   onLoad() {
     console.log(app.globalData.configInfo)
@@ -61,6 +60,11 @@ Page({
         // 使用腾讯定位服务逆地理解析经纬度
         app.globalData.map.reverseGeocoder({
           location: res1,
+          // 测试坐标
+          // location: {
+          //   latitude: 39.984060,
+          //   longitude: 116.307520
+          // },
           success: function (res2) {
             var userLocation = res2.result.ad_info;
             var county = userLocation.adcode;
@@ -103,6 +107,17 @@ Page({
                     item.townName = '';
                   }
                 });
+                // 显示空白页
+                if (data.data.data.length == 0) {
+                  _this.setData({
+                    defaultBlank: false
+                  })
+                }
+                if (data.data.data.length > 0) {
+                  _this.setData({
+                    defaultBlank: true
+                  })
+                }
                 _this.setData({
                   bookbagList: bookbagList
                 })
@@ -229,6 +244,13 @@ Page({
         url: '../webview/index?url=' + datas
       })
     }
+  },
+  // 下拉刷新
+  onPullDownRefresh: function () {
+    this.onLoad();
+    setTimeout(() => {
+      wx.stopPullDownRefresh()
+    }, 1000)
   },
   // 分享
   onShareAppMessage: function (res) {

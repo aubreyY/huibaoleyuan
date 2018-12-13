@@ -10,7 +10,7 @@ Page({
     hideModal: true,
     animationData: {},
     paymentFlag: false,
-    depositPaid:false,
+    depositPaid: false,
     depositMoney: ""
   },
   onLoad() {
@@ -112,6 +112,15 @@ Page({
           setTimeout(function () {
             _this.hideModal();
           }, 500)
+          app.reloadUserInfo(function (userInfo) {
+            console.log(userInfo)
+            _this.onShow();
+          });
+          wx.showToast({
+            icon: 'success',
+            title: "押金支付成功",
+            duration: 2000,
+          });
         }
         // 失败
         paymentConfig.fail = function (res) {
@@ -132,20 +141,6 @@ Page({
               }
             });
           });
-        }
-        // 完成返回
-        paymentConfig.complete = function (res) {
-          if (res.errMsg == 'requestPayment:ok') {
-            app.reloadUserInfo(function(userInfo){
-              console.log(userInfo)
-              _this.onShow();
-            });
-            wx.showToast({
-              icon: 'success',
-              title: "押金支付成功",
-              duration: 2000,
-            });
-          }
         }
         wx.requestPayment(paymentConfig);
       } else {

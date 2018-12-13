@@ -1,28 +1,34 @@
 <!-- 书包详情 -->
-<view class="bag_conent">
-    <image class="bag_content_img" mode="aspectFill" src="{{bookbagInfo.info.imglist[0]}}" />
-</view>
-<view class="bag_title_box">
-    <view class="bag_title">
-        <text class="bag_font_1">{{bookbagInfo.info.title}}</text>
-        <text class="bag_font_2">免费借阅</text>
+<view wx:if="{{successCode.errcode==0}}">
+    <view class="bag_conent">
+        <image class="bag_content_img" mode="aspectFill" src="{{bookbagInfo.info.imglist[0]}}" />
     </view>
-    <view class="bag_fonts">{{bookbagInfo.info.profile}}</view>
-</view>
-<!-- 包含图书 -->
-<view class="contains_box">
-    <view class="contains_title">包含图书</view>
-    <view class="contains_cont" wx:for="{{bookbagInfo.books}}" wx:key="itemIndex" wx:for-item="bookInfo" id="{{bookInfo.bookid}}" bindtap="showBookInfo">
-        <view class="contains_cont_left">
-            <image mode="aspectFill" src="{{bookInfo.cover}}" />
+    <view class="bag_title_box">
+        <view class="bag_title">
+            <text class="bag_font_1">{{bookbagInfo.info.title}}</text>
+            <text class="bag_font_2">免费借阅</text>
         </view>
-        <view class="contains_cont_right">
-            <text class="book_name">{{bookInfo.title}}</text>
-            <text class="book_author">{{bookInfo.author}}</text>
-            <text class="book_Press">{{bookInfo.publisher}}</text>
-            <text class="book_description">{{bookInfo.profile}}</text>
+        <view class="bag_fonts">{{bookbagInfo.info.profile}}</view>
+    </view>
+    <view class="contains_box">
+        <view class="contains_title">包含图书</view>
+        <view class="contains_cont" wx:for="{{bookbagInfo.books}}" wx:key="itemIndex" wx:for-item="bookInfo" id="{{bookInfo.bookid}}" bindtap="showBookInfo">
+            <view class="contains_cont_left">
+                <image mode="aspectFill" src="{{bookInfo.cover}}" />
+            </view>
+            <view class="contains_cont_right">
+                <text class="book_name">{{bookInfo.title}}</text>
+                <text class="book_author">作者: {{bookInfo.author}}</text>
+                <text class="book_Press">出版社: {{bookInfo.publisher}}</text>
+                <text class="book_description">简介: {{bookInfo.profile}}</text>
+            </view>
         </view>
     </view>
+    <view class="borrow_button" bindtap="confirmBorrow">免费借阅</view>
 </view>
-<!-- 免费借阅 -->
-<view class="borrow_button" bindtap="confirmBorrow">免费借阅</view>
+<!-- 空白区 -->
+<view class="default_blank" wx:if="{{errCode.errcode==1}}">
+    <image mode="widthFix" src="/image/qrcode-ico.png" />
+    <text>温馨提示\n</text>
+    <text>您扫描的书包二维码信息有误</text>
+</view>

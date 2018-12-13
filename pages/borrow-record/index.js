@@ -8,7 +8,8 @@ import {
 } from "../../base/util";
 Page({
     data: {
-        receordList: []
+        receordList: [],
+        defaultBlank: false
     },
     onLoad() {
         // 订单借阅记录
@@ -26,11 +27,19 @@ Page({
                     item.baginfo.typeText = typeDict[item.baginfo.type];
                     item.total_feesNum = formatMoney(item.total_fees);
                 });
+                if (data.data.length == 0) {
+                    this.setData({
+                        defaultBlank: false
+                    })
+                }
+                if (data.data.length > 0) {
+                    this.setData({
+                        defaultBlank: true
+                    })
+                }
                 this.setData({
                     receordList: receordList
                 })
-
-                console.log(data.data[0].status)
             } else {
                 console.log(data)
             }

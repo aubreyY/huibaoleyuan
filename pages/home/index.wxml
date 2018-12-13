@@ -13,7 +13,6 @@
     <text class="classify_box_title">{{typeInfo.name}}</text>
   </view>
 </view>
-
 <view class="book_box clearfix">
   <!-- 分类导航 -->
   <view class="{{navFixed?'classify_navbox_show':'classify_navbox_none'}}">
@@ -61,6 +60,11 @@
       <image mode="widthFix" src="/image/add_icon.png" />
       <view class="book_list_add_tit">{{bookbagInfo.countyName}} {{bookbagInfo.townName}}</view>
     </view>
+  </view>
+  <!-- 空白区 -->
+  <view class="default_blank" style="{{defaultBlank?'display:none':'display:block'}}">
+    <image mode="widthFix" src="/image/area-org-ico.png" />
+    <text>未找到服务网点</text>
   </view>
 </view>
 <!-- 底部 -->

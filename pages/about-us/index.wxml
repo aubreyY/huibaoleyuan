@@ -1,11 +1,12 @@
 <!-- 关于我们 -->
 <view class="about_content">
-    <view class="logo_img"><image mode="widthFix" src="/image/about_logo.png" /></view>
+    <view class="logo_img">
+        <image mode="widthFix" src="/image/about_logo.png" />
+    </view>
     <view class="logo_title">慧宝乐园</view>
-    <view class="logo_text_1">慧宝乐园，家庭亲子阅读服务平台。</view>
-    <view class="logo_text_2">这里有精选万册童书；</view>
-    <view class="logo_text_2">这里有业内知名专家引领阅读；</view>
-    <view class="logo_text_2">这里有绘本专业讲读指导；</view>
-    <view class="logo_text_2">这是一个童书游乐园；</view>
+    <view class="logo_text_1">为响应国家“倡导全民阅读,建设学习型社会”的号召，</view>
+    <view class="logo_text_2">慧宝乐园作为一家专注于儿童绘本借阅的共享经济平台，</view>
+    <view class="logo_text_2">联手中国下一代教育基金会推出“书香中国，智慧宝宝”全民</view>
+    <view class="logo_text_2">公益阅读项目，全面助力国民公益阅读。</view>
     <view class="logo_text_2">这是一个助力亲子成长的平台。</view>
 </view>

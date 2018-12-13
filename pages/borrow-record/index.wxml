@@ -12,7 +12,6 @@
         <text class="borrow_time_tit_3">书包系列: {{itemInfo.baginfo.title}}</text>
     </view>
     <view class="order_lable_content">
-        <view class="order_lable">{{itemInfo.baginfo.ageText}}</view>
         <view class="order_lable">{{itemInfo.baginfo.typeText}}</view>
     </view>
     <view class="order_lable_content">
@@ -24,4 +23,9 @@
         <text class="borrow_name">慧宝门店: {{itemInfo.orginfo.name}}</text>
         <text class="borrow_address">门店地址: {{itemInfo.orginfo.address}}</text>
     </view>
+</view>
+<!-- 空白区 -->
+<view class="default_blank" style="{{defaultBlank?'display:none':'display:block'}}">
+    <image mode="widthFix" src="/image/record-ico.png" />
+    <text>暂无明细记录</text>
 </view>

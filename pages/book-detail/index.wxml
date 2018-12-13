@@ -9,8 +9,8 @@
         <text class="book_Press">出版社: {{bookDetailInfo.publisher}}</text>
         <!-- <text class="book_Press_time">出版日期: {{bookDetailInfo.isbn}}</text> -->
         <view class="book_label_cont">
-            <!-- <view class="book_lable_list">{{bookDetailInfo.ageText}}</view> -->
             <view class="book_lable_list">{{bookDetailInfo.tags}}</view>
+            <view class="book_lable_list">{{bookDetailInfo.typeText}}</view>
         </view>
     </view>
 </view>

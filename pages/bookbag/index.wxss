@@ -11,7 +11,7 @@
 
 .bag_title_box {
     width: 100%;
-    height: 190rpx;
+    height: auto;
     background: #fff;
 }
 
@@ -40,6 +40,12 @@
     font-size: 26rpx;
     color: #999999;
     margin-left: 35rpx;
+    word-break: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-bottom: 8rpx;
 }
 
 /* 包含图书 */

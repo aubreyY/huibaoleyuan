@@ -121,14 +121,18 @@
                 <text class="modal_cont_nav_tit">订单二维码</text>
                 <image bindtap="hideQrcodeModal" class="modal_exit_icon" mode="widthFix" src="/image/exit_icon.png" />
             </view>
-            <canvas canvas-id="canvas-qrcode" style="width:320rpx; height:320rpx;margin:30rpx auto; "></canvas>
+            <!-- <canvas canvas-id="canvas-qrcode" style="width:320rpx; height:320rpx;margin:30rpx auto"></canvas> -->
+            <view style="width:320rpx; height:320rpx;margin:30rpx auto">
+                <image src="{{qrCode}}" style="width:320rpx; height:320rpx"></image>
+            </view>
             <view class="order_number">{{orderInfo.orderid}}</view>
         </view>
     </view>
 </view>
 <!-- 空白区 -->
 <view class="default_blank" style="{{defaultBlank?'display:none':'display:block'}}">
-    <view class="default_blank_title">暂无订单</view>
+    <image mode="widthFix" src="/image/order-ico.png" />
+    <text>还未有相关的订单</text>
 </view>
 <!-- 猜你喜欢 -->
 <view class="guess_like clearfix clearfix">
